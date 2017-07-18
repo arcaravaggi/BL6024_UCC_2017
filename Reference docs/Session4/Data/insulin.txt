@@ -1,0 +1,14 @@
+"subjects"	"insulin_sensitivity"	"fatty_acids"
+"subject_A"	250	17.9
+"subject_B"	220	18.3
+"subject_C"	145	18.3
+"subject_D"	115	18.4
+"subject_E"	230	18.4
+"subject_F"	200	20.2
+"subject_G"	330	20.3
+"subject_H"	400	21.8
+"subject_I"	370	21.9
+"subject_J"	260	22.1
+"subject_K"	270	23.1
+"subject_L"	530	24.2
+"subject_M"	375	24.4
