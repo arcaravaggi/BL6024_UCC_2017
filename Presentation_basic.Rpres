@@ -1,7 +1,7 @@
-Presentation_basic
+BL6024 - Quantitative Skills for Biologists using R
 ========================================================
-author: 
-date: 
+author: Dr. Tom Reed; Dr. Javi Del barco_Trillo; Dr. Anthony Caravaggi; Dr. Adam Kane
+date: 26th July 2017
 autosize: true
 
 First Slide
