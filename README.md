@@ -24,7 +24,7 @@ Materials for University College Cork BEES module, BL6024 Quantitative Skills fo
 * 2-way ANOVA
 * ANCOVA
 * Non-parametric alternatives
-* Reporting results
+* Reporting results  
 *In-class CA covering sessions 1-3*
 
 ###  4.	Implementation and interpretation of tests (Part 2)
@@ -37,7 +37,7 @@ Materials for University College Cork BEES module, BL6024 Quantitative Skills fo
 
 ### 6.	Even more advanced linear models
 * Mixed models
-* GAMs
+* GAMs  
 *In-class CA covering sessions 4-6*
 
 ### 7.	Multiparametric tests and other cool stuff
@@ -53,11 +53,11 @@ Materials for University College Cork BEES module, BL6024 Quantitative Skills fo
 * Loops
 
 ### 9.	Advanced visualization
-* Spatial visualization
+* Spatial visualization  
 *In-class CA covering sessions 7-9*
 
 ### 10.	Bayesian statistics
 * Frequentist vs Bayesian
-* Simple approaches
-
+* Simple approaches    
+  
 *Final report*
