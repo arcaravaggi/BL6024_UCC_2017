@@ -54,51 +54,100 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <aside class="gdbar right"><img src="assets/img/logo_ucc.png"></aside>
-
   <hgroup>
     <h2>Read-And-Delete</h2>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Edit YAML front matter</li>
 <li>Write using R Markdown</li>
 <li>Use an empty line followed by three dashes to separate slides!</li>
+<li>Designate the class of the next slide</li>
 </ol>
 
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
-  <aside class="gdbar right"><img src="assets/img/logo_ucc.png"></aside>
-
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>R code with output</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">summary(cars)
+    <pre><code class="r">plot(cars)
+abline(lm(dist ~ speed, data = cars), col = &quot;red&quot;)
 </code></pre>
 
-<pre><code>     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>R code only</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot(cars)
+abline(lm(dist ~ speed, data = cars), col = &quot;red&quot;)
 </code></pre>
 
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
-  <aside class="gdbar right"><img src="assets/img/logo_ucc.png"></aside>
-
   <hgroup>
-    <h2>Slide 3</h2>
+    <h2>Output only</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Images</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/hen_harrier.jpg" style="height:500px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Two Column Layout</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This slide has two columns. Append <code>&amp;twocol</code> to slide separator.</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>point 1</li>
+<li>point 2</li>
+<li>point 3</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>point 1</li>
+<li>point 2</li>
+<li>point 3</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Insert Live Website</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src = 'http://arcaravaggi.github.io' height='600px'></iframe>
+
   </article>
 </slide>
 
@@ -114,14 +163,38 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='R code with output'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Slide 3'>
+        data-slide=3 title='R code only'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Output only'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Images'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Two Column Layout'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Insert Live Website'>
+         7
       </a>
     </li>
   </ul>

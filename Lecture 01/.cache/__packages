@@ -1,0 +1,13 @@
+base
+reshape
+reshape2
+data.table
+dplyr
+tidyr
+car
+bindrcpp
+plyr
+ggplot2
+devtools
+twitteR
+slidify
