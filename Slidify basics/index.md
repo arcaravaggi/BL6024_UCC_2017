@@ -76,3 +76,14 @@ This slide has two columns. Append `&twocol` to slide separator.
 ## Insert Live Website
 
 <iframe src = 'http://arcaravaggi.github.io' height='600px'></iframe>
+
+--- .segue bg:grey
+
+# Use another title slide with a background colour
+
+--- .segue bg:darkgreen
+
+# Here's another example
+
+--- 
+
