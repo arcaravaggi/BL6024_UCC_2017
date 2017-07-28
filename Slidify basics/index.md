@@ -85,5 +85,30 @@ This slide has two columns. Append `&twocol` to slide separator.
 
 # Here's another example
 
---- 
+---  .class #id 
 
+### New slide
+
+
+```r
+2+4
+```
+
+```
+## [1] 6
+```
+
+* Bullet points
+* Bullet point 2
+
+---  .class #id 
+
+## Slide 6
+
+`HIGHLIGHT`
+
+*ITALICS*
+
+**BOLD**
+
+---
