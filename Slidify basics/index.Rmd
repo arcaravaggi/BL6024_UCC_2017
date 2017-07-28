@@ -86,23 +86,12 @@ This slide has two columns. Append `&twocol` to slide separator.
 
 ---  .class #id 
 
-### New slide
+## Text emphasis
 
-```{r}
-2+4
-```
+`HIGHLIGHT` = \`HIGHLIGHT\`
 
-* Bullet points
-* Bullet point 2
+*ITALICS* = \*ITALICS\*
 
----  .class #id 
-
-## Slide 6
-
-`HIGHLIGHT`
-
-*ITALICS*
-
-**BOLD**
+**BOLD** = \*\*BOLD\*\*
 
 ---
