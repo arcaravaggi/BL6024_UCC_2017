@@ -1,6 +1,6 @@
 These informal rules and procedures relate to the UCCRstats-L mailing list. They have been established for users of the mailing list to provide simple guidelines to make its use  more enjoyable and less annoying or bothersome.
 
-You can join the list by emailing **uccrstats-l-subscribe-request@lists.ucc.ie.**
+You can join the list by emailing **UCCRSTATS-L-subscribe-request@lists.ucc.ie**
 
 1. Be sure to include a descriptive subject line. E-mails received with no subject line may likely be perceived as spam by an email filter and be deleted before reaching the recipient's inbox.
 
