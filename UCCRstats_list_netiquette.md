@@ -21,3 +21,13 @@ You can join the list by emailing **UCCRSTATS-L-subscribe-request@lists.ucc.ie**
 9. Be respectful and considerate of your colleagues in your postings. If you disagree or become upset with someone's response or use of the list, reply to that person directly when appropriate.
 
 10. Become familiar with the features, settings, options and other capabilities of your e-mail client system.
+
+The following email addresses are used for the specified purposes:
+
+* To send an email to the list: *UCCRSTATS-L@LISTS.UCC.IE*  
+
+* To contact the list owner: *UCCRSTATS-L-request@LISTS.UCC.IE*  
+
+* To send commands to the LISTSERV server: *LISTSERV@LISTS.UCC.IE*  
+
+* To unsubscribe from the list: *UCCRSTATS-L-signoff-request@LISTS.UCC.IE*
