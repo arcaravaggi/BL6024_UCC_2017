@@ -1,6 +1,8 @@
 The UCC R Peer Group is open to all UCC students and staff. It provides a forum for the discussion of issues pertaining to statistical analyses carried out using R statistics. We welcome members of all abilities and career stages, whether you've never used R or have substantial experience. Join the mailing list, below, to join the Peer Group.  
 
-You can join the list by sending a blank email to  **UCCRSTATS-L-subscribe-request@lists.ucc.ie**   
+You can join the list by sending a blank email to  **UCCRSTATS-L-subscribe-request@lists.ucc.ie** 
+
+<p align="center"><img src="UUC_R_Group_logo.jpg" width="15%"></p>  
 
 The mailing list can be used for sharing tips and tricks, sharing new methods, asking questions about code and/or statistical methods, or anything else related to working in R. Please pay attention to the **Rules and Guidelines**, below.    
 
@@ -47,4 +49,4 @@ The following email addresses are used for the specified purposes:
 
 * To unsubscribe from the list: *UCCRSTATS-L-signoff-request@LISTS.UCC.IE*  
 
-![](UUC_R_Group_logo.jpg)
+<p align="center"><img src="UUC_R_Group_logo.jpg" width="15%"></p>
