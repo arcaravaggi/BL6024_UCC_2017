@@ -1,6 +1,19 @@
-These informal rules and procedures relate to the UCCRstats-L mailing list. They have been established for users of the mailing list to provide simple guidelines to make its use  more enjoyable and less annoying or bothersome.
+The UCC R Peer Group is open to all UCC students and staff. It provides a forum for the discussion of issues pertaining to statistical analyses carried out using R statistics. We welcome members of all abilities and career stages, whether you've never used R or have substantial experience. Join the mailing list, below, to join the Peer Group.  
 
-You can join the list by emailing **UCCRSTATS-L-subscribe-request@lists.ucc.ie**
+You can join the list by sending a blank email to  **UCCRSTATS-L-subscribe-request@lists.ucc.ie**   
+
+The mailing list can be used for sharing tips and tricks, sharing new methods, asking questions about code and/or statistical methods, or anything else related to working in R. Please pay attention to the **Rules and Guidelines**, below.    
+
+R can be downloaded, here: https://www.r-project.org/  
+R Studio can be downloaded, here: https://www.rstudio.com/  
+
+Join the list by sending a blank email to  **UCCRSTATS-L-subscribe-request@lists.ucc.ie**
+
+The mailing list home page, including the Archive, can be found here: http://lists.ucc.ie/cgi-bin/wa?A0=UCCRSTATS-L  
+
+**Rules and Guidelines**  
+
+These informal rules and procedures relate to the UCCRstats-L mailing list. They have been established for users of the mailing list to provide simple guidelines to make its use  more enjoyable and less annoying or bothersome.  
 
 1. Be sure to include a descriptive subject line. E-mails received with no subject line may likely be perceived as spam by an email filter and be deleted before reaching the recipient's inbox.
 
@@ -22,6 +35,8 @@ You can join the list by emailing **UCCRSTATS-L-subscribe-request@lists.ucc.ie**
 
 10. Become familiar with the features, settings, options and other capabilities of your e-mail client system.
 
+Join the list by sending a blank email to **UCCRSTATS-L-subscribe-request@lists.ucc.ie**  
+
 The following email addresses are used for the specified purposes:
 
 * To send an email to the list: *UCCRSTATS-L@LISTS.UCC.IE*  
@@ -30,4 +45,6 @@ The following email addresses are used for the specified purposes:
 
 * To send commands to the LISTSERV server: *LISTSERV@LISTS.UCC.IE*  
 
-* To unsubscribe from the list: *UCCRSTATS-L-signoff-request@LISTS.UCC.IE*
+* To unsubscribe from the list: *UCCRSTATS-L-signoff-request@LISTS.UCC.IE*  
+
+![](UUC_R_Group_logo.jpg)
