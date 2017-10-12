@@ -52,8 +52,7 @@ Materials for University College Cork BEES module, BL6024 Quantitative Skills fo
 * Main functions
 * Loops
 
-### 9.	Advanced visualization
-* Spatial visualization  
+### 9.	GIS (Geographic Information Systems)
 *In-class CA covering sessions 7-9*
 
 ### 10.	Bayesian statistics
