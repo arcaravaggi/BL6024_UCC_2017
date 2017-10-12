@@ -13,17 +13,8 @@ biglogo     : BEES_logo.jpg
 
 ## Slide 1
 
-Random text
+
 
 
 ---  .class #id 
 
-## Slide 2
-
-More text
-
---- .class #id
-
-## Slide 3
-
---- .class #id
