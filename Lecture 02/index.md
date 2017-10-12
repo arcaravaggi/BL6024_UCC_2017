@@ -1,6 +1,6 @@
 ---
 title       : BL6024 - Quantitative Skills for Biologists using R
-subtitle    : "Lecture XX: Subtitle"
+subtitle    : "Lecture 02: Data exploration and visualisation"
 framework   : io2012        # {revealjs, io2012, html5slides, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -13,9 +13,17 @@ biglogo     : BEES_logo.jpg
 
 ## Slide 1
 
+Random text
+
 
 ---  .class #id 
 
+## Slide 2
 
+More text
 
----
+--- .class #id
+
+## Slide 3
+
+--- .class #id
