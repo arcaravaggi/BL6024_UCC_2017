@@ -46,7 +46,7 @@
   </aside>
   <hgroup class="auto-fadein">
     <h1>BL6024 - Quantitative Skills for Biologists using R</h1>
-    <h2>Lecture XX: Subtitle</h2>
+    <h2>Lecture 3: Common statistical tests</h2>
     <p><br/></p>
   </hgroup>
   <article></article>  
@@ -56,22 +56,693 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Chi-square</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>The chi-square contingency table analysis is an analysis of count data</li>
+<li>It is a test of association among two or more categorical variables</li>
+<li>Does not assume the data are normally distributed (non-parametric test)</li>
+<li>Example: ladybirds in rural and industrial sites. Is there an association between ladybird colours and their habitat?</li>
+</ul>
+
+<pre><code class="r">lady = read.csv(&quot;ladybirds_morph_colour.csv&quot;)
+lady # look at the data
+str(lady) # 20 observations, with a count (number) for each one. 5 sites per habitat
+</code></pre>
+
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>So, do the frequencies of the two colours of ladybirds differ between the two habitat types?</li>
+<li>Using a chi-square, we need to calculate totals and in this case end up with 4 numbers. What would those 4 numbers be?</li>
+</ul>
+
   </article>
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">library(dplyr)
+totals = lady %&gt;%
+    group_by(Habitat,morph_colour) %&gt;%
+        summarise(total.number = sum(number)) 
+totals
+</code></pre>
+
+<ul>
+<li>%&gt;% denotes a pipe. You can read this like &quot;put the answer of the left-hand command into the function on the right&quot;</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Let&#39;s plot those totals. In this case, a bar chart will do the job:</li>
+</ul>
+
+<pre><code class="r">library(ggplot2)
+ggplot(totals, aes(x = Habitat, y = total.number, fill = morph_colour)) +   
+  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) +     
+  scale_fill_manual(values = c(black = &quot;black&quot;, red = &quot;red&quot;))
+</code></pre>
+
+<ul>
+<li>It looks like we may need to reject the null hypothesis</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Let&#39;s look at the data again:</li>
+</ul>
+
+<pre><code class="r">totals # now we will make a contingency table:
+lady.table = xtabs(number ~ Habitat + morph_colour, data = lady)
+# Have a look:
+lady.table
+# Run the chi-square:
+chisq.test(lady.table)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>One way to report these results:</li>
+</ul>
+
+<p>&quot;We tested the hypothesis that there is an association between colour morphs of ladybirds and industrial and rural habitats. Ladybird colour morphs are not equally distributed in the two habitats (Chi-square = 19.1, df = 1, p &lt; 0.001), with black morphs being more frequent in industrial habitats and red morphs more frequent in rural habitats (Figure 1).&quot;</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>There are other ways to run a chi-square. Let&#39;s go simpler:</li>
+</ul>
+
+<pre><code class="r">df &lt;- read.csv(&quot;https://goo.gl/j6lRXD&quot;) 
+head(df, 10)
+table(df$treatment, df$improvement)
+plot(df$treatment, df$improvement)
+chisq.test(df$treatment, df$improvement)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Even simpler. If you already know the frequencies you don&#39;t even need to load the whole dataset into R</li>
+<li>Question: Do we have a 1:1 sex ratio in our population?</li>
+</ul>
+
+<pre><code class="r">obs = c(50,20) # let&#39;s say 50 males and 20 females
+expP = c(0.50, 0.50) # we expect 1:1 sex ratio
+chisq.test(obs, p = expP)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>One last example:</li>
+</ul>
+
+<pre><code class="r">M = matrix(c(22, 4, 15, 10), byrow = TRUE, nrow = 2)
+</code></pre>
+
+<ul>
+<li>What did we do there? Now calculate the chi-square</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Chi-square</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Exercise</strong></p>
+
+<ul>
+<li>Corn kernels were counted in an ear of corn. </li>
+<li>There were 295 purple kernels and 86 yellow kernels. </li>
+<li>Are these counts consistent with a 3:1 ratio of purple to yellow?</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Measure of association (negative or positive)</li>
+<li>Cannot attribute causality</li>
+<li><p>Correlation coefficients say nothing about which variable causes the other to change</p></li>
+<li><p>2 types of correlation: bivariate and partial</p>
+
+<ul>
+<li>partial correlation controls for variation in other variables</li>
+</ul></li>
+<li><p>Parametic correlation =&gt; Pearson correlation</p></li>
+<li><p>Non-parametric correlation:</p>
+
+<ul>
+<li>Spearman&#39;s rho</li>
+<li>Kendall&#39;s tau (better than Spearman for small samples)</li>
+</ul></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Correlation coefficient</strong></p>
+
+<ul>
+<li><p>varies between -1 and +1</p>
+
+<ul>
+<li>0 = no relationship</li>
+</ul></li>
+<li><p>it is an effect size</p>
+
+<ul>
+<li>+/- 0.1 = small effect</li>
+<li>+/- 0.3 = medium effect</li>
+<li>+/- 0.5 = large effect</li>
+</ul></li>
+<li><p>R<sup>2</sup> - by squaring the value of R you get the proportion of variance in one variable shared by the other</p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>To compute basic correlation coefficients there are several functions that can be used:</li>
+</ul>
+
+<pre><code class="r">cor()
+cor.test() # I normally use this one
+rcorr() 
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Example</strong></p>
+
+<ul>
+<li>We will use the R dataset iris</li>
+<li>Investigate the dataset, e.g. use str()</li>
+<li>Question: Is sepal length correlated with petal length in any of the 3 species?</li>
+</ul>
+
+<pre><code class="r">setosa = subset(iris, Species==&quot;setosa&quot;)
+plot(setosa$Sepal.Length, setosa$Petal.Length, cex = 1.5, pch = 19, 
+     xlab = &quot;Sepal Length&quot;, ylab = &quot;Petal Length&quot;, cex.lab = 1.5)
+shapiro.test(setosa$Sepal.Length)
+shapiro.test(setosa$Petal.Length)
+cor.test(setosa$Sepal.Length, setosa$Petal.Length)
+</code></pre>
+
+<p>&quot;There is not a significant correlation between sepal length and petal length (r = 0.27, p = 0.06)&quot;</p>
+
+<ul>
+<li>Repeat with any other species</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Exercise</strong></p>
+
+<ul>
+<li>Load the &quot;SoaySheepFitness&quot; dataset</li>
+<li>Plot</li>
+<li>Determine normality</li>
+<li>Run correlation</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>t-test</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Comparison between two groups</li>
+<li>Independent &amp; dependent (or repeated measures) models</li>
+<li>function t.test()</li>
+</ul>
+
+<pre><code class="r"># Data for different groups stored in a single column:
+model&lt;-t.test(outcome~predictor, paired=FALSE/TRUE)
+#For example:
+ind.t.test&lt;-t.test(Anxiety~Group)
+
+# Data for different groups stored in two columns:
+model&lt;-t.test(scores group 1, scores group 2, paired=FALSE/TRUE)
+# For example:
+dep.t.test&lt;-t.test(control,treatment, paired=TRUE)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>t-test</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Example</strong></p>
+
+<ul>
+<li>Heights of 10 plants grown with fertilizer (fert) and 10 plants without (control)</li>
+<li>Independent samples</li>
+</ul>
+
+<pre><code class="r">fert = c(110.3, 130.4, 114.0, 135.7, 129.9, 98.2, 109.4, 131.4, 127.9, 125.7)
+control = c(64.7, 86.6, 67.1, 62.5, 75.1, 83.8, 71.7, 83.4, 90.3, 82.7)
+boxplot(control, fert)
+boxplot(control, fert, names = c(&quot;Control&quot;, &quot;Fertilizer&quot;), 
+    xlab = &quot;Treatment&quot;, ylab = &quot;Plant Height (cm)&quot;, cex.lab = 1.4)
+</code></pre>
+
+<ul>
+<li>Interpret</li>
+<li>Swap the two boxplots</li>
+<li>Check normality for the Fertility and Control samples using shapiro.test()</li>
+<li>Also test that variances are equal using the var.test(group1,group2)</li>
+<li>Conduct the t-test: t.test(x,y, paired= FALSE/TRUE, var.equal=TRUE/FALSE)</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Use ANOVA to compare several means (do not do a series of t-tests on all pairwise combinations of the data! This increases type I error)</li>
+<li>Constancy of variance (homoscedasticity) is the most important assumption underlying regression and analysis of variance
+
+<ul>
+<li>var.test() for two samples</li>
+<li>for more than two samples Bartlett test or Fligner-Killeen test: bartlett.test(); fligner.test()</li>
+</ul></li>
+<li>ANOVA is an omnibus test
+
+<ul>
+<li>it test for an overall difference between groups</li>
+<li>it tells us that the group means are different</li>
+<li>it doesn&#39;t tell us exactly which means differ</li>
+</ul></li>
+<li>ANOVA is simply a special case of regression; traditional ANOVA is simply regression with categorical predictors</li>
+<li>R does this through the general linear model (GLM): functions lm() &amp; aov()</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Post hoc tests</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Compare each mean against all others</li>
+<li>Tukey and Dunnett&#39;s tests can be done using the glht() function in the multcomp package</li>
+<li>Also TukeyHSD()</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Example</strong></p>
+
+<ul>
+<li>We will use the &quot;Daphniagrowth.csv&quot;&quot; dataset. Get it into Rstudio and look at the data</li>
+<li>Question: Do parasites reduce <em>Daphnia</em> growth?</li>
+<li>We will use ggplot2 again to make the figures, so make it available</li>
+<li>We will Plot -&gt; Model -&gt; Check Assumptions -&gt; Interpret</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Plot first</strong></p>
+
+<pre><code class="r">daphnia =read.csv(&quot;Daphniagrowth.csv&quot;)
+library(ggplot2)
+ggplot(daphnia, aes(x=parasite, y=growth.rate)) # aes = aesthetics
+</code></pre>
+
+<pre><code class="r">ggplot(daphnia, aes(x=parasite, y=growth.rate)) +
+  geom_boxplot()
+</code></pre>
+
+<pre><code class="r">ggplot(daphnia, aes(x=parasite, y=growth.rate)) +
+  geom_boxplot() +
+  theme_bw() # gets rid of the grey background
+</code></pre>
+
+<pre><code class="r">ggplot(daphnia, aes(x=parasite, y=growth.rate)) +
+  geom_boxplot() +
+  theme_bw() +
+  coord_flip() # Maybe you prefer it this way
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Next write the model</strong></p>
+
+<pre><code class="r">model.growth = lm(growth.rate ~ parasite, data = daphnia)
+</code></pre>
+
+<p><strong>Then check the assumptions</strong></p>
+
+<pre><code class="r">install.packages(&quot;ggfortify&quot;)
+library(ggfortify)
+autoplot(model.growth)
+</code></pre>
+
+<ul>
+<li>Residuals vs Fitted, if model is appropriate you should not see any pattern</li>
+<li>Q-Q plot, points should be closed to the line. If so, normality is met</li>
+<li>Scale-location, evaluates the assumption of equal variance. No pattern is good</li>
+<li>Leverage, to see influential points and outliers</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Finally, we can interpret our model</strong></p>
+
+<ul>
+<li>We can use anova() and summary()</li>
+</ul>
+
+<pre><code class="r">anova(model.growth)
+# F value = between-group variance / within-group variance
+summary(model.growth)
+</code></pre>
+
+<ul>
+<li>Post hoc tests (e.g. Tukey&#39;s test)</li>
+</ul>
+
+<pre><code class="r">model.aov = aov(model.growth) # TukeyHSD() does not work with lm models
+TukeyHSD(model.aov) 
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Exercise</strong></p>
+
+<ul>
+<li>Use the iris dataset again</li>
+<li>Question: are there any differences in petal length between the 3 species?</li>
+<li>Remember: Plot -&gt; Model -&gt; Check Assumptions -&gt; Interpret</li>
+<li>For plotting, you can use ggplot or base R. For example:</li>
+</ul>
+
+<pre><code class="r">boxplot(iris$Petal.Length~iris$Species, ylab= &quot;Petal Length&quot;, cex.lab= 1.4) 
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>2-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Two categorical factors and their interaction</li>
+<li>Let&#39;s go through an example: &quot;growth.csv&quot;. Load and check</li>
+<li>Each combination of diet and supplement was replicated 4 times (fully factorial experimental design)</li>
+</ul>
+
+<p><strong>Let&#39;s plot the data</strong></p>
+
+<pre><code class="r">cow = read.csv(&quot;growth.csv&quot;)
+library(dplyr)
+cow.means = cow %&gt;% group_by(diet, supplement) %&gt;% summarise(meanGrow = mean(gain))
+cow.means # see what we have done
+library(ggplot2)
+ggplot(cow.means, aes(x=supplement, y=meanGrow, color=diet, group=diet)) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>2-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Build the model</strong></p>
+
+<ul>
+<li>H0 =&gt; The effect of supplement type on cow weight gain does not depend on the diet</li>
+<li>So we need to include an interaction in the model</li>
+<li>Supplement*diet =&gt; 2 main effects + interaction</li>
+</ul>
+
+<pre><code class="r">cow.model = lm(gain ~ diet * supplement, data = cow)
+</code></pre>
+
+<p><strong>Check the assumptions and interpret the model</strong></p>
+
+<pre><code class="r">library(ggfortify)
+autoplot(cow.model, smooth.colour=NA) # assumptions. Looks OK
+anova(cow.model)
+summary(cow.model)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANCOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Another form of glm which includes covariates (continuous). That is, we have one categorical and one continuous explanatory variables</p></li>
+<li><p>Including covariate into model allows us to &quot;partial out&quot; its effect</p></li>
+<li><p>Including covariate takes away some of the unexplained variance - allows the effects of the other variables to be seen more clearly</p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANCOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Example</strong></p>
+
+<ul>
+<li>Let&#39;s use the &quot;limpet.csv&quot; dataset. Examine the data</li>
+<li>Question: &quot;Does the density dependence of egg production differ between spring and summer?&quot;</li>
+<li>First, let&#39;s make a plot</li>
+</ul>
+
+<pre><code class="r">ggplot(limpets, aes(x=DENSITY, y=EGGS, color=SEASON)) +
+  geom_point() +
+  scale_color_manual(values = c(spring=&quot;dark green&quot;, summer=&quot;red&quot;)) +
+  theme_bw()
+</code></pre>
+
+<ul>
+<li>Now the rest: make the model, check the assumptions and interpret results</li>
+</ul>
+
+<pre><code class="r">limpets.mod = lm(EGGS ~ DENSITY*SEASON, data=limpets)
+autoplot(limpets.mod)
+anova(limpets.mod) # You could remove the interaction (EGGS ~ DENSITY+SEASON, data=limpets)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Non-parametric equivalents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>When data is normally distributed:</strong></p>
+
+<ul>
+<li><strong>t-test</strong>: Two groups (independent or dependent samples) </li>
+<li><strong>ANOVA</strong>: More than two groups </li>
+</ul>
+
+<p><strong>When data is non-normally distributed:</strong> </p>
+
+<ul>
+<li>Mann-Whitney test - Two independent groups  - wilcox.test(x,y)</li>
+<li>Wilcoxon test     - Two dependent groups    - wilcox.test(x, y,paired=TRUE)<br></li>
+<li><p>Kruskal-Wallis    - More than two groups    - kruskal.test(y~A)</p>
+
+<ul>
+<li>For post hoc tests you can use kruskalmc() in the pgirmess package</li>
+</ul></li>
+<li><p><a href="https://www.statmethods.net/stats/nonparametric.html">https://www.statmethods.net/stats/nonparametric.html</a></p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Non-parametric equivalents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Example</strong></p>
+
+<ul>
+<li>Use the mtcars R database</li>
+<li>am =&gt; 0 is automatic, 1 is manual</li>
+<li>Question: Do automatic and manual cars differ in their number of cylinders?</li>
+</ul>
+
+<pre><code class="r">boxplot(mtcars$cyl~mtcars$am) 
+#we don&#39;t check for normality, as we have count data
+wilcox.test(cyl~am,data=mtcars)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>In-class Continuous Assessment #1</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Complete and submit exercise before you leave</li>
+<li>Work on your own</li>
+<li>You can use your notes, any books you have, and the internet</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>In-class Continuous Assessment #1</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Complete and submit exercise before you leave</li>
+<li>Work on your own</li>
+<li>You can use your notes, any books you have, and the internet</li>
+<li>Use the R dataset&quot;chickwts&quot;</li>
+<li>Question: Does chick weight depend on feed type?</li>
+<li>Create a new script. Write your name in the first line of the script. Write all the code necessary to address the question above. Make plots as polished as possible, check assumptions and interpret results. Write any notes and interpretation using # symbols</li>
+</ul>
+
   </article>
 </slide>
 
@@ -81,20 +752,194 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Chi-square'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='Chi-square'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Chi-square'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Chi-square'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Chi-square'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Chi-square'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Chi-square'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Chi-square'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Chi-square'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Chi-square'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Correlation'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Correlation'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Correlation'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Correlation'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Correlation'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='t-test'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='t-test'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='One-way ANOVA'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Post hoc tests'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='ANOVA'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='ANOVA'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='ANOVA'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='ANOVA'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='ANOVA'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='2-way ANOVA'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='2-way ANOVA'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='ANCOVA'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='ANCOVA'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Non-parametric equivalents'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Non-parametric equivalents'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='In-class Continuous Assessment #1'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='In-class Continuous Assessment #1'>
+         32
       </a>
     </li>
   </ul>
