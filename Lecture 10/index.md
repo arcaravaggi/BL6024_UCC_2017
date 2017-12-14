@@ -19,11 +19,11 @@ biglogo     : BEES_logo.jpg
 <br>
 - Priors and posteriors
 <br>
-- Bayesian vs. frequentist
+- Bayesian vs. Frequentist
 <br>
 - The machinery of Bayesian statistics
 <br>
-- Bayesian statistics in R
+- Bayesian statistics in `R`
 <br>
 - Practical examples
 
@@ -264,6 +264,18 @@ $$ p(x) = \int p(x,\theta)\  d\theta $$
 
 <br>
 
+- \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
+- Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)
+- Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+ Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+......................
+ <br />
+ Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)
+- Repeat previous step many times to get a good approximation of \(p(\theta|x)\)
+- The sequence of random draws for each parameter *k* forms a Markov chain
+
 ---  .class #id 
 
 
@@ -322,9 +334,11 @@ $$ p(x) = \int p(x,\theta)\  d\theta $$
 
 - Trace plots and burn-in
 - *Use multiple parallel chains*
-
+ 
+<br>
+ 
 <div style='text-align: center'>
-    <img src="assets/img/chains.jpg" style="height:300px"></img>
+    <img src="assets/img/chains.jpg" style="height:350px"></img>
 </div>
 
 ---  .class #id 
@@ -452,6 +466,14 @@ $$ p(x) = \int p(x,\theta)\  d\theta $$
 <br>
 <br>
 ## Any questions?
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+*Acknowledgements*: Introduction to WinBUGS for Ecologists - M. K&#233;ry
 
 
 ---

@@ -66,11 +66,11 @@
 <br></li>
 <li>Priors and posteriors
 <br></li>
-<li>Bayesian vs. frequentist
+<li>Bayesian vs. Frequentist
 <br></li>
 <li>The machinery of Bayesian statistics
 <br></li>
-<li>Bayesian statistics in R
+<li>Bayesian statistics in <code>R</code>
 <br></li>
 <li>Practical examples</li>
 </ul>
@@ -388,6 +388,20 @@
   <article data-timings="">
     <p><br></p>
 
+<ul>
+<li>\(x= \)data, \(\theta= \)vector of <em>k</em> unknowns \((\theta_1,\theta_2,...,\theta_k)\)<br></li>
+<li>Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)</li>
+<li>Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+......................
+<br />
+Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)</li>
+<li>Repeat previous step many times to get a good approximation of \(p(\theta|x)\)</li>
+<li>The sequence of random draws for each parameter <em>k</em> forms a Markov chain</li>
+</ul>
+
   </article>
 </slide>
 
@@ -473,8 +487,10 @@
 <li><em>Use multiple parallel chains</em></li>
 </ul>
 
+<p><br></p>
+
 <div style='text-align: center'>
-    <img src="assets/img/chains.jpg" style="height:300px"></img>
+    <img src="assets/img/chains.jpg" style="height:350px"></img>
 </div>
 
   </article>
@@ -663,6 +679,15 @@
 <br></p>
 
 <h2>Any questions?</h2>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<em>Acknowledgements</em>: Introduction to WinBUGS for Ecologists - M. K&#233;ry</p>
 
   </article>
 </slide>
