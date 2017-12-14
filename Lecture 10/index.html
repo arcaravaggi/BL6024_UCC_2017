@@ -46,7 +46,7 @@
   </aside>
   <hgroup class="auto-fadein">
     <h1>BL6024 - Quantitative Skills for Biologists using R</h1>
-    <h2>Lecture XX: Subtitle</h2>
+    <h2>Lecture 10: An Introduction to Bayesian Statistics</h2>
     <p><br/></p>
   </hgroup>
   <article></article>  
@@ -56,20 +56,618 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Contents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>A bit of history
+<br></li>
+<li>Priors and posteriors
+<br></li>
+<li>Bayesian vs. frequentist
+<br></li>
+<li>The machinery of Bayesian statistics
+<br></li>
+<li>Bayesian statistics in R
+<br></li>
+<li>Practical examples</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>History of Bayesian statistics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><strong>Bayes</strong>&#39; rule</li>
+</ul>
+
+<p>\[ p(x,y) = p(x|y) \times p(y) \]
+\[ p(x,y) = p(y,x) \]</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: center'>
+    <img src="assets/img/Bayes.gif" style="height:370px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>History of Bayesian statistics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><strong>Bayes</strong>&#39; rule</li>
+</ul>
+
+<p>\[ p(x,y) = p(x|y) \times p(y) \]
+\[ p(x,y) = p(y,x) \]
+\[ p(y|x) = \frac {p(x|y) \times p(y)}{p(x)}\]
+<br></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: center'>
+    <img src="assets/img/Bayes.gif" style="height:370px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>History of Bayesian statistics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><strong>Bayes</strong>&#39; rule</li>
+</ul>
+
+<p>\[ p(x,y) = p(x|y) \times p(y) \]
+\[ p(x,y) = p(y,x) \]
+\[ p(y|x) = \frac {p(x|y) \times p(y)}{p(x)}\]
+<br></p>
+
+<ul>
+<li>Use in statistical inference</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: center'>
+    <img src="assets/img/Bayes.gif" style="height:370px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Priors and posteriors</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p>\[ \color{darkgreen}{p(\theta|x)} = \frac { \color{darkred}{p(x|\theta)} \times \color{darkorange}{p(\theta)}}{\color{darkblue}{p(x)}}\]
+<br></p>
+
+<p>Simplified to: \(\color{darkgreen}{Posterior\ distribution} \sim \color{darkred}{Likelihood} \times \color{darkorange}{Prior\ distribution}\)</p>
+
+<p>i.e. we update our prior belief in light of the data to get a posterior distribution for the parameters
+<br></p>
+
+<p>\(\color{darkblue}{p(x)}\) &rightarrow; Evidence (normalization)</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>We think Bayesian!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<div style='text-align: center'>
+    <img src="assets/img/ThinkBayes.jpg" style="height:470px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian vs. Frequentist</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p><strong>- Both</strong>: data are observed realizations of stochastic systems containing random processes</p>
+
+<p><strong>- Classical (frequentist) stats:</strong> the quantities used to describe these random processes (parameters) are fixed and unknown constants</p>
+
+<p><strong>- Bayesian stats:</strong> the parameters are viewed as unobserved realizations of random processes</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian vs. Frequentist</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p><strong>- Both</strong>: data are observed realizations of stochastic systems containing random processes</p>
+
+<p><strong>- Classical (frequentist) stats:</strong> the quantities used to describe these random processes (parameters) are fixed and unknown constants</p>
+
+<p><strong>- Bayesian stats:</strong> the parameters are viewed as unobserved realizations of random processes</p>
+
+<p><br></p>
+
+<p style="text-align: center;"> <span style="color:darkred;">Estimating a single point vs. a distribution </span> </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian vs. Frequentist</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p><strong>Uncertainty</strong>:</p>
+
+<ul>
+<li><p><strong>Classical (frequentist) stats</strong>: <em>frequency of hypothetical replicates</em></p></li>
+<li><p><strong>Bayesian stats</strong>: <em>posterior distribution of a parameter, given the data, the model and the priors</em></p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian vs. Frequentist</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p><strong>Uncertainty</strong>:</p>
+
+<ul>
+<li><p><strong>Classical (frequentist) stats</strong>: <em>frequency of hypothetical replicates</em></p></li>
+<li><p><strong>Bayesian stats</strong>: <em>posterior distribution of a parameter, given the data, the model and the priors</em></p></li>
+</ul>
+
+<p><br></p>
+
+<p style="text-align: center;"> <span style="color:darkred;"> Parameters $\theta$ are random variables &rightarrow; we can make probabilistic statements </span> </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Pros &amp; cons of the Bayesian approach</h2>
   </hgroup>
   <article data-timings="">
     
+<div style='float:left;width:48%;' class='centered'>
+  <p><br></p>
+
+<ul>
+<li>Flexibility and tractability
+<br></li>
+<li>No asymptotics
+<br></li>
+<li>Incorporate existing information
+<br></li>
+<li>Error propagation
+<br></li>
+<li>Intuitive interpretation</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br></p>
+
+<ul>
+<li>Prior choice
+<br></li>
+<li>Controversies on model selection
+<br></li>
+<li>Computing times</li>
+</ul>
+
+</div>
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <article data-timings="">
     
+<div style='float:left;width:48%;' class='centered'>
+  <p><br>
+<br>
+<br>
+<br></p>
+
+<blockquote>
+<p>&nbsp;
+<em>The argument in the academic community is mostly esoteric tail wagging anyway</em>. </p>
+
+<p>&nbsp;                                    </p>
+
+<p>&nbsp;
+<em>In truth most analysts out of the ivory tower don&#39;t care that much, if at all, about Bayesian vs. Frequentist</em>.</p>
+</blockquote>
+
+<p>(Rob Balon)</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br>
+<br>
+<br></p>
+
+<div style='text-align: right'>
+    <img src="assets/img/Balon.jpg" style="height:320px"></img>
+</div>
+
+</div>
   </article>
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian machinery</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li><p>Problem is the estimation of \(p(x)\):
+\[ p(x) = \int p(x,\theta)\  d\theta \]</p></li>
+<li><p><em>Solution</em>: approximate inference</p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bayesian machinery</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>Markov Chain Monte Carlo (MCMC) algorithms</li>
+<li>Not the only solution (e.g. INLA)</li>
+<li><em>Software</em>: WinBUGS (OpenBUGS), JAGS, Stan, Nimble, MCMCglmm, ...</li>
+</ul>
+
+<p><br></p>
+
+<div style='text-align: center'>
+<img src="assets/img/BUGS.jpg" alt="" style="height:250px"></img>
+<img src="assets/img/Stan.png" alt="" style="height:200px"></img>
+<img src="assets/img/NIMBLE.png" alt="" style="height:250px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: Gibbs sampler</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>BUGS/JAGS in practice</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>Define model</li>
+<li>Set priors and constraints</li>
+<li>Compile model based on data</li>
+<li>Initialise chains</li>
+<li>Iterate chains until convergence</li>
+<li>Obtain posterior sample</li>
+<li>Monitor convergence and prior sensitivity</li>
+<li>Model validation and selection</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Choosing your priors</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><br></p>
+
+<ul>
+<li><p style='text-align: left'>What is a reasonable prior?</p>
+<br></li>
+<li><p style='text-align: left'>Uninformative vs. informative</p>
+<br></li>
+<li><p style='text-align: left'> Can have subtle effects in multidimensional cases </p>
+<br></li>
+<li><p style='text-align: left'>Assess prior sensitivity</p></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: right'>
+    <img src="assets/img/Prior.gif" style="height:250px"></img>
+</div>
+
+<div style='text-align: right'>
+    <img src="assets/img/Choice.jpg" style="height:250px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><em>Trace plots and burn-in</em></li>
+</ul>
+
+<p><br></p>
+
+<div style='text-align: center'>
+    <img src="assets/img/trace.png" style="height:350px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li><em>Use multiple parallel chains</em></li>
+</ul>
+
+<div style='text-align: center'>
+    <img src="assets/img/chains.jpg" style="height:300px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li>Use multiple parallel chains</li>
+<li><em>Brooks-Gelman-Rubin (BGR) diagnostic</em> </li>
+</ul>
+
+<div style='text-align: center'>
+    <img src="assets/img/BGR.gif" style="height:350px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li>Use multiple parallel chains</li>
+<li>Brooks-Gelman-Rubin (BGR) diagnostic </li>
+<li><em>Density plots</em></li>
+</ul>
+
+<div style='text-align: center'>
+    <img src="assets/img/density.png" style="height:350px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li>Use multiple parallel chains</li>
+<li>Brooks-Gelman-Rubin (BGR) diagnostic </li>
+<li>Density plots</li>
+<li><em>Monte Carlo error</em></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li>Use multiple parallel chains</li>
+<li>Brooks-Gelman-Rubin (BGR) diagnostic </li>
+<li>Density plots</li>
+<li>Monte Carlo error</li>
+<li><em>Autocorrelation and thinning</em></li>
+</ul>
+
+<div style='text-align: center'>
+    <img src="assets/img/autoc.jpg" style="height:250px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Convergence monitoring</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Trace plots and burn-in</li>
+<li>Use multiple parallel chains</li>
+<li>Brooks-Gelman-Rubin (BGR) diagnostic </li>
+<li>Density plots</li>
+<li>Monte Carlo error</li>
+<li>Autocorrelation and thinning</li>
+<li><em>Effective sample size and posterior summary</em></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model validation and selection</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>Challenging (as in frequentist!)</li>
+<li>Residual diagnostics (for non-hierarchical models)</li>
+</ul>
+
+<div style='text-align: center'>
+    <img src="assets/img/residuals.png" style="height:350px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model validation and selection</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>Challenging (as in frequentist!)</li>
+<li>Residual diagnostics (for non-hierarchical models)</li>
+<li>Hierarchical models: cross-validation, validation with test data, posterior predictive checks.</li>
+<li>95% credible intervals and overlap with 0</li>
+<li>Deviance Information Criterion (DIC)</li>
+<li>RJ-MCMC</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: estimating the mean</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: is the coin fair?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: simple linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Practical - Objectives</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li><p>Estimate the mean, probability of obtaining heads and the parameters of a simple linear regression (using the example from Session XX)</p></li>
+<li><p>Familiarise yourself with BUGS language and <code>R2OpenBUGS</code> and <code>coda</code> packages in <code>R</code></p></li>
+<li><p>Compare the results obtain in a frequentist vs. Bayesian setting</p></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><br>
+<br>
+<br></p>
+
+<h2>Any questions?</h2>
+
+  </article>
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
   <article data-timings="">
     
   </article>
@@ -81,20 +679,194 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Contents'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='History of Bayesian statistics'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='History of Bayesian statistics'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='History of Bayesian statistics'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Priors and posteriors'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='We think Bayesian!'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Bayesian vs. Frequentist'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Bayesian vs. Frequentist'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Bayesian vs. Frequentist'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Bayesian vs. Frequentist'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Pros &amp; cons of the Bayesian approach'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='NA'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Bayesian machinery'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Bayesian machinery'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Example: Gibbs sampler'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='BUGS/JAGS in practice'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Choosing your priors'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Convergence monitoring'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Convergence monitoring'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Convergence monitoring'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Convergence monitoring'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Convergence monitoring'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Convergence monitoring'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Convergence monitoring'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Model validation and selection'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Model validation and selection'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Example: estimating the mean'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Example: is the coin fair?'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Example: simple linear regression'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Practical - Objectives'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='NA'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='NA'>
+         32
       </a>
     </li>
   </ul>
