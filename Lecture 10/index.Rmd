@@ -601,10 +601,20 @@ gelman.diag(mcmc)
 ## Example: simple linear regression
 
 ```{r}
-#MC error vs SD
+#MC error vs SD (%)
 summa<-summary(mcmc)
 summa[[1]][,4]/summa[[1]][,2]*100
 
+```
+
+---  .class #id 
+
+## Example: simple linear regression
+
+```{r,fig.width=24, fig.height=8}
+#autocorrelation plots
+par(mfrow=c(1,3),cex.main=2,cex.lab=2)
+autocorr.plot(mcmc[[1]], auto.layout = F)
 ```
 
 ---  .class #id 
@@ -621,7 +631,7 @@ densplot(mcmc)
 
 ## Example: simple linear regression
 ```{r,eval=F}
-#HPD interval
+#Summary of the posterior distribution
 summary(mcmc)
 ```
 

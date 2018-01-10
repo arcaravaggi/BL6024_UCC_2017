@@ -634,7 +634,7 @@ gelman.diag(mcmc)
 
 
 ```r
-#MC error vs SD
+#MC error vs SD (%)
 summa<-summary(mcmc)
 summa[[1]][,4]/summa[[1]][,2]*100
 ```
@@ -650,9 +650,9 @@ summa[[1]][,4]/summa[[1]][,2]*100
 
 
 ```r
-#density plots
+#autocorrelation plots
 par(mfrow=c(1,3),cex.main=2,cex.lab=2)
-densplot(mcmc)
+autocorr.plot(mcmc[[1]], auto.layout = F)
 ```
 
 ![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.png)
@@ -661,8 +661,21 @@ densplot(mcmc)
 
 ## Example: simple linear regression
 
+
 ```r
-#HPD interval
+#density plots
+par(mfrow=c(1,3),cex.main=2,cex.lab=2)
+densplot(mcmc)
+```
+
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
+
+---  .class #id 
+
+## Example: simple linear regression
+
+```r
+#Summary of the posterior distribution
 summary(mcmc)
 ```
 
@@ -687,7 +700,7 @@ summary(mcmc)
 ## Practical - Objectives
 <br>
 
-- Estimate the mean, probability of obtaining heads and the parameters of a simple linear regression (using the example from Session 4)
+- Estimate the mean, the probability of obtaining heads and the parameters of a simple linear regression (using the example from Session 4)
 
 - Familiarise yourself with BUGS language and `R2OpenBUGS` and `coda` packages in `R`
 
