@@ -6,3 +6,4 @@ library(slidify)
 author('deck')
 
 slidify('index.Rmd')
+

@@ -1,0 +1,15 @@
+base
+sp
+raster
+rgdal
+rgeos
+maptools
+slidify
+ggplot2
+reshape2
+MASS
+lattice
+caret
+car
+magick
+here

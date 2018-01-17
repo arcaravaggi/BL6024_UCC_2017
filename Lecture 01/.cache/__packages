@@ -1,3 +1,12 @@
 base
 slidify
 ggplot2
+sp
+raster
+rgdal
+rgeos
+maptools
+reshape2
+MASS
+lattice
+caret

@@ -56,7 +56,707 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Previously</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the first class, we learned:</p>
+
+<ul>
+<li>Data types</li>
+<li>Arthimetic</li>
+<li>Storing variables</li>
+<li>Working with data frames</li>
+</ul>
+
+<p>In this class, we will explore:</p>
+
+<ul>
+<li>Checking normality, homescedastiticty, outliers and transformations</li>
+<li>Basic plots</li>
+<li>ggplot2</li>
+<li>Main types of plots</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Normality</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/n_dist.jpg" style="height:250px"></img>
+</div>  
+
+<p>Does a sample of continuous data come from a normal (Gaussian) distribution. We can use visual inspection and normality tests to find out whether our data are normal or not. Normality tests assess the null hypothesis: </p>
+
+<ul>
+<li>H0: There is no observable difference between data and normal distribution </li>
+</ul>
+
+<p>These tests can inform our analyses. For example, if we want to use 2-sample t-tests to compare two samples of data, both should come from normal distributions and have similar variances. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Normal distributions</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">x &lt;- rbeta(5000,5,5)
+hist(x, prob = TRUE)
+lines(density(x, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">shapiro.test(x)
+</code></pre>
+
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  x
+## W = 0.99562, p-value = 4.35e-11
+</code></pre>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Let&#39;s use the bird dataset (<code>tdat.csv</code>), provided prior to this class.</p>
+
+<pre><code class="r">setwd(&quot;C:/Users/Anthony Caravaggi/Dropbox/GitHub/BL6024_UCC_2017/Lecture 02&quot;)
+tDat &lt;- read.csv(&quot;assets/img/tDat.csv&quot;, header = TRUE, stringsAsFactors=FALSE)
+head(tDat)
+</code></pre>
+
+<pre><code>##      ï..Date  Code      Sp_C          Sp_L Type Age Sex Wing Weight
+## 1 19/06/2011 BLABI Blackbird Turdus merula    N   3  JM  135   98.8
+## 2 01/07/2011 BLABI Blackbird Turdus merula    R   3   J  126   88.4
+## 3 01/07/2011 BLABI Blackbird Turdus merula    N   3   J  127   89.8
+## 4 07/08/2011 BLABI Blackbird Turdus merula    N   3   J  132   91.1
+## 5 07/08/2011 BLABI Blackbird Turdus merula    N   3   J  131   95.3
+## 6 13/08/2011 BLABI Blackbird Turdus merula    N   3   M  129  101.3
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><code>Histograms</code> and <code>density plots</code> allow us to look at the curve</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">greti &lt;- tDat[tDat$Sp_C == &quot;Great tit&quot;, ]
+hist(greti$Weight, prob = TRUE)
+lines(density(greti$Weight, adjust=2), col=&quot;blue&quot;, lwd=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">plot(density(greti$Wing))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><code>Q-q plots</code> plot the quantiles (fraction of points below a given value) of the first dataset against the quantiles of the second dataset. </p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">qqnorm(greti$Weight);qqline(greti$Weight, col = 2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">qqnorm(greti$Wing);qqline(greti$Wing, col = 2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Formally testing for normality</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Eyeballing the data can leave much to interpretation, and there&#39;s no guarantee that others will agree with your definition of &#39;normal&#39;. To quantify the state of our data, we want to calculate the probability (&#39;p-value&#39;) that our data are from a normal distribution.</p>
+
+<p>The lower the p-value, the greater the chance that your data deviate from normality. We use a value of 0.05 as a threshold - when the p-value is lower than 0.05, we can have confidence in stating that the data deviate from normality.</p>
+
+<p>There are a number of formal tests available in R, e.g. te <code>nortest</code> package. We&#39;ll just stick with Shapiro-Wilk, available in base R via <code>shapiro.test()</code>. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Shapiro-Wilk test</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">shapiro.test(greti$Weight)
+</code></pre>
+
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  greti$Weight
+## W = 0.98897, p-value = 0.736
+</code></pre>
+
+<pre><code class="r">shapiro.test(greti$Wing)
+</code></pre>
+
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  greti$Wing
+## W = 0.45546, p-value = 1.33e-15
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Clearly, something is skewing the wing length data. But what is it?</p>
+
+<pre><code class="r">greti$Wing
+</code></pre>
+
+<pre><code>##  [1] 23 24 24 24 23 73 73 75 75 76 77 71 68 74 75 75 72 78 73 73 78 74 74
+## [24] 77 78 68 68 66 66 73 77 78 72 78 73 80 77 71 76 72 74 75 75 73 77 74
+## [47] 74 74 74 74 73 72 74 73 74 76 76 76 71 70 71 74 73 79 75 73 73 74 79
+## [70] 74 74 75 78 75 76 76 75 75 73
+</code></pre>
+
+<pre><code class="r">greti[greti$Wing &lt;= 24, ]
+</code></pre>
+
+<pre><code>##        ï..Date  Code      Sp_C        Sp_L Type Age Sex Wing Weight
+## 170 23/05/2015 GRETI Great tit Parus major    N   1       23   17.0
+## 171 23/05/2015 GRETI Great tit Parus major    N   1       24   17.2
+## 172 23/05/2015 GRETI Great tit Parus major    N   1       24   16.4
+## 173 23/05/2015 GRETI Great tit Parus major    N   1       24   18.1
+## 174 23/05/2015 GRETI Great tit Parus major    N   1       23   16.7
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>We need to remove these data so that all remaining birds are fledged juveniles and adults.</p>
+
+<pre><code class="r">greti &lt;- greti[!greti$Wing &lt;= 24,]
+min(greti$Wing)
+</code></pre>
+
+<pre><code>## [1] 66
+</code></pre>
+
+<pre><code class="r">shapiro.test(greti$Wing)
+</code></pre>
+
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  greti$Wing
+## W = 0.94789, p-value = 0.004131
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">plot(density(greti$Wing))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Skew</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If data are skewed, they are asymmetric relative to the normal distribution. The mean is typically less than the median and the tail of the distribution is longer on one side than the other.</p>
+
+<p>Use of skewed data can lead to incorrect results if the data are used inappropriately in statistical tests.</p>
+
+<p>If we want to use 2-sample t-tests to compare two samples of data, both should come from normal distributions and have similar variances.</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Positive skew</p>
+
+<pre><code class="r">y &lt;- rbeta(5000,2,5)
+hist(y, prob = TRUE)
+lines(density(y, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Negative skew</p>
+
+<pre><code class="r">x &lt;- rbeta(10000,5,2)
+hist(x, prob = TRUE)
+lines(density(x, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Transformations</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Trasformations change the shape of a distribution or relationship by replacing a variable by a function of that variable. It is used to coerce variables to similar distributions and address data which violate model assumptions.</p>
+
+<p>Why might we want to transform our data?</p>
+
+<ul>
+<li>Convenience</li>
+<li>Reducing skewness</li>
+<li>Equal spread</li>
+<li>Modelling relationships (two or more variables)</li>
+</ul>
+
+<p>Most parametric tests require that residuals be normally distributed and that the residuals be homoscedastic (even variance). </p>
+
+<p>You must be careful about how you report results from analyses with transformed variables! </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Standardisation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Standardised values have a mean of 0 and a standard deviation of 1. Standardised variables are useful for comparing variables of different units.</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">p &lt;- runif(1000, min=2, max=10)
+r &lt;- runif(1000, min=50, max=100)
+pr &lt;- data.frame(p,r)
+head(pr)
+</code></pre>
+
+<pre><code>##          p        r
+## 1 6.316312 73.52573
+## 2 2.467157 57.49076
+## 3 9.609054 95.68523
+## 4 8.317026 93.02424
+## 5 2.639461 81.21698
+## 6 3.655211 67.04794
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">p2 &lt;- as.data.frame(scale(pr))
+head(p2)
+</code></pre>
+
+<pre><code>##            p          r
+## 1  0.1405076 -0.1078671
+## 2 -1.4826155 -1.2102311
+## 3  1.5290006  1.4155428
+## 4  0.9841744  1.2326068
+## 5 -1.4099575  0.4208873
+## 6 -0.9816333 -0.5531987
+</code></pre>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Standardisation doesn&#39;t affect the shape of the distribution</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">hist(pr$r, prob = TRUE)
+lines(density(pr$r, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-16-1.png" alt="plot of chunk unnamed-chunk-16"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">hist(p2$r, prob = TRUE)
+lines(density(p2$r, adjust=2), col=&quot;blue&quot;, lwd=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Equal spread (homoscedasticity)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Homoscedasticity of residuals is an important assumption of linear regression. The variance of residuals should not increase relative to the response variable. Transformation of heteroscedastic data so that residuals are evenly spread eases data handling and interpretation. </p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <div style='text-align: left;'>
+    <img src="assets/img/hetsced.png" style="height:350px"></img>
+</div> 
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: left;'>
+    <img src="assets/img/homsced.png" style="height:350px"></img>
+</div> 
+  
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">lmMod &lt;- lm(dist ~ speed, data=cars)
+par(mfrow=c(2,2)) # init 4 charts in 1 panel
+plot(lmMod)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-18-1.png" alt="plot of chunk unnamed-chunk-18"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Top-left </p>
+
+<ul>
+<li>Residuals vs fitted</li>
+</ul>
+
+<p>Bottom-left</p>
+
+<ul>
+<li>Standardised residuals</li>
+</ul>
+
+<p>Are points randomly and evenly distributed?</p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Reducing skewness</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>square (x<sup>2)</sup></li>
+<li>logarithm (log, log10, ln)</li>
+<li>exponential</li>
+<li>square root</li>
+<li>cube root</li>
+</ul>
+
+<p>Which transformation to use?</p>
+
+<ul>
+<li>What works with the data?</li>
+<li>What makes contextual sense?</li>
+<li>What keeps dimensions simple and convenient?</li>
+</ul>
+
+<p>Positive skew = square root, cube root &amp; log
+Negative skew = exponential, square root (constant - x), cube root (constant - x), log (constant - x)</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Positive (right) skew</p>
+
+<pre><code class="r">hist(y, prob = TRUE)
+lines(density(y, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Positive skew</p>
+
+<pre><code class="r">hist(y, prob = TRUE)
+lines(density(y, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Square root</p>
+
+<pre><code class="r">hist(sqrt(y), prob = TRUE)
+lines(density(sqrt(y), adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Negative (left) skew</p>
+
+<pre><code class="r">hist(x, prob = TRUE)
+lines(density(x, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Negative skew</p>
+
+<pre><code class="r">hist(x, prob = TRUE)
+lines(density(x, adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Exponential</p>
+
+<pre><code class="r">hist(exp(x), prob = TRUE)
+lines(density(exp(x), adjust=2), col=&quot;blue&quot;, lwd=2) 
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Back to the bird data</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(density(greti$Wing))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-27-1.png" alt="plot of chunk unnamed-chunk-27"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Back to the bird data</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(density(greti$Wing))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-28-1.png" alt="plot of chunk unnamed-chunk-28"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">plot(density(log(greti$Wing)))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-29-1.png" alt="plot of chunk unnamed-chunk-29"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(density(exp(greti$Wing)))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-30-1.png" alt="plot of chunk unnamed-chunk-30"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">plot(density(sqrt(greti$Wing)))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-31-1.png" alt="plot of chunk unnamed-chunk-31"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Outliers</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Outliers are data points which are located an abnomal distance from other values in a dataset. A dataset may have one or more outliers. The definition of &#39;abnormal&#39; can be subjective, so you should take care to explain your definition.</p>
+
+<p>One commonly-used definition is that of a data point which falls 1.5x the interquartil range above the third quartile or below the first quartile. </p>
+
+<p>Outliers are often problematic for data analyses as they can distort model estimates and predictions.</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Identifying and removing outliers</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">greti_outliers &lt;- data.frame(Date = rep(&quot;11/12/2012&quot;, 10), Code = rep(&quot;GRETI&quot;, 10),
+                      Sp_C = rep(&quot;Great tit&quot;, 10), Sp_L = rep(&quot;Parus major&quot;, 10),
+                      Type = rep(&quot;N&quot;, 10), Age = rep(&quot;3&quot;, 10), Sex = rep(&quot;F&quot;, 10),
+                      Wing = sample(15:23, 10, replace=TRUE), Weight = sample(4:8, 10, replace=TRUE))
+greti2 &lt;- rbind(greti, greti_outliers) 
+</code></pre>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>With and without outliers</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(greti2$Wing, greti2$Weight, main=&quot;With Outliers&quot;, 
+     xlab=&quot;wing length (cm)&quot;, ylab=&quot;weight (g)&quot;, pch=&quot;*&quot;, 
+     col=&quot;red&quot;, cex=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-34-1.png" alt="plot of chunk unnamed-chunk-34"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">plot(greti$Wing, greti$Weight, main=&quot;Without Outliers&quot;, 
+     xlab=&quot;wing length (cm)&quot;, ylab=&quot;weight (g)&quot;, pch=&quot;*&quot;, 
+     col=&quot;red&quot;, cex=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-35-1.png" alt="plot of chunk unnamed-chunk-35"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>To identify the outliers, compute the I and IV quartiles using the <code>quartile</code> function. The compute the range using <code>IQR</code></p>
+
+<pre><code class="r">quantiles &lt;- quantile(greti2$Wing, probs = c(.25, .75))
+range &lt;- 1.5 * IQR(greti2$Wing)
+</code></pre>
+
+<p>We can then subset the data, excluding the outliers</p>
+
+<pre><code class="r">greti_normal &lt;- subset(greti2, greti2$Wing &gt; (quantiles[1] - range) 
+                     &amp; greti2$Wing &lt; (quantiles[2] + range))
+min(greti_normal$Wing)
+</code></pre>
+
+<pre><code>## [1] 68
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">plot(greti$Wing, greti$Weight, main=&quot;Without Outliers&quot;, 
+     xlab=&quot;wing length (cm)&quot;, ylab=&quot;weight (g)&quot;, pch=&quot;*&quot;, 
+     col=&quot;red&quot;, cex=2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-38-1.png" alt="plot of chunk unnamed-chunk-38"></p>
+
+  </article>
+</slide>
+
+<slide class="segue" id="slide-33" style="background:white;">
+  <hgroup>
+    <h2>Plotting data</h2>
   </hgroup>
   <article data-timings="">
     
@@ -65,7 +765,399 @@
 
 <slide class="class" id="id" style="background:;">
   <article data-timings="">
+    <p><strong>Bar plot</strong> represent data in bars where height is reflective of the value. </p>
+
+<pre><code class="r">sp &lt;- table(tDat$Code)
+barplot(sp)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-39-1.png" alt="plot of chunk unnamed-chunk-39"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><strong>Scatter plots</strong> are probably the most commonly used plot type in the biological sciences. Points represent the spatial locations of data from X and Y coordinates. </p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">x &lt;- rnorm(50)
+y &lt;- x * 2 + rnorm(50, 0, 0.5)
+plot(x, y)
+abline(a = 0, b = 2)
+</code></pre>
+
+<p>A scatterplot uses the generic function plot. We add a line with the function abline, which uses an intercept (here 0) and a slope (here 2):</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-41-1.png" alt="plot of chunk unnamed-chunk-41"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>We can also plot a line based on a linear regression</p>
+
+<pre><code class="r">plot(x, y, main = &quot;Plot of X by Y&quot;, xlab = &quot;X variable&quot;, ylab = &quot;Y variable&quot;, xlim = c(-2,2), ylim = c(-4, 2))
+lm1 &lt;- lm(y ~ x)
+abline(lm1, lty = 2, lwd = 2, col = &quot;blue&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-42-1.png" alt="plot of chunk unnamed-chunk-42"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><strong>Boxplots</strong> display the minimum, first quartile, median, third quartile, and maximum.</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">boxplot(tDat$Wing)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-43-1.png" alt="plot of chunk unnamed-chunk-43"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">boxplot(tDat$Wing ~ tDat$Code)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-44-1.png" alt="plot of chunk unnamed-chunk-44"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><strong>Histograms</strong> represent the probability distribution of continuous numerical data. </p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">rand &lt;- rnorm(1000)
+hist(rand)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-45-1.png" alt="plot of chunk unnamed-chunk-45"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="r">hist(rand, main = &quot;Normal distribution (frequency)&quot;, 
+     br = -50:50/10)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-46-1.png" alt="plot of chunk unnamed-chunk-46"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">hist(rand, main = &quot;Normal distribution (frequency)&quot;, br = -50:50/10, freq = FALSE)
+lines(-50:50/10, dnorm(-50:50/10), lwd = 3, col = &quot;red&quot;, lty = 2)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-47-1.png" alt="plot of chunk unnamed-chunk-47"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conditioning plots (coplots)</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tDat2 &lt;- subset(tDat, tDat$Code %in% c(&quot;BLUTI&quot;, &quot;CHIFF&quot;, &quot;WREN&quot;))
+coplot(tDat2$Wing ~ tDat2$Weight | tDat2$Code, columns=3)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-48-1.png" alt="plot of chunk unnamed-chunk-48"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
     
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">tDat2 &lt;- subset(tDat, tDat$Code %in% c(&quot;BLUTI&quot;, 
+                                       &quot;CHIFF&quot;, &quot;WREN&quot;))
+
+coplot(tDat2$Wing ~ tDat2$Weight | tDat2$Code, 
+       cex=1.5, number=3, columns=3,
+       panel=function(x,y,...) {
+          panel.smooth(x,y,span=.8,iter=5,...)
+          abline(lm(y ~ x), col=&quot;blue&quot;)
+     } )
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-50-1.png" alt="plot of chunk unnamed-chunk-50"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plot aesthetics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Different coloured points for each group (species)</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">library(car)
+unique(tDat$Code)
+tDat$Sp_N &lt;- recode(tDat$Code, &quot;&#39;BLABI&#39;=1; &#39;BLUTI&#39;=2; 
+                    &#39;CHIFF&#39;=3; &#39;GRETI&#39;=4;&#39;GREWO&#39;=5;
+                    &#39;ROBIN&#39;=6; &#39;WREN&#39;=7; &#39;BLACA&#39;=8&quot;, 
+                    as.numeric.result=TRUE, 
+                    as.factor.result = FALSE)
+plot(tDat$Wing, tDat$Weight, col = tDat$Sp_N, pch=&quot;*&quot;)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-52-1.png" alt="plot of chunk unnamed-chunk-52"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>We can also plot subsets</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">plot(tDat$Wing[tDat$Sp_N==c(2,3,4,6,7,8)],
+     tDat$Weight[tDat$Sp_N== c(2,3,4,6,7,8)],
+     col = tDat$Sp_N[tDat$Sp_N==c(2,3,4,6,7,8)], 
+     pch=&quot;*&quot;))
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-54-1.png" alt="plot of chunk unnamed-chunk-54"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>Bar plot</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ggplot</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>First, we need to load the ggplot package</p>
+
+<pre><code class="r">library(ggplot2)
+</code></pre>
+
+<p>The following command initiates the creation of the plot with default aesthetics.</p>
+
+<pre><code class="r">p &lt;- ggplot(tDat, aes(Code))
+</code></pre>
+
+<p>We then add the command to draw the barplot</p>
+
+<pre><code class="r">p + geom_bar()
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-58-1.png" alt="plot of chunk unnamed-chunk-58"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>We can easily manipulate the plot by using aesthetic commands</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">library(ggplot2)
+p &lt;- ggplot(tDat, aes(Sex, Age)) # X by Y
+p + geom_bar(stat=&quot;identity&quot;) + # bar height
+  theme_classic() + # Standard theme
+  labs(title = &quot;Age and sex of ringed birds&quot;, 
+         x = &quot;Age (BTO code)&quot;,
+         y = &quot;Sex&quot;,
+         caption = &quot;(based on data from the BTO)&quot;)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-60-1.png" alt="plot of chunk unnamed-chunk-60"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">sx &lt;- subset(tDat, tDat$Sex %in% c(&quot;M&quot;, &quot;F&quot;))
+
+p &lt;- ggplot(sx, aes(Sp_C)) # X by Y
+p + geom_bar(aes(fill = Sex)) + 
+  coord_flip() +
+  theme(legend.position = &quot;top&quot;,
+        text = element_text(size=20),
+        axis.text.x = element_text(angle=90, hjust=1)) +
+  labs(title = &quot;Age and sex of ringed birds&quot;, 
+         x = &quot;Age (BTO code)&quot;,
+         y = &quot;Sex&quot;)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code>## Error in ggplot(sx, aes(Sp_C)): object &#39;sx&#39; not found
+</code></pre>
+
+<pre><code>## Error: stat_count() must not be used with a y aesthetic.
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-62-1.png" alt="plot of chunk unnamed-chunk-62"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">p &lt;- ggplot(tDat2, aes(Wing, Weight, colour = Code)) + 
+  geom_point()
+p + labs(colour = &quot;Species code&quot;) +
+  labs(x = &quot;Wing length (cm)&quot;,
+       y = &quot;Weight (g)&quot;) +
+  theme_light()
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-64-1.png" alt="plot of chunk unnamed-chunk-64"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>Boxplots</p>
+
+<pre><code class="r">ggplot(tDat, aes(Code, Wing)) +
+  geom_boxplot()
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-65-1.png" alt="plot of chunk unnamed-chunk-65"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Histograms</p>
+
+<pre><code class="r">ggplot(subset(tDat,Code %in% c(&quot;ROBIN&quot;)), aes(Weight)) + 
+  geom_histogram(binwidth = 0.5)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-66-1.png" alt="plot of chunk unnamed-chunk-66"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/cat_plot.gif" style="height:600px"></img>
+</div> 
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">library(ggplot2)
+library(magick)
+library(here)
+p &lt;- ggplot(tDat2, aes(Wing, Weight, colour = Code)) + 
+  geom_point() +
+  labs(colour = &quot;Species code&quot;) +
+  labs(x = &quot;Wing length (cm)&quot;,
+       y = &quot;Weight (g)&quot;) +
+  theme_light() +
+  ggtitle(&quot;Birds&quot;) +
+  ggsave(filename = paste0(here(&quot;/&quot;), last_plot()$labels$title, &quot;.png&quot;),
+         width = 5, height = 4, dpi = 300)
+
+background &lt;- image_read(paste0(here(&quot;/&quot;), &quot;Birds.png&quot;))
+logo_raw &lt;- image_read(&quot;assets/img/alpaca.gif&quot;) 
+
+frames &lt;- lapply(logo_raw, function(frame) {
+  image_composite(background, frame, offset = &quot;+70+800&quot;)
+})
+
+animation &lt;- image_animate(image_join(frames))
+
+image_write(animation, &quot;assets/img/alpaca_plot.gif&quot;)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>In-class CA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Data from AnAge: The Animal Ageing &amp; Longevity Database (<a href="http://lib.stat.cmu.edu/datasets/sleep">http://lib.stat.cmu.edu/datasets/sleep</a>)</p>
+
+<pre><code class="r">mDat &lt;- read.csv(&quot;assets/img/mDat.csv&quot;, header = TRUE, stringsAsFactors=FALSE)
+head(mDat)
+</code></pre>
+
+<pre><code>##          order         family       genus       species       name
+## 1 Artiodactyla Antilocapridae Antilocapra     americana  Pronghorn
+## 2 Artiodactyla        Bovidae       Addax nasomaculatus      Addax
+## 3 Artiodactyla        Bovidae   Aepyceros      melampus     Impala
+## 4 Artiodactyla        Bovidae  Alcelaphus    buselaphus Hartebeest
+## 5 Artiodactyla        Bovidae  Ammodorcas       clarkei    Dibatag
+## 6 Artiodactyla        Bovidae  Ammotragus        lervia     Aoudad
+##   f_maturity gestation litter_size litters_yr b_weight a_weight
+## 1        547       235         2.0          1     3000    46100
+## 2       1065       282         1.0          1     5600    92500
+## 3        456       198         1.0          1     5550    52500
+## 4        730       247         1.0          1     9050   159000
+## 5         NA       204         1.0         NA       NA    30500
+## 6        335       149         1.2          2     4500    92500
+##   longevity_yr
+## 1         15.5
+## 2         28.0
+## 3         25.6
+## 4         22.5
+## 5           NA
+## 6         21.7
+</code></pre>
+
   </article>
 </slide>
 
@@ -75,14 +1167,314 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Previously'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='Normality'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Normal distributions'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='NA'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='NA'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Formally testing for normality'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Shapiro-Wilk test'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='NA'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='NA'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Skew'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='NA'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='NA'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Transformations'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Standardisation'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='NA'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Equal spread (homoscedasticity)'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='NA'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Reducing skewness'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='NA'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='NA'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='NA'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='NA'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Back to the bird data'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Back to the bird data'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='NA'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Outliers'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Identifying and removing outliers'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='NA'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='NA'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='NA'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Plotting data'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='NA'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='NA'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='NA'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='NA'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='NA'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='NA'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Conditioning plots (coplots)'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='NA'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Plot aesthetics'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='NA'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='NA'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='ggplot'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='NA'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='NA'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='NA'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='NA'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='NA'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='NA'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='In-class CA'>
+         52
       </a>
     </li>
   </ul>
