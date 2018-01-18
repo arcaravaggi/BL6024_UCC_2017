@@ -506,7 +506,7 @@ head(btDat)
 
 All values of the same variable **must** be contained within the same column
 
-```{r echo = FALSE}
+```{r}
 v1 <- c(13.4, 18.1, 11.9)
 v2 <- c(9.5, 12.3, 10.4)
 v3 <- c(21.0, 18.3, 17.6)
