@@ -140,7 +140,24 @@ Facebook - R-Space (https://www.facebook.com/groups/308600982528221)
 `UCC R Stats Mailing List`    
 https://github.com/arcaravaggi/BL6024_UCC_2017/blob/master/UCCRstats_list_intro.md 
 
---- .class #id
+--- .class #id &twocol
+
+*** =left
+
+<div style='text-align: center;'>
+    <img src="assets/img/R_book.jpg" style="height:450px"></img>
+http://bit.ly/2BdS1Gj
+</div> 
+
+
+*** =right
+<div style='text-align: center;'>
+    <img src="assets/img/BES.png" style="height:450px"></img>
+http://bit.ly/2FV3MF6
+</div> 
+  
+
+--- .class #id 
 
 ## Lesson 2
 
