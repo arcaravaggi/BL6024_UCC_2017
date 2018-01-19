@@ -171,6 +171,19 @@
 <p>\[ \color{darkgreen}{p(\theta|x)} = \frac { \color{darkred}{p(x|\theta)} \times \color{darkorange}{p(\theta)}}{\color{darkblue}{p(x)}}\]
 <br></p>
 
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Priors and posteriors</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p>\[ \color{darkgreen}{p(\theta|x)} = \frac { \color{darkred}{p(x|\theta)} \times \color{darkorange}{p(\theta)}}{\color{darkblue}{p(x)}}\]
+<br></p>
+
 <p>Simplified to: \(\color{darkgreen}{Posterior\ distribution} \sim \color{darkred}{Likelihood} \times \color{darkorange}{Prior\ distribution}\)</p>
 
 <p>i.e. we update our prior belief in light of the data to get a posterior distribution for the parameters
@@ -377,6 +390,80 @@
 <img src="assets/img/Stan.png" alt="" style="height:200px"></img>
 <img src="assets/img/NIMBLE.png" alt="" style="height:250px"></img>
 </div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: Gibbs sampler</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>\(x= \)data, \(\theta= \)vector of <em>k</em> unknowns \((\theta_1,\theta_2,...,\theta_k)\)<br></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: Gibbs sampler</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>\(x= \)data, \(\theta= \)vector of <em>k</em> unknowns \((\theta_1,\theta_2,...,\theta_k)\)<br></li>
+<li>Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: Gibbs sampler</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>\(x= \)data, \(\theta= \)vector of <em>k</em> unknowns \((\theta_1,\theta_2,...,\theta_k)\)<br></li>
+<li>Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)</li>
+<li>Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+......................
+<br />
+Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example: Gibbs sampler</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<ul>
+<li>\(x= \)data, \(\theta= \)vector of <em>k</em> unknowns \((\theta_1,\theta_2,...,\theta_k)\)<br></li>
+<li>Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)</li>
+<li>Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+<br />
+......................
+<br />
+Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)</li>
+<li>Repeat previous step many times to get a good approximation of \(p(\theta|x)\)</li>
+</ul>
 
   </article>
 </slide>
@@ -942,7 +1029,7 @@ summary(mcmc)
     <p><br></p>
 
 <ul>
-<li><p>Estimate the mean, the probability of obtaining heads and the parameters of a simple linear regression (using the example from Session 4)</p></li>
+<li><p>Estimate the mean and standard deviation of a set of numbers, and the parameters of a simple linear regression (using the example from Session 4)</p></li>
 <li><p>Familiarise yourself with BUGS language and <code>R2OpenBUGS</code> and <code>coda</code> packages in <code>R</code></p></li>
 <li><p>Compare the results obtain in a frequentist vs. Bayesian setting</p></li>
 </ul>
@@ -972,7 +1059,7 @@ Adam Kane</p>
   </article>
 </slide>
 
-<slide class="" id="slide-43" style="background:;">
+<slide class="" id="slide-48" style="background:;">
   <article data-timings="">
     
   </article>
@@ -1014,13 +1101,13 @@ Adam Kane</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='We think Bayesian!'>
+        data-slide=6 title='Priors and posteriors'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Bayesian vs. Frequentist'>
+        data-slide=7 title='We think Bayesian!'>
          7
       </a>
     </li>
@@ -1044,19 +1131,19 @@ Adam Kane</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Pros &amp; cons of the Bayesian approach'>
+        data-slide=11 title='Bayesian vs. Frequentist'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='NA'>
+        data-slide=12 title='Pros &amp; cons of the Bayesian approach'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Bayesian machinery'>
+        data-slide=13 title='NA'>
          13
       </a>
     </li>
@@ -1068,49 +1155,49 @@ Adam Kane</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Example: Gibbs sampler'>
+        data-slide=15 title='Bayesian machinery'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='BUGS/JAGS in practice'>
+        data-slide=16 title='Example: Gibbs sampler'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Choosing your priors'>
+        data-slide=17 title='Example: Gibbs sampler'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Convergence monitoring'>
+        data-slide=18 title='Example: Gibbs sampler'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Convergence monitoring'>
+        data-slide=19 title='Example: Gibbs sampler'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Convergence monitoring'>
+        data-slide=20 title='Example: Gibbs sampler'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Convergence monitoring'>
+        data-slide=21 title='BUGS/JAGS in practice'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Convergence monitoring'>
+        data-slide=22 title='Choosing your priors'>
          22
       </a>
     </li>
@@ -1128,61 +1215,61 @@ Adam Kane</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Model validation and selection'>
+        data-slide=25 title='Convergence monitoring'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Model validation and selection'>
+        data-slide=26 title='Convergence monitoring'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Examples'>
+        data-slide=27 title='Convergence monitoring'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Example: estimating the mean'>
+        data-slide=28 title='Convergence monitoring'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Example: is the coin fair?'>
+        data-slide=29 title='Convergence monitoring'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Example: simple linear regression'>
+        data-slide=30 title='Model validation and selection'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Example: simple linear regression'>
+        data-slide=31 title='Model validation and selection'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Example: simple linear regression'>
+        data-slide=32 title='Examples'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Example: simple linear regression'>
+        data-slide=33 title='Example: estimating the mean'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Example: simple linear regression'>
+        data-slide=34 title='Example: is the coin fair?'>
          34
       </a>
     </li>
@@ -1224,20 +1311,50 @@ Adam Kane</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Practical - Objectives'>
+        data-slide=41 title='Example: simple linear regression'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='NA'>
+        data-slide=42 title='Example: simple linear regression'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='NA'>
+        data-slide=43 title='Example: simple linear regression'>
          43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Example: simple linear regression'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Example: simple linear regression'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Practical - Objectives'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='NA'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='NA'>
+         48
       </a>
     </li>
   </ul>
