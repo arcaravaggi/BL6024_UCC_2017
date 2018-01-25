@@ -1,0 +1,558 @@
+order,family,genus,species,name,f_maturity,gestation,litter_size,litters_yr,b_weight,a_weight,longevity_yr
+Artiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,547,235,2,1,3000,46100,15.5
+Artiodactyla,Bovidae,Addax,nasomaculatus,Addax,1065,282,1,1,5600,92500,28
+Artiodactyla,Bovidae,Aepyceros,melampus,Impala,456,198,1,1,5550,52500,25.6
+Artiodactyla,Bovidae,Alcelaphus,buselaphus,Hartebeest,730,247,1,1,9050,159000,22.5
+Artiodactyla,Bovidae,Ammodorcas,clarkei,Dibatag,,204,1,,,30500,
+Artiodactyla,Bovidae,Ammotragus,lervia,Aoudad,335,149,1.2,2,4500,92500,21.7
+Artiodactyla,Bovidae,Antidorcas,marsupialis,Springbok,213,168,1,1,4160,39000,19.8
+Artiodactyla,Bovidae,Antilope,cervicapra,Blackbuck,466,168,1,1.9,3850,37500,23.9
+Artiodactyla,Bovidae,Beatragus,hunteri,Hirola,,283,1,,8350,159000,
+Artiodactyla,Bovidae,Bison,bison,American bison,912,274,1,1,20000,630000,33.5
+Artiodactyla,Bovidae,Bison,bonasus,European bison,730,270,1,1,23375,610000,26.4
+Artiodactyla,Bovidae,Bos,frontalis,Gaur,590,275,1,0.9,23000,825000,26.2
+Artiodactyla,Bovidae,Bos,grunniens,Yak,738,274,1,0.8,18000,667000,26.3
+Artiodactyla,Bovidae,Bos,javanicus,Banteng,730,295,1,1,,700000,27.1
+Artiodactyla,Bovidae,Bos,sauveli,Kouprey,,260,1,,,800000,
+Artiodactyla,Bovidae,Bos,taurus,Domestic cattle,548,277,1,1,,750000,20
+Artiodactyla,Bovidae,Boselaphus,tragocamelus,Nilgai,815,255,1.5,1,5875,180000,21.7
+Artiodactyla,Bovidae,Bubalus,bubalis,Water buffalo,502,311,1.375,1,37500,725000,34.9
+Artiodactyla,Bovidae,Bubalus,depressicornis,Anoa,730,300,1,1,,155000,36.1
+Artiodactyla,Bovidae,Bubalus,mindorensis,Tamaraw,,300,1,0.5,,240000,
+Artiodactyla,Bovidae,Bubalus,quarlesi,Mountain anoa,,295,1,1,,150000,29.2
+Artiodactyla,Bovidae,Budorcas,taxicolor,Takin,730,210,1,1,6000,180000,21.9
+Artiodactyla,Bovidae,Capra,caucasica,West Caucasian tur,,157,1,,3850,70000,19.3
+Artiodactyla,Bovidae,Capra,cylindricornis,East Caucasian tur,1019,161,1.2,1,3787.5,50000,20.2
+Artiodactyla,Bovidae,Capra,falconeri,Markhor,745,163,2,,,41000,19.1
+Artiodactyla,Bovidae,Capra,hircus,Domestic goat,406,155,1.5,1,2250,61000,20.8
+Artiodactyla,Bovidae,Capra,ibex,Ibex,797,169,1.1,0.8,2850,82500,20.9
+Artiodactyla,Bovidae,Capra,nubiana,Nubian ibex,,150,1,,,46250,22.4
+Artiodactyla,Bovidae,Capra,pyrenaica,Spanish ibex,548,165,1.5,,,57500,
+Artiodactyla,Bovidae,Capra,sibirica,Siberian ibex,,175,,,3640,130000,22.3
+Artiodactyla,Bovidae,Capricornis,crispus,Japanese serow,1095,215,1,1,3510.5,80000,24
+Artiodactyla,Bovidae,Capricornis,sumatraensis,Serow,912,213,1,1,3500,95000,18.5
+Artiodactyla,Bovidae,Cephalophus,dorsalis,Bay duiker,578,236,1,,1610,11600,17.5
+Artiodactyla,Bovidae,Cephalophus,jentinki,Jentink's duiker,,,1,,4581,70000.3,21
+Artiodactyla,Bovidae,Cephalophus,natalensis,Natal duiker,,213,1,,955,10000,15.2
+Artiodactyla,Bovidae,Cephalophus,niger,Black duiker,,128,1,,1940,18100,14.8
+Artiodactyla,Bovidae,Cephalophus,nigrifrons,Black-fronted duiker,,,,,,13900,17.9
+Artiodactyla,Bovidae,Cephalophus,rufilatus,Red-flanked duiker,270,230,1,,943,13000,15.2
+Artiodactyla,Bovidae,Cephalophus,silvicultor,Yellow-backed duiker,,165,1,1,2400,62000,22.5
+Artiodactyla,Bovidae,Cephalophus,weynsi,Weyns's duiker,,,,,,,15.2
+Artiodactyla,Bovidae,Cephalophus,zebra,Zebra duiker,,227,1,,1707.5,17500.1,
+Artiodactyla,Bovidae,Connochaetes,gnou,Black wildebeest,763,259,1,,11000,132250,21.8
+Artiodactyla,Bovidae,Connochaetes,taurinus,Blue wildebeest,411,253,1,1,18125,164500,24.3
+Artiodactyla,Bovidae,Damaliscus,lunatus,Topi,639,238,1,0.6,11100,110000,23.6
+Artiodactyla,Bovidae,Damaliscus,pygargus,Sassaby or blesbok,707,243,1.2,,6792,84500,23
+Artiodactyla,Bovidae,Eudorcas,rufifrons,Red-fronted gazelle,,175,1,,,15011,14.5
+Artiodactyla,Bovidae,Eudorcas,thomsonii,Thomson's gazelle,365,170,1,1.5,2600,25000,20
+Artiodactyla,Bovidae,Gazella,bennettii,Indian gazelle,,,,,,18916.7,
+Artiodactyla,Bovidae,Gazella,cuvieri,Cuvier's gazelle,349,171,1.5,,,17500,17.9
+Artiodactyla,Bovidae,Gazella,dorcas,Dorcas gazelle,730,182,1,1,1650,14500,23.7
+Artiodactyla,Bovidae,Gazella,gazella,Mountain gazelle,476,180,1,1.5,2360,23250,18.3
+Artiodactyla,Bovidae,Gazella,leptoceros,Rhim gazelle,157,176,1,,4640,48500,14.6
+Artiodactyla,Bovidae,Gazella,spekei,Speke's gazelle,511,197,1,,1253.33,20000,
+Artiodactyla,Bovidae,Gazella,subgutturosa,Goitered gazelle,646,175,1.3,1,2625,48500,16.3
+Artiodactyla,Bovidae,Hemitragus,hylocrius,Nilgiri tahr,669,188,1.3,,,75000,17.3
+Artiodactyla,Bovidae,Hemitragus,jayakari,Arabian tahr,,164,1,,,23000,
+Artiodactyla,Bovidae,Hemitragus,jemlahicus,Himalayan tahr,547,183,1,1,2000,35200,21.8
+Artiodactyla,Bovidae,Hippotragus,equinus,Roan antelope,730,284,1,,15167,225000,25.9
+Artiodactyla,Bovidae,Hippotragus,niger,Sable antelope,768,271,1,1,16375,225000,22.2
+Artiodactyla,Bovidae,Kobus,ellipsiprymnus,Waterbuck,771,264,1,1,9000,175333,30
+Artiodactyla,Bovidae,Kobus,kob,Kob,403,251,1,1.3,5405,105000,21.9
+Artiodactyla,Bovidae,Kobus,leche,Lechwe,898,229,1,,5100,94800,25.4
+Artiodactyla,Bovidae,Kobus,megaceros,Nile lechwe,730,235,1,1,5100,90000,21.1
+Artiodactyla,Bovidae,Litocranius,walleri,Gerenuk,359,204,1,,,43500,17.3
+Artiodactyla,Bovidae,Madoqua,guentheri,Gunther's dik-dik,,178,1,2,681.67,4550,17.5
+Artiodactyla,Bovidae,Madoqua,kirkii,Kirk's dik-dik,213,172,1,2,600,5000,17.3
+Artiodactyla,Bovidae,Naemorhedus,baileyi,Red goral,,213,1.5,,,28863,19
+Artiodactyla,Bovidae,Naemorhedus,caudatus,Chinese goral,,,,,,27000,20.3
+Artiodactyla,Bovidae,Naemorhedus,goral,Goral,500,215,1,1,2000,31750,17.6
+Artiodactyla,Bovidae,Nanger,dama,Dama gazelle,,208,1,,,73000,19.3
+Artiodactyla,Bovidae,Nanger,granti,Grant's gazelle,251,196,1,,5602.5,67000,19.7
+Artiodactyla,Bovidae,Nanger,soemmerringii,Soemmering's gazelle,640,190,1,,,48500,15.5
+Artiodactyla,Bovidae,Neotragus,moschatus,Suni,183,180,1,,,6500,13.5
+Artiodactyla,Bovidae,Neotragus,pygmaeus,Royal antelope,,183,1,,,2250,11.1
+Artiodactyla,Bovidae,Oreamnos,americanus,Mountain goat,912,184,1.2,1,3200,90000,20.8
+Artiodactyla,Bovidae,Oreotragus,oreotragus,Klipspringer,365,196,1,1,1130,12000,25.9
+Artiodactyla,Bovidae,Oryx,dammah,Scimitar-horned oryx,639,247,1,,10317,177500,27.5
+Artiodactyla,Bovidae,Oryx,gazella,Gemsbok,550,270,1,1.3,12000,170000,23.8
+Artiodactyla,Bovidae,Oryx,leucoryx,Arabian oryx,794,243,1,1,,121350,20.8
+Artiodactyla,Bovidae,Ourebia,ourebi,Oribi,304,193,1,1.5,2235,17000,15.9
+Artiodactyla,Bovidae,Ovibos,moschatus,Muskox,1096,258,1,0.8,11460,315000,27.4
+Artiodactyla,Bovidae,Ovis,ammon,Argali,403,170,1,1,3400,160000,16.8
+Artiodactyla,Bovidae,Ovis,aries,Domestic sheep or mouflon,548,146,1.58,1,2370,80000,22.8
+Artiodactyla,Bovidae,Ovis,canadensis,Bighorn sheep,707,180,1,1,4400,70275,20.6
+Artiodactyla,Bovidae,Ovis,dalli,Dall's sheep,684,173,1,1,2819,73100,19.6
+Artiodactyla,Bovidae,Pelea,capreolus,Common rhebok,,261,1,,,25000,
+Artiodactyla,Bovidae,Philantomba,maxwellii,Maxwell's duiker,730,120,1,1,832,7000,18.3
+Artiodactyla,Bovidae,Philantomba,monticola,Blue duiker,487,193,1,,800,6250,15.9
+Artiodactyla,Bovidae,Procapra,gutturosa,Mongolian gazelle,532,185,1.3,1,2900,30000,12
+Artiodactyla,Bovidae,Pseudois,nayaur,Bharal,730,160,1.5,,,55000,20.9
+Artiodactyla,Bovidae,Raphicerus,campestris,Steenbok,238,197,1,,920,13000,9.3
+Artiodactyla,Bovidae,Raphicerus,melanotis,Cape grysbok,,,,,,10249.9,
+Artiodactyla,Bovidae,Redunca,arundinum,Southern reedbuck,,224,1,,4500,58000,16.8
+Artiodactyla,Bovidae,Redunca,fulvorufula,Mountain reedbuck,388,216,1,1.1,3000,30000,15
+Artiodactyla,Bovidae,Redunca,redunca,Bohar reedbuck,502,228,1,,,45500,
+Artiodactyla,Bovidae,Rupicapra,pyrenaica,Pyrenean chamois,,,,,,30000,
+Artiodactyla,Bovidae,Rupicapra,rupicapra,Chamois,674,122,1,1,2400,37500,17.6
+Artiodactyla,Bovidae,Saiga,tatarica,Saiga,331,152,1.7,1,3500,37500,
+Artiodactyla,Bovidae,Sylvicapra,grimmia,Bush duiker,255,165,1,1.4,1612,18500,15.4
+Artiodactyla,Bovidae,Syncerus,caffer,African buffalo,1475,331,1,0.4,44000,700000,32.8
+Artiodactyla,Bovidae,Taurotragus,derbianus,Giant eland,1107,264,1,,,680000,20.3
+Artiodactyla,Bovidae,Taurotragus,oryx,Eland,589,274,1,,32000,500000,26.1
+Artiodactyla,Bovidae,Tetracerus,quadricornis,Four-horned antelope,365,212,1.5,,1044,19000,17.4
+Artiodactyla,Bovidae,Tragelaphus,angasii,Nyala,452,224,1,1.2,5232.5,120000,18.5
+Artiodactyla,Bovidae,Tragelaphus,eurycerus,Bongo,806,288,1,0.7,19800,307500,21.9
+Artiodactyla,Bovidae,Tragelaphus,imberbis,Lesser kudu,504,235,1,1.3,6000,82500,19.8
+Artiodactyla,Bovidae,Tragelaphus,scriptus,Bushbuck,496,188,1,1.5,3800,60000,15.3
+Artiodactyla,Bovidae,Tragelaphus,spekii,Sitatunga,401,242,1,1,4000,87500,22.6
+Artiodactyla,Bovidae,Tragelaphus,strepsiceros,Greater kudu,517,228,1,1,15000,217500,23.5
+Artiodactyla,Camelidae,Camelus,bactrianus,Bactrian camel,1278,395,1,0.5,36000,475000,35.4
+Artiodactyla,Camelidae,Camelus,dromedarius,Dromedary,1095,405,1,0.7,37000,434000,28.4
+Artiodactyla,Camelidae,Lama,glama,Llama,800,330,1,1,11000,140000,28.9
+Artiodactyla,Camelidae,Lama,guanicoe,Guanaco,365,335,1,0.5,11500,127500,33.7
+Artiodactyla,Camelidae,Vicugna,pacos,Alpaca,432,345,1.04,,7210,62000,25.8
+Artiodactyla,Camelidae,Vicugna,vicugna,Vicugna,730,340,1,0.7,5740,50000,31.6
+Artiodactyla,Cervidae,Alces,alces,Moose,751,243,1.3,1,12844,386000,
+Artiodactyla,Cervidae,Axis,axis,Chital,766,226,1.03,,3144,36000,20.8
+Artiodactyla,Cervidae,Axis,calamianensis,Calamian deer,,224,2,,,40500,17.2
+Artiodactyla,Cervidae,Axis,kuhlii,Bawean deer,,227,1.2,1.3,,55000,17.8
+Artiodactyla,Cervidae,Axis,porcinus,Hog deer,304,232,1,,2532,43000,22.9
+Artiodactyla,Cervidae,Blastocerus,dichotomus,Marsh deer,,270,1,1,4200,102500,
+Artiodactyla,Cervidae,Capreolus,capreolus,Western roe deer,413,153,1.6,1,1010,21666.7,17.5
+Artiodactyla,Cervidae,Capreolus,pygargus,Eastern roe deer,,294,2,1,1750,39450,
+Artiodactyla,Cervidae,Cervus,elaphus,Red deer,852,245,1,0.9,10100,200000,31.5
+Artiodactyla,Cervidae,Cervus,nippon,Sika deer,500,210,1,1,5750,42000,26.3
+Artiodactyla,Cervidae,Dama,dama,Fallow deer,487,233,1,1,4500,70000,21.1
+Artiodactyla,Cervidae,Elaphodus,cephalophus,Tufted deer,639,180,1,,,33500,22.7
+Artiodactyla,Cervidae,Elaphurus,davidianus,Pere David's deer,821,288,1,1,11000,186500,27.5
+Artiodactyla,Cervidae,Hippocamelus,antisensis,Guemals,,255,1,,,45000,
+Artiodactyla,Cervidae,Hippocamelus,bisulcus,Chilean guemal,,198,1,1,3576,70000,
+Artiodactyla,Cervidae,Hydropotes,inermis,Chinese water deer,183,190,2.7,,1042,11500,13.9
+Artiodactyla,Cervidae,Mazama,americana,Red brocket,395,225,1.3,1,538.5,33000,17.1
+Artiodactyla,Cervidae,Mazama,gouazoubira,Gray brocket,395,212,1,,919,17000,14.8
+Artiodactyla,Cervidae,Muntiacus,crinifrons,Black muntjac,,196,1,,,18590,
+Artiodactyla,Cervidae,Muntiacus,feae,Fea's muntjac,,196,1.2,,,22000,
+Artiodactyla,Cervidae,Muntiacus,muntjak,Indian muntjac,272,210,1.17,,1223,21000,18.8
+Artiodactyla,Cervidae,Muntiacus,reevesi,Reeves's muntjac,274,199,1,1.5,1050,18000,23.2
+Artiodactyla,Cervidae,Odocoileus,hemionus,Mule deer,478,207,1.5,1,2950,57000,22
+Artiodactyla,Cervidae,Odocoileus,virginianus,White-tailed deer,309,198,2,1,3000,87000,23
+Artiodactyla,Cervidae,Ozotoceros,bezoarticus,Pampas deer,365,213,1,1,2100,32500,21.9
+Artiodactyla,Cervidae,Przewalskium,albirostre,Thorold's deer,730,253,1,1,,135000,21.3
+Artiodactyla,Cervidae,Pudu,puda,Southern pudu,274,200,1,,900,10000,18.3
+Artiodactyla,Cervidae,Rangifer,tarandus,Caribou and reindeer,662,228,1,1,6500,101250,21.8
+Artiodactyla,Cervidae,Rucervus,duvaucelii,Barasingha,1095,250,1,,,170000,24.5
+Artiodactyla,Cervidae,Rucervus,eldii,Eld's deer,508,241,1,1,4750,122500,20.5
+Artiodactyla,Cervidae,Rusa,alfredi,Visayan spotted deer,,243,,,,46475,18.5
+Artiodactyla,Cervidae,Rusa,marianna,Philippine deer,,,,,,50000,
+Artiodactyla,Cervidae,Rusa,timorensis,Timor deer,464,251,1,1,,63000,21.1
+Artiodactyla,Cervidae,Rusa,unicolor,Sambar,650,232,1,1,10000,185000,26.4
+Artiodactyla,Giraffidae,Giraffa,camelopardalis,Giraffe,1278,457,1,0.5,58500,800000,39.5
+Artiodactyla,Giraffidae,Okapia,johnstoni,Okapi,578,458,1,0.8,16000,225000,33.5
+Artiodactyla,Hippopotamidae,Hexaprotodon,liberiensis,Pygmy hippopotamus,1278,199,1,0.4,4900,215000,42.3
+Artiodactyla,Hippopotamidae,Hippopotamus,amphibius,Hippopotamus,1279,234,1,0.6,40000,3750000,61.2
+Artiodactyla,Moschidae,Moschus,berezovskii,Chinese forest musk deer,540,197,1,1,524,12000,
+Artiodactyla,Moschidae,Moschus,chrysogaster,Alpine musk deer,639,188,1,1,800,11000,
+Artiodactyla,Moschidae,Moschus,moschiferus,Siberian musk deer,473,162,1.5,1,458.75,10000,
+Artiodactyla,Suidae,Babyrousa,babyrussa,Babirusa,548,153,1.3,2,715,71500,22.9
+Artiodactyla,Suidae,Hylochoerus,meinertzhageni,Giant forest hog,365,132,5,1,1250,202500,
+Artiodactyla,Suidae,Phacochoerus,africanus,Wart hog,578,164,3,1.5,660,100000,20.9
+Artiodactyla,Suidae,Potamochoerus,larvatus,Bushpig,,122,2.7,,,87500,
+Artiodactyla,Suidae,Potamochoerus,porcus,Red river hog,1096,122,3,,775,88000,22
+Artiodactyla,Suidae,Sus,barbatus,Bearded pig,,122,4,1,,102750,16.2
+Artiodactyla,Suidae,Sus,salvanius,Pygmy hog,700,108,3,,191.5,8000,14
+Artiodactyla,Suidae,Sus,scrofa,Wild boar,334,115,7,1.5,960,130000,27
+Artiodactyla,Suidae,Sus,verrucosus,Javan pig,274,120,6,,1000,76000,17
+Artiodactyla,Tayassuidae,Catagonus,wagneri,Chacoan peccary,1096,152,2.4,,610,34750,
+Artiodactyla,Tayassuidae,Pecari,tajacu,Collared peccary,329,145,2,2,700,20200,31.5
+Artiodactyla,Tayassuidae,Tayassu,pecari,White-lipped peccary,548,158,2,,700,22000,28.5
+Artiodactyla,Tragulidae,Hyemoschus,aquaticus,Water chevrotain,403,175,1.25,1,,11000,
+Artiodactyla,Tragulidae,Moschiola,meminna,Indian spotted chevrotain,,150,1.5,,319,2450,14.5
+Artiodactyla,Tragulidae,Tragulus,javanicus,Lesser mouse-deer,167,144,1,,370,2850,14
+Artiodactyla,Tragulidae,Tragulus,napu,Greater mouse-deer,137,153,1,1,373,6500,16.7
+Carnivora,Ailuridae,Ailurus,fulgens,Red panda,550,116,2,1,100,4325,19
+Carnivora,Canidae,Atelocynus,microtis,Short-eared dog,,,,,,9500,11.9
+Carnivora,Canidae,Canis,adustus,Side-striped jackal,274,64,4,2,,10250,13.7
+Carnivora,Canidae,Canis,aureus,Golden jackal,334,63,3,1,207.5,11000,18.8
+Carnivora,Canidae,Canis,familiaris,Domestic dog,510,63,6,,,40000,24
+Carnivora,Canidae,Canis,latrans,Coyote,274,63,6,1,250,13250,21.8
+Carnivora,Canidae,Canis,lupus,Gray wolf,669,62,6,0.8,450,26625,20.6
+Carnivora,Canidae,Canis,mesomelas,Black-backed jackal,309,60,4,1,159,10250,16.7
+Carnivora,Canidae,Cerdocyon,thous,Crab-eating fox,274,55,4,1.9,140,6500,12.7
+Carnivora,Canidae,Chrysocyon,brachyurus,Maned wolf,730,64,3,,368,21500,16.8
+Carnivora,Canidae,Cuon,alpinus,Dhole,365,61,5,1,275,15750,16.1
+Carnivora,Canidae,Lycalopex,culpaeus,Culpeo,365,61,4,1,168,13000,13.1
+Carnivora,Canidae,Lycalopex,griseus,Argentinian gray fox,,56,4.2,,,3990,10.9
+Carnivora,Canidae,Lycalopex,gymnocercus,Pampas fox,304,57,4,,,8500,13.7
+Carnivora,Canidae,Lycalopex,sechurae,Sechuran fox,,,,,,4000,9.9
+Carnivora,Canidae,Lycalopex,vetulus,Hoary fox,,,3,,,5350,12.6
+Carnivora,Canidae,Lycaon,pictus,African wild dog,639,72,8,1,318,26500,17
+Carnivora,Canidae,Nyctereutes,procyonoides,Raccoon dog,304,61,6,1,75,6500,16.6
+Carnivora,Canidae,Otocyon,megalotis,Bat-eared fox,365,68,4,2,122,4150,17
+Carnivora,Canidae,Speothos,venaticus,Bush dog,304,68,4,2,160,6000,14.1
+Carnivora,Canidae,Urocyon,cinereoargenteus,Gray fox,345,57,4,1,95,4750,16.2
+Carnivora,Canidae,Urocyon,littoralis,Island gray fox,365,52,2.6,1,100,1890.7,
+Carnivora,Canidae,Vulpes,bengalensis,Indian fox,,50,4,1,58.5,2375,
+Carnivora,Canidae,Vulpes,cana,Blanford's fox,304,55,2,,29,1000,
+Carnivora,Canidae,Vulpes,chama,Cape fox,274,51,4,,,4000,
+Carnivora,Canidae,Vulpes,corsac,Corsac fox,504,53,4.7,,62.5,2700,13
+Carnivora,Canidae,Vulpes,lagopus,Arctic fox,304,52,9,1,70,5200,16.3
+Carnivora,Canidae,Vulpes,macrotis,Kit fox,,54,4,,40,2500,15.8
+Carnivora,Canidae,Vulpes,pallida,Pale fox,,52,4,,75,2800,16
+Carnivora,Canidae,Vulpes,rueppellii,Ruppell's sand fox,,,2,,,3200,14.3
+Carnivora,Canidae,Vulpes,velox,Swift fox,365,55,4.5,1,39.65,2400,15.9
+Carnivora,Canidae,Vulpes,vulpes,Red fox,304,52,5,1,100,4131.7,21.3
+Carnivora,Canidae,Vulpes,zerda,Fennec,274,51,2.2,1,26.28,1250,16.3
+Carnivora,Eupleridae,Cryptoprocta,ferox,Fossa,1496,90,3,1,100,9500,23.1
+Carnivora,Eupleridae,Fossa,fossana,Malagasy civet,728,82,1,,67.5,1540,21.4
+Carnivora,Eupleridae,Galidia,elegans,Ring-tailed mongoose,737,72,1,1,50,800,26
+Carnivora,Eupleridae,Mungotictis,decemlineata,Narrow-striped mongoose,742,99,1,,50,700,
+Carnivora,Felidae,Acinonyx,jubatus,Cheetah,456,88,3,0.7,489,53500,20.5
+Carnivora,Felidae,Caracal,caracal,Caracal,456,74,3,,165,16000,20.3
+Carnivora,Felidae,Catopuma,temminckii,Asiatic golden cat,639,95,1,,250,13500,23
+Carnivora,Felidae,Felis,catus,Domestic cat,289,65,4,,97.5,3900,30
+Carnivora,Felidae,Felis,chaus,Jungle cat,335,60,3,2,131,10000,20
+Carnivora,Felidae,Felis,manul,Pallas' cat,365,72,4.1,,89,3500,15.9
+Carnivora,Felidae,Felis,margarita,Sand cat,274,67,4.5,2,55.5,2750,13.9
+Carnivora,Felidae,Felis,nigripes,Black-footed cat,445,66,2,4,72.4,2125,15.6
+Carnivora,Felidae,Felis,silvestris,Wild cat,304,64,3.7,2.3,100,5500,19
+Carnivora,Felidae,Leopardus,colocolo,Colocolo,,,2.5,,,2950,19.6
+Carnivora,Felidae,Leopardus,geoffroyi,Geoffroy's cat,479,75,2,1.3,93.2,4000,23
+Carnivora,Felidae,Leopardus,guigna,Kodkod,,,,,,2230,
+Carnivora,Felidae,Leopardus,pardalis,Ocelot,600,77,2,1,255.5,8800,28.2
+Carnivora,Felidae,Leopardus,tigrinus,Little spotted cat,,75,1.5,,,2250,21.9
+Carnivora,Felidae,Leopardus,wiedii,Margay,659,81,1.5,,166.5,3666.7,24
+Carnivora,Felidae,Leptailurus,serval,Serval,821,70,2.5,2.5,263,13350,22.4
+Carnivora,Felidae,Lynx,canadensis,Canada lynx,498,63,3.5,1,204,10100,26.8
+Carnivora,Felidae,Lynx,lynx,Eurasian lynx,639,66,2,1,246.5,23000,23.7
+Carnivora,Felidae,Lynx,pardinus,Spanish lynx,,68,2.5,,,11000,
+Carnivora,Felidae,Lynx,rufus,Bobcat,365,65,3,0.9,265,8600,32.3
+Carnivora,Felidae,Neofelis,nebulosa,Clouded leopard,730,89,2,,170,19500,19.8
+Carnivora,Felidae,Panthera,leo,Lion,1095,109,3,1,1300,175000,27
+Carnivora,Felidae,Panthera,onca,Jaguar,730,99,2,0.5,820,81150,28
+Carnivora,Felidae,Panthera,pardus,Leopard,937,97,2,1.25,550,53750,27.3
+Carnivora,Felidae,Panthera,tigris,Tiger,1268,105,2.5,0.4,1190,119700,26.3
+Carnivora,Felidae,Pardofelis,marmorata,Marbled cat,,,2,,85,3500,
+Carnivora,Felidae,Prionailurus,bengalensis,Leopard cat,365,62,2.5,,96,5000,17
+Carnivora,Felidae,Prionailurus,planiceps,Flat-headed cat,,56,,,,6750,14
+Carnivora,Felidae,Prionailurus,rubiginosus,Rusty-spotted cat,,68,2.5,,,1350,17.9
+Carnivora,Felidae,Prionailurus,viverrinus,Fishing cat,,72,2,,170,10650,17.2
+Carnivora,Felidae,Profelis,aurata,African golden cat,,81,2,,248.33,10650,21
+Carnivora,Felidae,Puma,concolor,Cougar,912,92,2.5,0.45,400,63000,23.8
+Carnivora,Felidae,Puma,yagouaroundi,Jaguarundi,803,73,2,2,,7000,18.6
+Carnivora,Felidae,Uncia,uncia,Snow leopard,730,96,2,1,475,50000,21.2
+Carnivora,Herpestidae,Atilax,paludinosus,Marsh mongoose,,76,2,2,100,3300,20.8
+Carnivora,Herpestidae,Bdeogale,nigripes,Black-footed mongoose,,,1,,,2000,15.8
+Carnivora,Herpestidae,Crossarchus,obscurus,Long-nosed cusimanse,274,58,4,2.5,9.8,790,13.3
+Carnivora,Herpestidae,Cynictis,penicillata,Yellow mongoose,730,56,2,2,,598.5,15.2
+Carnivora,Herpestidae,Galerella,pulverulenta,Cape gray mongoose,,61,2.6,,20.2,650,11.7
+Carnivora,Herpestidae,Galerella,sanguinea,Slender mongoose,365,65,2,2,,500,12.6
+Carnivora,Herpestidae,Helogale,parvula,Dwarf mongoose,456,55,3,2.25,,274.8,18
+Carnivora,Herpestidae,Herpestes,brachyurus,Short-tailed mongoose,,,3.5,,,1414.1,
+Carnivora,Herpestidae,Herpestes,edwardsi,Indian gray mongoose,,59,2.6,3.3,,1000,12.3
+Carnivora,Herpestidae,Herpestes,ichneumon,Egyptian mongoose,730,74,3,1.5,,2200,
+Carnivora,Herpestidae,Herpestes,javanicus,Javan mongoose,301,49,2,2,25.92,800,16.6
+Carnivora,Herpestidae,Herpestes,naso,Long-nosed mongoose,,,,,,3000,
+Carnivora,Herpestidae,Herpestes,smithii,Ruddy mongoose,,,2.5,,,1702.5,17.8
+Carnivora,Herpestidae,Herpestes,urva,Crab-eating mongoose,,66,3,,,1863.2,13.3
+Carnivora,Herpestidae,Herpestes,vitticollis,Striped-necked mongoose,,,2.5,,,2250,12.8
+Carnivora,Herpestidae,Ichneumia,albicauda,White-tailed mongoose,,,2.3,,,3500,14.8
+Carnivora,Herpestidae,Mungos,mungo,Banded mongoose,289,60,2.5,2,39,1331.5,17.4
+Carnivora,Herpestidae,Suricata,suricatta,Meerkat,365,77,4,1,29,776,20.6
+Carnivora,Hyaenidae,Crocuta,crocuta,Spotted hyena,1095,110,2,1,1390,63000,41.1
+Carnivora,Hyaenidae,Hyaena,brunnea,Brown hyena,1000,92,2.5,0.4,688,42250,31.9
+Carnivora,Hyaenidae,Hyaena,hyaena,Striped hyena,800,90,2.5,,700,40000,25
+Carnivora,Hyaenidae,Proteles,cristata,Aardwolf,,84,2.5,,275,10000,20
+Carnivora,Mephitidae,Conepatus,chinga,Molina's hog-nosed skunk,,,,,,3400,10
+Carnivora,Mephitidae,Conepatus,leuconotus,Hog-nosed skunk,319,56,3.4,1.5,,1900,10.2
+Carnivora,Mephitidae,Mephitis,macroura,Hooded skunk,,61,5.3,,,965,
+Carnivora,Mephitidae,Mephitis,mephitis,Striped skunk,335,63,5,1,33.5,3500,13.9
+Carnivora,Mephitidae,Spilogale,putorius,Eastern spotted skunk,152,31,5,1.5,9.5,600,10.5
+Carnivora,Mustelidae,Aonyx,capensis,African clawless otter,365,63,2.5,,1050,23500,14.2
+Carnivora,Mustelidae,Aonyx,cinereus,Oriental small-clawed otter,,63,1.42,2,57,3000,23
+Carnivora,Mustelidae,Arctonyx,collaris,Hog badger,,42,3,,58,10500,15.8
+Carnivora,Mustelidae,Eira,barbara,Tayra,700,66,2,,83,4500,22.3
+Carnivora,Mustelidae,Enhydra,lutris,Sea otter,974,140,1,0.8,1868,25850,27
+Carnivora,Mustelidae,Galictis,cuja,Lesser grison,,,,,,1000,10.2
+Carnivora,Mustelidae,Galictis,vittata,Greater grison,,40,2,,,2300,12.5
+Carnivora,Mustelidae,Gulo,gulo,Wolverine,710,35,3,0.5,95,16333.3,19.5
+Carnivora,Mustelidae,Hydrictis,maculicollis,Spotted-necked otter,,61,2,,,4000,22.9
+Carnivora,Mustelidae,Ictonyx,libycus,Saharan striped polecat,,38,2,,,425,
+Carnivora,Mustelidae,Ictonyx,striatus,Striped polecat,304,36,2,1,15,910,14
+Carnivora,Mustelidae,Lontra,canadensis,Northern river otter,730,62,2.5,0.9,140,9000,27
+Carnivora,Mustelidae,Lontra,longicaudis,Neotropical river otter,,57,2.5,,,7500,
+Carnivora,Mustelidae,Lutra,lutra,European otter,548,61,2,1,110.5,6750,18.2
+Carnivora,Mustelidae,Lutrogale,perspicillata,Smooth-coated otter,,63,5,,,9000,
+Carnivora,Mustelidae,Martes,americana,American marten,365,28,3,1,30,884,17.8
+Carnivora,Mustelidae,Martes,flavigula,Yellow-throated marten,,150,2.5,,57.5,2500,16
+Carnivora,Mustelidae,Martes,foina,Beech marten,548,30,3.5,1,30,1700,18.2
+Carnivora,Mustelidae,Martes,martes,European pine marten,456,28,4,1,30,1300,18.2
+Carnivora,Mustelidae,Martes,melampus,Japanese marten,,,,,,1000,
+Carnivora,Mustelidae,Martes,pennanti,Fisher,365,45,2.5,1,35,3175,14.3
+Carnivora,Mustelidae,Martes,zibellina,Sable,456,30,3,,30,1066.7,18.4
+Carnivora,Mustelidae,Meles,meles,Old World badger,365,49,3,1,80,13000,18.6
+Carnivora,Mustelidae,Mellivora,capensis,Honey badger,,180,2,2,210,10000,31.3
+Carnivora,Mustelidae,Melogale,moschata,Chinese ferret-badger,,,2.5,,,672,19
+Carnivora,Mustelidae,Melogale,personata,Burmese ferret-badger,,,3,,,2000,
+Carnivora,Mustelidae,Mustela,erminea,Ermine,95,43,6.77,1,2.3,110.3,12.5
+Carnivora,Mustelidae,Mustela,eversmanii,Steppe polecat,319,36,9.4,1,5.73,1350,9.1
+Carnivora,Mustelidae,Mustela,frenata,Long-tailed weasel,162,25,6.2,1,3.1,150.6,8.8
+Carnivora,Mustelidae,Mustela,lutreola,European mink,323,54,4,,8,590,8.4
+Carnivora,Mustelidae,Mustela,nigripes,Black-footed ferret,365,43,3,,7.4,1021,9.4
+Carnivora,Mustelidae,Mustela,nivalis,Least weasel,120,36,5,1.5,2.6,46.9,9.1
+Carnivora,Mustelidae,Mustela,putorius,European polecat,312,42,7.5,1.5,9.5,809,11.1
+Carnivora,Mustelidae,Mustela,sibirica,Siberian weasel,,29,6,,,565,8.8
+Carnivora,Mustelidae,Neovison,vison,American mink,334,42,4.5,1,8.5,925,11.4
+Carnivora,Mustelidae,Poecilogale,albinucha,African striped weasel,439,32,2.2,1.2,4,280,
+Carnivora,Mustelidae,Pteronura,brasiliensis,Giant otter,730,68,1.5,1,204.25,24000,17.3
+Carnivora,Mustelidae,Taxidea,taxus,American badger,183,41,3,0.7,93.5,8000,25
+Carnivora,Mustelidae,Vormela,peregusna,Marbled polecat,91,61,5.76,,,542.5,8.8
+Carnivora,Nandiniidae,Nandinia,binotata,African palm civet,1095,64,2,2,55,1900,21
+Carnivora,Odobenidae,Odobenus,rosmarus,Walrus,1745,331,1,0.5,60000,1012500,
+Carnivora,Otariidae,Arctocephalus,australis,South American fur seal,1095,236,1,1,4250,110000,30.6
+Carnivora,Otariidae,Arctocephalus,forsteri,New Zealand fur seal,1825,236,1,1,3833.33,55000,
+Carnivora,Otariidae,Arctocephalus,galapagoensis,Galapagos fur seal,1461,213,1,1,3500,45500,
+Carnivora,Otariidae,Arctocephalus,gazella,Antarctic fur seal,1278,257,1,1,6000,84500,
+Carnivora,Otariidae,Arctocephalus,pusillus,South African fur seal,1276,368,1,1,6200,127551,32.1
+Carnivora,Otariidae,Arctocephalus,tropicalis,Subantarctic fur seal,,357,1,1,4420,50000,
+Carnivora,Otariidae,Callorhinus,ursinus,Northern fur seal,1095,240,1.3,0.9,5281,165500,
+Carnivora,Otariidae,Eumetopias,jubatus,Steller sea lion,1780,274,1,1,19000,415000,32.8
+Carnivora,Otariidae,Neophoca,cinerea,Australian sea lion,1095,258,1,0.69,7075,190000,24.1
+Carnivora,Otariidae,Otaria,flavescens,Southern sea lion,1461,357,1,1,12500,207500,29
+Carnivora,Otariidae,Phocarctos,hookeri,New Zealand sea lion,,365,1,1,7000,187580,
+Carnivora,Otariidae,Zalophus,californianus,California sea lion,1095,259,1.2,0.5,7000,180000,35.7
+Carnivora,Phocidae,Cystophora,cristata,Hooded seal,1095,240,1,1,18000,405000,
+Carnivora,Phocidae,Erignathus,barbatus,Bearded seal,1712,259,1,1,35000,373000,
+Carnivora,Phocidae,Halichoerus,grypus,Gray seal,1460,240,1,0.9,14000,268000,42.9
+Carnivora,Phocidae,Histriophoca,fasciata,Ribbon seal,1050,274,1,1,10500,90000,
+Carnivora,Phocidae,Hydrurga,leptonyx,Leopard seal,1095,274,1,,30000,367750,
+Carnivora,Phocidae,Leptonychotes,weddellii,Weddell seal,1365,304,1,,29000,425000,
+Carnivora,Phocidae,Lobodon,carcinophaga,Crabeater seal,1461,259,1,0.5,23000,250000,
+Carnivora,Phocidae,Mirounga,angustirostris,Northern elephant seal,1095,252,1,1,37500,1600000,
+Carnivora,Phocidae,Mirounga,leonina,Southern elephant seal,1059,220,1,1,42500,1400000,
+Carnivora,Phocidae,Monachus,monachus,Mediterranean monk seal,1461,289,1,0.5,19000,275000,
+Carnivora,Phocidae,Monachus,schauinslandi,Hawaiian monk seal,1825,335,1,0.5,17000,222500,
+Carnivora,Phocidae,Ommatophoca,rossii,Ross seal,1095,228,1,1,20000,177000,
+Carnivora,Phocidae,Pagophilus,groenlandicus,Harp seal,1637,228,1.25,,8700,180000,
+Carnivora,Phocidae,Phoca,largha,Spotted seal,1279,319,1,,7100,85000,
+Carnivora,Phocidae,Phoca,vitulina,Harbor seal,1095,253,1,1,11000,115000,47.6
+Carnivora,Phocidae,Pusa,caspica,Caspian seal,2009,330,1,,5000,86000,
+Carnivora,Phocidae,Pusa,hispida,Ringed seal,1826,251,1,1,6000,90000,46
+Carnivora,Phocidae,Pusa,sibirica,Baikal seal,2129,273,1.02,1,3000,90000,56
+Carnivora,Procyonidae,Bassaricyon,alleni,Allen's olingo,,,,,,1235,25.2
+Carnivora,Procyonidae,Bassaricyon,gabbii,Olingo,685,73,1,,55,1235,21.8
+Carnivora,Procyonidae,Bassariscus,astutus,Ringtail,300,52,3,1,30,1015,19
+Carnivora,Procyonidae,Bassariscus,sumichrasti,Cacomistle,300,64,2,,25,900,24
+Carnivora,Procyonidae,Nasua,narica,White-nosed coati,712,78,4.17,,140,3750,26.4
+Carnivora,Procyonidae,Nasua,nasua,South american coati,730,73,4,,140,4750,23.7
+Carnivora,Procyonidae,Potos,flavus,Kinkajou,820,115,1,1,175,3000,38.4
+Carnivora,Procyonidae,Procyon,cancrivorus,Crab-eating raccoon,365,63,3,,71,6270,19
+Carnivora,Procyonidae,Procyon,lotor,Common raccoon,365,63,4,1,80,6000,21
+Carnivora,Ursidae,Ailuropoda,melanoleuca,Giant panda,2192,48,1.5,0.7,110,117500,36.8
+Carnivora,Ursidae,Helarctos,malayanus,Sun bear,2372,95,1,,325,46000,35.9
+Carnivora,Ursidae,Melursus,ursinus,Sloth bear,1095,198,1.5,,400,100000,33.3
+Carnivora,Ursidae,Tremarctos,ornatus,Spectacled bear,,228,1.5,,320,109250,39
+Carnivora,Ursidae,Ursus,americanus,American black bear,1278,70,2,0.4,277.5,154250,34
+Carnivora,Ursidae,Ursus,arctos,Brown bear,1313,103,2,0.4,510,277500,40
+Carnivora,Ursidae,Ursus,maritimus,Polar bear,1734,65,2,0.4,665,475000,43.8
+Carnivora,Ursidae,Ursus,thibetanus,Asiatic black bear,1095,228,2,,463,103750,39.2
+Carnivora,Viverridae,Arctictis,binturong,Binturong,925,92,2,2,318,12250,27
+Carnivora,Viverridae,Arctogalidia,trivirgata,Small-toothed palm civet,1095,45,2.5,2,,2250,16.1
+Carnivora,Viverridae,Chrotogale,owstoni,Owston's palm civet,,61,2,1.5,81.5,3250,
+Carnivora,Viverridae,Civettictis,civetta,African civet,365,65,2.5,2.2,380.5,13666.7,28
+Carnivora,Viverridae,Cynogale,bennettii,Otter civet,,,2,,,4000,
+Carnivora,Viverridae,Genetta,abyssinica,Abyssinian genet,,,,,,1650,
+Carnivora,Viverridae,Genetta,genetta,Small-spotted genet,1479,78,2,2,77.75,1866.7,22.7
+Carnivora,Viverridae,Genetta,maculata,Panther genet,,,2.3,,,2225,20
+Carnivora,Viverridae,Genetta,pardina,Pardine genet,1461,,2.5,,71.5,2000,
+Carnivora,Viverridae,Genetta,servalina,Servaline genet,,,1.5,,,1055,
+Carnivora,Viverridae,Genetta,tigrina,Large-spotted genet,1461,70,2.5,2,71.5,1820,21.3
+Carnivora,Viverridae,Hemigalus,derbyanus,Banded palm civet,,,2,,125,2400,16
+Carnivora,Viverridae,Paguma,larvata,Masked palm civet,,,2.3,2,,4300,27.4
+Carnivora,Viverridae,Paradoxurus,hermaphroditus,Asian palm civet,341,60,3.4,2,88.65,3100,24.5
+Carnivora,Viverridae,Prionodon,linsang,Banded linsang,,,2.25,,40,700,
+Carnivora,Viverridae,Viverra,civettina,Malabar civet,,,,,,12061,15.4
+Carnivora,Viverridae,Viverra,tangalunga,Malayan civet,,,2,,,7350,15
+Carnivora,Viverridae,Viverra,zibetha,Large indian civet,,80,3,2,,10000,21.7
+Carnivora,Viverridae,Viverricula,indica,Small Indian civet,,,3.88,,,3000,
+Primates,Aotidae,Aotus,azarae,Azara's night monkey,,,1,1,,1230,30
+Primates,Aotidae,Aotus,lemurinus,Lemurine night monkey,,135,1,1,98,874,33.8
+Primates,Aotidae,Aotus,trivirgatus,Northern night monkey,821,142,1,1.4,88.5,800,30.1
+Primates,Aotidae,Aotus,vociferans,Noisy night monkey,,,1,,,873,22.1
+Primates,Atelidae,Alouatta,caraya,Black howler monkey,1167,187,1,1,187.5,5462.5,32.4
+Primates,Atelidae,Alouatta,guariba,Brown howler monkey,,,,,,5540,
+Primates,Atelidae,Alouatta,palliata,Mantled howler monkey,1095,186,1,0.6,409,7000,24
+Primates,Atelidae,Alouatta,pigra,Mexican black howler monkey,,187,1,,480,7000,
+Primates,Atelidae,Alouatta,sara,Bolivian red howler monkey,,,,,,6611,
+Primates,Atelidae,Alouatta,seniculus,Red howler monkey,1475,190,1,0.7,263,6543.2,25
+Primates,Atelidae,Ateles,belzebuth,White-bellied spider monkey,1461,184,1,0.3,,7535,37
+Primates,Atelidae,Ateles,chamek,Chamek spider monkey,,,,,,6000,42.8
+Primates,Atelidae,Ateles,fusciceps,Brown-headed spider monkey,1515,227,1,0.5,400,7000,46
+Primates,Atelidae,Ateles,geoffroyi,Central American spider monkey,1825,232,1,0.3,426,7267.5,47.1
+Primates,Atelidae,Ateles,marginatus,White-whiskered spider monkey,,,,,,6000,44
+Primates,Atelidae,Ateles,paniscus,Black spider monkey,1516,229,1,0.5,452.5,7887.5,46
+Primates,Atelidae,Brachyteles,arachnoides,Woolly spider monkey or muriqui,2738,232,1,0.3,,11170,40
+Primates,Atelidae,Lagothrix,lagothricha,Humboldt's woolly monkey,2555,223,1,0.5,300,7650,32
+Primates,Callitrichidae,Callimico,goeldii,Goeldi's monkey,365,153,1,1.2,48.15,555,22.2
+Primates,Callitrichidae,Callithrix,geoffroyi,Geoffroy's marmoset,,,,,,342,17.6
+Primates,Callitrichidae,Callithrix,jacchus,White-tufted-ear marmoset,477,144,2,2,26.5,255.2,22.8
+Primates,Callitrichidae,Callithrix,kuhlii,Weid's black-tufted-ear marmoset,,,,,,342,20
+Primates,Callitrichidae,Callithrix,penicillata,Black-pencilled marmoset,,,2,,,307,15.4
+Primates,Callitrichidae,Cebuella,pygmaea,Pygmy marmoset,684,125,2,,16,124,18.6
+Primates,Callitrichidae,Leontocebus,fuscicollis,Saddlebacked tamarin,546,147,1.8,1,39.9,456.5,24.9
+Primates,Callitrichidae,Leontocebus,nigricollis,Black-mantled tamarin,850,140,1.8,2.9,43.5,519.2,20.2
+Primates,Callitrichidae,Leontopithecus,chrysomelas,Golden-headed lion tamarin,,,2,,,535,21.3
+Primates,Callitrichidae,Leontopithecus,chrysopygus,Golden-rumped lion tamarin,,,,,,570,17.9
+Primates,Callitrichidae,Leontopithecus,rosalia,Golden lion tamarin,547,128,2,1.8,55.3,654.5,31.6
+Primates,Callitrichidae,Mico,argentatus,Silvery marmoset,304,144,2,3.2,35.1,343.2,16.5
+Primates,Callitrichidae,Mico,humeralifer,Tassel-eared marmoset,304,144,2,,34.5,355.8,15
+Primates,Callitrichidae,Saguinus,bicolor,Brazilian bare-faced tamarin,,160,1.63,,,495.8,19
+Primates,Callitrichidae,Saguinus,geoffroyi,Geoffroy's tamarin,548,142,2,,46.03,499.3,20.5
+Primates,Callitrichidae,Saguinus,imperator,Emperor tamarin,546,145,2,,47,518.5,23.7
+Primates,Callitrichidae,Saguinus,labiatus,Red-chested mustached tamarin,,147,1.9,1.2,42.33,501.3,20.5
+Primates,Callitrichidae,Saguinus,leucopus,Silvery-brown bare-face tamarin,,142,2,,44,490,15.2
+Primates,Callitrichidae,Saguinus,midas,Midas tamarin,608,127,2,1.4,40,553.8,21
+Primates,Callitrichidae,Saguinus,mystax,Black-chested mustached tamarin,486,145,2,,46.9,543.5,20
+Primates,Callitrichidae,Saguinus,oedipus,Cotton-top tamarin,548,178,1.9,1,39.36,445.5,26.2
+Primates,Cebidae,Cebus,albifrons,White-fronted capuchin,1310,158,1,0.7,233,2467.5,40.4
+Primates,Cebidae,Cebus,capucinus,White-faced capuchin,1505,162,1,0.5,230,2655,54
+Primates,Cebidae,Cebus,olivaceus,Weeping capuchin,2190,162,1,0.5,,2552.5,47
+Primates,Cebidae,Saimiri,boliviensis,Bolivian squirrel monkey,,158,1,,,615,30.3
+Primates,Cebidae,Saimiri,oerstedii,Central American squirrel monkey,,161,1,,,788.5,
+Primates,Cebidae,Saimiri,sciureus,South American squirrel monkey,1003,161,1,1,107,925,30.2
+Primates,Cebidae,Sapajus,apella,Brown capuchin,1703,158,1.5,0.6,239.7,2642.5,46
+Primates,Cercopithecidae,Allenopithecus,nigroviridis,Allen's swamp monkey,,,1,,221,4702.5,27
+Primates,Cercopithecidae,Allochrocebus,lhoesti,L'hoest's monkey,,,1,0.8,,4700,24.1
+Primates,Cercopithecidae,Allochrocebus,preussi,Preuss's monkey,,,1,,,5250,26
+Primates,Cercopithecidae,Allochrocebus,solatus,Sun-tailed monkey,1734,,1,0.7,,5405,
+Primates,Cercopithecidae,Cercocebus,agilis,Agile mangabey,,,,,,8000,31
+Primates,Cercopithecidae,Cercocebus,galeritus,Tana River mangabey,2267,175,1,,,9467.5,
+Primates,Cercopithecidae,Cercocebus,torquatus,Red-capped mangabey,973,167,1,0.9,,9492.5,46
+Primates,Cercopithecidae,Cercopithecus,ascanius,Black-cheeked white-nosed monkey,1642,147,1,0.7,371,3705,31.2
+Primates,Cercopithecidae,Cercopithecus,campbelli,Campbell's monkey,1095,180,1,,,3600,30
+Primates,Cercopithecidae,Cercopithecus,cephus,Moustached monkey,1460,172,1,0.4,340,3585,36
+Primates,Cercopithecidae,Cercopithecus,diana,Diana monkey,1962,,1,1,475,4550,35.1
+Primates,Cercopithecidae,Cercopithecus,erythrogaster,Red-bellied monkey,,,1,,,3250,24
+Primates,Cercopithecidae,Cercopithecus,hamlyni,Owl-faced monkey,,,,,,4425,28.6
+Primates,Cercopithecidae,Cercopithecus,mitis,Blue monkey,1673,132,1,0.5,366.4,9000,37.8
+Primates,Cercopithecidae,Cercopithecus,mona,Mona monkey,,,1,,284,4500,30
+Primates,Cercopithecidae,Cercopithecus,neglectus,De Brazza's monkey,1611,177,1,1,260,5945,30.8
+Primates,Cercopithecidae,Cercopithecus,nictitans,White-nosed guenon,1460,172,1,0.5,406,5465,31
+Primates,Cercopithecidae,Cercopithecus,petaurista,Lesser white-nosed monkey,,,1,,,3650,29
+Primates,Cercopithecidae,Cercopithecus,pogonias,Crowned guenon,1460,165,1,0.5,340,3580,27
+Primates,Cercopithecidae,Cercopithecus,wolfi,Wolf's monkey,,,1,,435,3390,24
+Primates,Cercopithecidae,Chlorocebus,aethiops,Vervet,1034,162,1,1,314,5620,30.8
+Primates,Cercopithecidae,Colobus,angolensis,Angolan colobus,,,1,,,8625,35.3
+Primates,Cercopithecidae,Colobus,guereza,Guereza,1461,175,1,1,397.8,9950,35
+Primates,Cercopithecidae,Colobus,polykomos,King colobus,1642,185,1,0.6,708.5,9525,33.9
+Primates,Cercopithecidae,Erythrocebus,patas,Patas monkey,956,167,1,1,504.5,7750,28.3
+Primates,Cercopithecidae,Lophocebus,albigena,Gray-cheeked mangabey,1460,181,1,0.4,425,9317.5,36
+Primates,Cercopithecidae,Macaca,arctoides,Stump-tailed macaque,1186,177,1,0.6,479,9275,29.2
+Primates,Cercopithecidae,Macaca,assamensis,Assam macaque,,,,,,9100,31.4
+Primates,Cercopithecidae,Macaca,fascicularis,Long-tailed macaque,1238,165,1,0.9,320,6362.5,39
+Primates,Cercopithecidae,Macaca,fuscata,Japanese macaque,1483,174,1.5,0.5,496,8882.5,38.5
+Primates,Cercopithecidae,Macaca,maura,Moor macaque,1825,165,1,0.6,389.5,5575,33
+Primates,Cercopithecidae,Macaca,mulatta,Rhesus monkey,1231,165,1,1,464,8235,40
+Primates,Cercopithecidae,Macaca,nemestrina,Pigtail macaque,1125,172,1,0.8,462.5,7912.5,37.6
+Primates,Cercopithecidae,Macaca,nigra,Celebes crested macaque,1490,176,1,0.7,461,7965,34
+Primates,Cercopithecidae,Macaca,ochreata,Booted macaque,,,,,,3950,29
+Primates,Cercopithecidae,Macaca,radiata,Bonnet macaque,1295,161,1,1,394,6755,30
+Primates,Cercopithecidae,Macaca,silenus,Liontail macaque,1429,176,1,0.7,407,7875,40
+Primates,Cercopithecidae,Macaca,sinica,Toque macaque,1460,152,1,0.7,446,4370,29.3
+Primates,Cercopithecidae,Macaca,sylvanus,Barbary macaque,1399,164,1.5,1,450,10875,29.1
+Primates,Cercopithecidae,Macaca,thibetana,Tibetan macaque,,170,1,0.5,525,10300,27
+Primates,Cercopithecidae,Macaca,tonkeana,Tonkean macaque,,173,,,,11950,28.4
+Primates,Cercopithecidae,Mandrillus,leucophaeus,Drill,1277,179,1,0.8,772,18250,39
+Primates,Cercopithecidae,Mandrillus,sphinx,Mandrill,1186,173,1,0.8,613,23000,40
+Primates,Cercopithecidae,Miopithecus,talapoin,Talapoin,1395,169,1,1,203.8,1384.5,27.7
+Primates,Cercopithecidae,Nasalis,larvatus,Proboscis monkey,1460,166,1.25,0.7,490,14617.5,25.1
+Primates,Cercopithecidae,Papio,hamadryas,Hamadryas baboon,1514,171,1,0.8,814,18000,37.5
+Primates,Cercopithecidae,Presbytis,comata,Grizzled leaf monkey,,,1,,,6695,
+Primates,Cercopithecidae,Presbytis,melalophos,Mitred leaf monkey,,,1,,,6540,20
+Primates,Cercopithecidae,Presbytis,thomasi,North Sumatran leaf monkey,,,,,,6690,
+Primates,Cercopithecidae,Pygathrix,nemaeus,Douc langur,1460,171,1,1,393.5,9720,26
+Primates,Cercopithecidae,Rhinopithecus,bieti,Black snub-nosed monkey,,170,,,427,9960,
+Primates,Cercopithecidae,Rhinopithecus,roxellana,Golden snub-nosed monkey,,199,1,,,14750,29.5
+Primates,Cercopithecidae,Semnopithecus,entellus,Hanuman langur,1162,192,1,0.7,500,13516.5,29
+Primates,Cercopithecidae,Semnopithecus,johnii,Hooded leaf monkey,,,1,,,12000,34
+Primates,Cercopithecidae,Semnopithecus,vetulus,Purple-faced leaf monkey,1278,211,1,0.4,432.33,7081.8,26.1
+Primates,Cercopithecidae,Theropithecus,gelada,Gelada baboon,1391,168,1,0.5,464,16200,36
+Primates,Cercopithecidae,Trachypithecus,auratus,Javan langur,,,,,,9720,31.1
+Primates,Cercopithecidae,Trachypithecus,cristatus,Silvered leaf monkey,1461,,1,,,6185,28.3
+Primates,Cercopithecidae,Trachypithecus,francoisi,Fran?ois's leaf monkey,1460,,,,457,7325,26.3
+Primates,Cercopithecidae,Trachypithecus,geei,Golden leaf monkey,,,1,,,8100,
+Primates,Cercopithecidae,Trachypithecus,obscurus,Dusky leaf monkey,1461,145,1,0.5,300,7080,33.9
+Primates,Cercopithecidae,Trachypithecus,phayrei,Phayre's leaf monkey,,167,1,0.8,,8400,28.3
+Primates,Cercopithecidae,Trachypithecus,pileatus,Capped leaf monkey,,,,,,11450,25.2
+Primates,Cheirogaleidae,Cheirogaleus,major,Greater dwarf lemur,365,65,2.2,,18.1,395,13.4
+Primates,Cheirogaleidae,Cheirogaleus,medius,Fat-tailed dwarf lemur,365,61,22.2,1,19,380,29
+Primates,Cheirogaleidae,Microcebus,murinus,Gray mouse lemur,243,61,2,1,6,64.8,18.2
+Primates,Cheirogaleidae,Microcebus,rufus,Brown mouse lemur,,61,2.5,,6.5,55.5,
+Primates,Cheirogaleidae,Mirza,coquereli,Giant mouse lemur,312,89,1.8,1,14.8,311.2,17.4
+Primates,Cheirogaleidae,Phaner,furcifer,Fork-marked lemur,,174,1,,,400,25
+Primates,Daubentoniidae,Daubentonia,madagascariensis,Aye-aye,882,165,1,1,109,2277.5,32.3
+Primates,Galagidae,Euoticus,elegantulus,Western needle-clawed galago,,122,1,,,315,
+Primates,Galagidae,Galago,moholi,South African galago,146,124,1.4,2,12.3,169.2,16.6
+Primates,Galagidae,Galago,senegalensis,Senegal galago,240,126,1.5,2,12.2,192.2,17.1
+Primates,Galagidae,Galagoides,demidoff,Demidoff's galago,256,111,1.1,1,7.5,60,13.4
+Primates,Galagidae,Otolemur,crassicaudatus,Greater galago,495,130,1.5,1,43.2,1094.5,22.7
+Primates,Galagidae,Otolemur,garnettii,Small-eared galago,600,132,1,1.4,46,1300,20
+Primates,Galagidae,Paragalago,zanzibaricus,Zanzibar galago,265,120,1.3,2,14.1,146.8,
+Primates,Galagidae,Sciurocheirus,alleni,Allen's squirrel galago,243,133,1.3,1,24,273,
+Primates,Hominidae,Gorilla,gorilla,Gorilla,2829,256,1,0.3,2061.4,139842,60.1
+Primates,Hominidae,Homo,sapiens,Human,4745,280,1,0.3,3312.5,62035,122.5
+Primates,Hominidae,Pan,paniscus,Pygmy chimpanzee or bonobo,3194,232,1,0.2,1331,39925,55
+Primates,Hominidae,Pan,troglodytes,Chimpanzee,3376,229,1,0.2,1821,44983.5,59.4
+Primates,Hominidae,Pongo,pygmaeus,Orangutan,2555,249,1,0.2,1736.5,64475,59
+Primates,Hylobatidae,Hoolock,hoolock,Hoolock gibbon,2556,,1,0.3,,6875,41
+Primates,Hylobatidae,Hylobates,agilis,Agile gibbon,,,1,0.3,,5925,49
+Primates,Hylobatidae,Hylobates,klossii,Kloss's gibbon,,213,1,0.4,,5900,37
+Primates,Hylobatidae,Hylobates,lar,White-handed gibbon,2555,217,1,0.5,307.2,6810,56
+Primates,Hylobatidae,Hylobates,moloch,Silvery gibbon,,243,1,0.4,,6207.5,45
+Primates,Hylobatidae,Hylobates,muelleri,Borneo gibbon,,207,1,,,5765,60
+Primates,Hylobatidae,Hylobates,pileatus,Pileated gibbon,,228,1,,,5735,38
+Primates,Hylobatidae,Nomascus,concolor,Crested gibbon,3080,207,1,,,6852.5,46.1
+Primates,Hylobatidae,Nomascus,leucogenys,White-cheeked gibbon,,,,,497,6000,44.1
+Primates,Hylobatidae,Symphalangus,syndactylus,Siamang,2190,231,1,0.4,517,10900,43
+Primates,Indriidae,Propithecus,diadema,Diademed sifaka,1186,157,1,0.5,145,5550,21
+Primates,Indriidae,Propithecus,tattersalli,Golden-crowned sifaka,1642,,,,98,3545,20
+Primates,Indriidae,Propithecus,verreauxi,Verreaux's sifaka,912,148,1,1,72.25,5000,31
+Primates,Lemuridae,Eulemur,coronatus,Crowned lemur,608,126,1.24,1,70,1645,27
+Primates,Lemuridae,Eulemur,fulvus,Brown lemur,509,118,1.1,2,73,2485,35.5
+Primates,Lemuridae,Eulemur,macaco,Black lemur,540,120,1.4,1,70.1,2467,37.5
+Primates,Lemuridae,Eulemur,mongoz,Mongoose lemur,650,120,1,1,62,1555,36.2
+Primates,Lemuridae,Eulemur,rubriventer,Red-bellied lemur,646,120,1,,76.5,2191.5,31.7
+Primates,Lemuridae,Hapalemur,aureus,Golden bamboo lemur,,142,1,1,,1455,
+Primates,Lemuridae,Hapalemur,griseus,Bamboo lemur,880,145,1.1,1.1,50.4,1012.5,23.3
+Primates,Lemuridae,Lemur,catta,Ring-tailed lemur,595,135,1.1,0.9,70.6,2555,37.3
+Primates,Lemuridae,Prolemur,simus,Greater bamboo lemur,,142,1,1,,1737.5,17.6
+Primates,Lemuridae,Varecia,rubra,Red ruffed lemur,609,98,2.2,,109.73,3601.3,37.5
+Primates,Lemuridae,Varecia,variegata,Ruffed lemur,605,98,1.9,1,107.17,3482.3,39.4
+Primates,Lepilemuridae,Lepilemur,mustelinus,Weasel sportive lemur,592,135,1,1,27,700,
+Primates,Lepilemuridae,Lepilemur,ruficaudatus,Red-tailed sportive lemur,595,136,1,,,779,
+Primates,Lorisidae,Arctocebus,calabarensis,Calabar angwantibo,279,133,1,1.5,26.1,257.5,13
+Primates,Lorisidae,Loris,tardigradus,Slender loris,380,166,1.3,1.5,11,238.2,21.6
+Primates,Lorisidae,Nycticebus,coucang,Slow loris,578,188,1,1,48.2,890.5,25.8
+Primates,Lorisidae,Nycticebus,pygmaeus,Pygmy slow loris,273,188,2,,23,419,19.3
+Primates,Lorisidae,Perodicticus,potto,Potto,547,170,1,1,38.3,919.9,32.4
+Primates,Pitheciidae,Cacajao,calvus,Red uakari,1204,182,1,0.5,,3165,35.8
+Primates,Pitheciidae,Cacajao,melanocephalus,Black uakari,,,1,,,2935,
+Primates,Pitheciidae,Chiropotes,albinasus,White-nosed bearded saki,1460,160,1,,,2910,20
+Primates,Pitheciidae,Chiropotes,satanas,Brown-bearded saki,1460,160,1,,,2942.5,19.6
+Primates,Pitheciidae,Pithecia,aequatorialis,Equatorial saki,,,,,,1200,
+Primates,Pitheciidae,Pithecia,irrorata,Gray monk saki,,,,,,1200,
+Primates,Pitheciidae,Pithecia,monachus,Monk saki,,,1,,120.67,1780,25
+Primates,Pitheciidae,Pithecia,pithecia,Guianan saki,775,158,1,1,,1480,36
+Primates,Pitheciidae,Plecturocebus,cupreus,Coppery titi,,132,1,0.9,74,1120,26.4
+Primates,Pitheciidae,Plecturocebus,donacophilus,Bolivian titi,,,1,,,795,25
+Primates,Pitheciidae,Plecturocebus,moloch,Dusky titi,912,163,1,1,86,804,26.2
+Primates,Tarsiidae,Carlito,syrichta,Philippine tarsier,,179,1,,25.9,119.2,16
+Primates,Tarsiidae,Cephalopachus,bancanus,Western tarsier,920,178,1,1.5,24.6,122.5,16.3
+Primates,Tarsiidae,Tarsius,tarsier,Spectral tarsier,425,157,1,2.4,24.3,144.8,
+Scandentia,Ptilocercidae,Ptilocercus,lowii,Pen-tailed tree shrew,,,2,,10,42.5,
+Scandentia,Tupaiidae,Tupaia,belangeri,Northern tree shrew,,46,2,7.5,10,200,11.1
+Scandentia,Tupaiidae,Tupaia,glis,Common tree shrew,90,46,2,2.5,12.94,200,12.4
+Scandentia,Tupaiidae,Tupaia,minor,Pygmy tree shrew,,,2,,,58.6,12.2
+Scandentia,Tupaiidae,Tupaia,tana,Large tree shrew,,,2.2,,,197.8,11.6
+Scandentia,Tupaiidae,Urogale,everetti,Mindanao tree shrew,,55,2,,20,350,11.5

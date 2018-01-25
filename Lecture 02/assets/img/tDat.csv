@@ -1,0 +1,318 @@
+code,sp_c,sp_l,type,age,sex,wing,weight
+BLABI,Blackbird,Turdus merula,N,3,JM,135,98.8
+BLABI,Blackbird,Turdus merula,R,3,J,126,88.4
+BLABI,Blackbird,Turdus merula,N,3,J,127,89.8
+BLABI,Blackbird,Turdus merula,N,3,J,132,91.1
+BLABI,Blackbird,Turdus merula,N,3,J,131,95.3
+BLABI,Blackbird,Turdus merula,N,3,M,129,101.3
+BLABI,Blackbird,Turdus merula,N,3,J,132,81.5
+BLABI,Blackbird,Turdus merula,R,3,M,128,100.2
+BLABI,Blackbird,Turdus merula,N,3,M,129,88.9
+BLABI,Blackbird,Turdus merula,N,3,M,133,104.6
+BLABI,Blackbird,Turdus merula,R,3,M,128,98.8
+BLABI,Blackbird,Turdus merula,N,3,M,132,101.1
+BLABI,Blackbird,Turdus merula,N,3,F,127,98.5
+BLABI,Blackbird,Turdus merula,N,3,M,126,96.5
+BLABI,Blackbird,Turdus merula,N,3,F,126,92.8
+BLABI,Blackbird,Turdus merula,N,3,M,131,98.3
+BLABI,Blackbird,Turdus merula,N,4,M,141,127.3
+BLABI,Blackbird,Turdus merula,R,4,M,131,99.4
+BLABI,Blackbird,Turdus merula,R,5,M,127,97.8
+BLABI,Blackbird,Turdus merula,N,5,F,132,113
+BLABI,Blackbird,Turdus merula,N,5,M,137,103.6
+BLABI,Blackbird,Turdus merula,N,5,M,128,100.9
+BLABI,Blackbird,Turdus merula,N,5,M,129,92.7
+BLABI,Blackbird,Turdus merula,N,5,M,131,92.7
+BLABI,Blackbird,Turdus merula,R,5,F,124,90.3
+BLABI,Blackbird,Turdus merula,N,5,F,122,91.8
+BLABI,Blackbird,Turdus merula,R,5,M,129,83.7
+BLABI,Blackbird,Turdus merula,R,5,M,128,89.8
+BLABI,Blackbird,Turdus merula,N,5,,128,93.1
+BLABI,Blackbird,Turdus merula,N,6,F,128,100.2
+BLABI,Blackbird,Turdus merula,N,6,M,133,113.2
+BLABI,Blackbird,Turdus merula,N,6,F,131,102.7
+BLABI,Blackbird,Turdus merula,N,6,F,128,95.2
+BLABI,Blackbird,Turdus merula,R,6,M,133,94.7
+BLABI,Blackbird,Turdus merula,N,6,F,129,94.8
+BLABI,Blackbird,Turdus merula,R,6,M,138,97.9
+BLABI,Blackbird,Turdus merula,N,6,F,127,94.1
+BLABI,Blackbird,Turdus merula,N,6,M,131,83.9
+BLABI,Blackbird,Turdus merula,N,6,M,135,94.4
+BLABI,Blackbird,Turdus merula,N,6,F,127,96.7
+BLABI,Blackbird,Turdus merula,R,6,F,126,96.8
+BLABI,Blackbird,Turdus merula,N,6,F,130,99.5
+BLABI,Blackbird,Turdus merula,N,6,M,134,8.7
+BLABI,Blackbird,Turdus merula,N,6,M,131,99.3
+BLABI,Blackbird,Turdus merula,N,6,F,125,89.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,11.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,9.3
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,M,63,11.7
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,J,62,9.2
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,8.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,69,10.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,8.7
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,10.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,61,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,63,10.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,61,11.4
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,,67,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,,60,9.3
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,,63,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,64,10.6
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,62,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,3,,64,11.1
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,,61,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,R,3,J,61,8.9
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,66,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,66,11.6
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,65,11.3
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,64,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,67,11.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,4,,62,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,4,,61,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,10
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,10.7
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,,66,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,11.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,4,,62,11.1
+BLUTI,Blue tit,Cyanistes caeruleus,R,4,,66,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,61,9.9
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,65,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,61,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.6
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,F,60,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,61,9.6
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,65,9.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,66,11
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,9.2
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,63,10.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,9.9
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,,63,9.4
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,M,64,10.7
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,M,65,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,63,9.9
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,63,11.9
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,F,61,9.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,60,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,,59,9.8
+BLUTI,Blue tit,Cyanistes caeruleus,R,5,,65,11
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.3
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,11.8
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,11.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,63,9.9
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,F,61,10.7
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,10.4
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,11.7
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,10.6
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,67,11.7
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,,62,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10.8
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,61,9.8
+BLUTI,Blue tit,Cyanistes caeruleus,R,6,,62,10.1
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,11.9
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,10.6
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,,64,10.4
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,10.5
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,62,11.2
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,M,62,10.6
+BLUTI,Blue tit,Cyanistes caeruleus,N,6,,62,10.2
+CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,62,8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,56,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,R,2,,63,9.5
+CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,60,7.9
+CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,56,7.7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,55,6.6
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,61,7.4
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,60,7.5
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,57,7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,60,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,60,8.4
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,M,60,7.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,56,6.7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.5
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,58,8.2
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,62,9
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,56,7.4
+CHIFF,Chiffchaff,Phylloscopus collybita,R,3,,57,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.9
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,62,8.2
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.4
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,60,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,60,12.9
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,61,8.2
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,62,7.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,,61,7.7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,54,7.1
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,54,6.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,64,8.6
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,61,8.4
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,,68,8.6
+CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,64,7.8
+CHIFF,Chiffchaff,Phylloscopus collybita,N,5,F,55,8.2
+CHIFF,Chiffchaff,Phylloscopus collybita,N,5,,62,8.7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,6,M,62,7.7
+CHIFF,Chiffchaff,Phylloscopus collybita,N,6,,62,9.2
+GRETI,Great tit,Parus major,N,1,,23,17
+GRETI,Great tit,Parus major,N,1,,24,17.2
+GRETI,Great tit,Parus major,N,1,,24,16.4
+GRETI,Great tit,Parus major,N,1,,24,18.1
+GRETI,Great tit,Parus major,N,1,,23,16.7
+GRETI,Great tit,Parus major,R,2,F,73,18.9
+GRETI,Great tit,Parus major,N,3,F,73,18.2
+GRETI,Great tit,Parus major,N,3,M,75,18.1
+GRETI,Great tit,Parus major,R,3,M,75,18
+GRETI,Great tit,Parus major,R,3,M,76,19.2
+GRETI,Great tit,Parus major,N,3,J,77,17
+GRETI,Great tit,Parus major,N,3,J,71,14.2
+GRETI,Great tit,Parus major,N,3,J,68,18.1
+GRETI,Great tit,Parus major,N,3,J,74,16.7
+GRETI,Great tit,Parus major,N,3,J,75,16.7
+GRETI,Great tit,Parus major,N,3,J,75,16
+GRETI,Great tit,Parus major,N,3,F,72,15.9
+GRETI,Great tit,Parus major,N,3,J,78,18.4
+GRETI,Great tit,Parus major,N,3,J,73,17.1
+GRETI,Great tit,Parus major,N,3,F,73,16.5
+GRETI,Great tit,Parus major,N,3,J,78,18
+GRETI,Great tit,Parus major,N,3,F,74,19.1
+GRETI,Great tit,Parus major,N,3,J,74,18.6
+GRETI,Great tit,Parus major,N,3,M,77,19
+GRETI,Great tit,Parus major,R,3,M,78,21
+GRETI,Great tit,Parus major,R,3,J,68,17.1
+GRETI,Great tit,Parus major,R,3,J,68,17.1
+GRETI,Great tit,Parus major,R,3,J,66,16.4
+GRETI,Great tit,Parus major,R,3,J,66,14.8
+GRETI,Great tit,Parus major,R,4,F,73,17.6
+GRETI,Great tit,Parus major,R,4,F,77,18.8
+GRETI,Great tit,Parus major,R,4,M,78,20.4
+GRETI,Great tit,Parus major,N,4,F,72,15.9
+GRETI,Great tit,Parus major,R,4,M,78,15.8
+GRETI,Great tit,Parus major,N,5,M,73,18.4
+GRETI,Great tit,Parus major,N,5,M,80,20.1
+GRETI,Great tit,Parus major,R,5,M,77,18.8
+GRETI,Great tit,Parus major,N,5,F,71,17.1
+GRETI,Great tit,Parus major,N,5,M,76,18.9
+GRETI,Great tit,Parus major,N,5,F,72,16.7
+GRETI,Great tit,Parus major,N,5,M,74,19.2
+GRETI,Great tit,Parus major,R,5,M,75,19
+GRETI,Great tit,Parus major,R,5,M,75,18.1
+GRETI,Great tit,Parus major,N,5,F,73,16.5
+GRETI,Great tit,Parus major,N,5,M,77,18.2
+GRETI,Great tit,Parus major,N,5,M,74,17.3
+GRETI,Great tit,Parus major,N,5,M,74,20.2
+GRETI,Great tit,Parus major,R,5,F,74,15.7
+GRETI,Great tit,Parus major,N,5,F,74,17.2
+GRETI,Great tit,Parus major,N,5,F,74,16.2
+GRETI,Great tit,Parus major,R,5,F,73,17.4
+GRETI,Great tit,Parus major,N,5,F,72,17.8
+GRETI,Great tit,Parus major,N,5,F,74,21.7
+GRETI,Great tit,Parus major,N,5,F,73,17.9
+GRETI,Great tit,Parus major,R,5,M,74,19
+GRETI,Great tit,Parus major,R,5,M,76,18.4
+GRETI,Great tit,Parus major,R,5,M,76,17.1
+GRETI,Great tit,Parus major,R,5,F,76,17.8
+GRETI,Great tit,Parus major,N,5,F,71,21.1
+GRETI,Great tit,Parus major,N,5,F,70,17.7
+GRETI,Great tit,Parus major,N,5,F,71,17.5
+GRETI,Great tit,Parus major,N,5,F,74,16.1
+GRETI,Great tit,Parus major,R,6,F,73,17.8
+GRETI,Great tit,Parus major,R,6,M,79,19.1
+GRETI,Great tit,Parus major,R,6,F,75,18
+GRETI,Great tit,Parus major,N,6,F,73,17.9
+GRETI,Great tit,Parus major,N,6,F,73,16.1
+GRETI,Great tit,Parus major,N,6,F,74,19.3
+GRETI,Great tit,Parus major,R,6,M,79,19.4
+GRETI,Great tit,Parus major,R,6,F,74,17.9
+GRETI,Great tit,Parus major,N,6,F,74,18.3
+GRETI,Great tit,Parus major,N,6,F,75,18
+GRETI,Great tit,Parus major,R,6,M,78,20
+GRETI,Great tit,Parus major,N,6,M,75,20.5
+GRETI,Great tit,Parus major,N,6,M,76,18.9
+GRETI,Great tit,Parus major,N,6,M,76,19
+GRETI,Great tit,Parus major,N,6,F,75,16.8
+GRETI,Great tit,Parus major,N,6,M,75,17.6
+GRETI,Great tit,Parus major,N,6,F,73,17.9
+GREWO,Green woodpecker,Picus viridis,N,6,F,163,190
+ROBIN,Robin,Erithacus rubecula,N,1,J,72,17.8
+ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.6
+ROBIN,Robin,Erithacus rubecula,N,3,J,73,17.9
+ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.2
+ROBIN,Robin,Erithacus rubecula,N,3,J,71,18.3
+ROBIN,Robin,Erithacus rubecula,N,3,J,73,18.2
+ROBIN,Robin,Erithacus rubecula,R,3,,71,18.2
+ROBIN,Robin,Erithacus rubecula,R,3,,75,19.3
+ROBIN,Robin,Erithacus rubecula,N,3,J,75,16.2
+ROBIN,Robin,Erithacus rubecula,N,3,J,73,19
+ROBIN,Robin,Erithacus rubecula,N,3,J,72,18.7
+ROBIN,Robin,Erithacus rubecula,N,3,,72,16.7
+ROBIN,Robin,Erithacus rubecula,R,3,J,73,18.8
+ROBIN,Robin,Erithacus rubecula,N,3,J,72,18.2
+ROBIN,Robin,Erithacus rubecula,N,3,J,73,19.7
+ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.2
+ROBIN,Robin,Erithacus rubecula,N,3,,71,17
+ROBIN,Robin,Erithacus rubecula,N,3,J,71,19.2
+ROBIN,Robin,Erithacus rubecula,N,3,J,75,18.4
+ROBIN,Robin,Erithacus rubecula,N,4,,71,17.3
+ROBIN,Robin,Erithacus rubecula,R,4,,71,22.3
+ROBIN,Robin,Erithacus rubecula,N,4,,77,19.7
+ROBIN,Robin,Erithacus rubecula,N,5,,72,17.8
+ROBIN,Robin,Erithacus rubecula,N,5,,72,18.7
+ROBIN,Robin,Erithacus rubecula,N,5,M,74,18.1
+ROBIN,Robin,Erithacus rubecula,R,5,M,72,16.4
+ROBIN,Robin,Erithacus rubecula,N,5,,75,20.5
+ROBIN,Robin,Erithacus rubecula,N,5,F,72,19.7
+ROBIN,Robin,Erithacus rubecula,N,5,M,74,16.9
+ROBIN,Robin,Erithacus rubecula,N,5,F,71,20.6
+ROBIN,Robin,Erithacus rubecula,R,5,F,71,24.3
+ROBIN,Robin,Erithacus rubecula,N,5,F,71,18.3
+ROBIN,Robin,Erithacus rubecula,N,5,M,68,16.2
+ROBIN,Robin,Erithacus rubecula,R,6,,74,18.5
+ROBIN,Robin,Erithacus rubecula,N,6,,74,19
+ROBIN,Robin,Erithacus rubecula,R,6,M,74,17.2
+ROBIN,Robin,Erithacus rubecula,N,6,M,75,18.5
+ROBIN,Robin,Erithacus rubecula,N,6,,72,18.2
+WREN,Wren,Troglodytes troglodytes,N,3,J,50,9.6
+WREN,Wren,Troglodytes troglodytes,N,3,J,47,8.2
+WREN,Wren,Troglodytes troglodytes,N,3,J,45,10.2
+WREN,Wren,Troglodytes troglodytes,N,3,J,45,7.8
+WREN,Wren,Troglodytes troglodytes,N,3,J,52,10.2
+WREN,Wren,Troglodytes troglodytes,R,3,J,51,10.9
+WREN,Wren,Troglodytes troglodytes,N,3,J,51,10.1
+WREN,Wren,Troglodytes troglodytes,N,3,,46,8.1
+WREN,Wren,Troglodytes troglodytes,N,3,,46,8.2
+WREN,Wren,Troglodytes troglodytes,N,3,,49,10.1
+WREN,Wren,Troglodytes troglodytes,N,3,,49,10.8
+WREN,Wren,Troglodytes troglodytes,N,3,J,49,10.4
+WREN,Wren,Troglodytes troglodytes,N,3,J,48,10.2
+WREN,Wren,Troglodytes troglodytes,N,4,,51,11.5
+WREN,Wren,Troglodytes troglodytes,N,4,,46,10.6
+WREN,Wren,Troglodytes troglodytes,N,4,,50,10.2
+WREN,Wren,Troglodytes troglodytes,N,4,F,45,9.7
+WREN,Wren,Troglodytes troglodytes,R,5,,50,11.7
+WREN,Wren,Troglodytes troglodytes,N,5,F,47,10.4
+WREN,Wren,Troglodytes troglodytes,N,5,,50,10.5
+WREN,Wren,Troglodytes troglodytes,N,5,F,49,10.8
+WREN,Wren,Troglodytes troglodytes,N,5,F,49,10.5
+WREN,Wren,Troglodytes troglodytes,N,5,M,43,8.9
+WREN,Wren,Troglodytes troglodytes,N,5,M,50,12.1
+WREN,Wren,Troglodytes troglodytes,N,5,F,52,11.6
+WREN,Wren,Troglodytes troglodytes,N,5,,46,11
+WREN,Wren,Troglodytes troglodytes,N,5,,50,11.6
+WREN,Wren,Troglodytes troglodytes,N,6,,49,10.6
+WREN,Wren,Troglodytes troglodytes,N,6,F,46,10.3
+BLACA,Blackcap,Sylvia atricapilla,N,5,M,72,23.1

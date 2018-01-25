@@ -1,0 +1,318 @@
+﻿Date,Code,Sp_C,Sp_L,Type,Age,Sex,Wing,Weight
+19/06/2011,BLABI,Blackbird,Turdus merula,N,3,JM,135,98.8
+01/07/2011,BLABI,Blackbird,Turdus merula,R,3,J,126,88.4
+01/07/2011,BLABI,Blackbird,Turdus merula,N,3,J,127,89.8
+07/08/2011,BLABI,Blackbird,Turdus merula,N,3,J,132,91.1
+07/08/2011,BLABI,Blackbird,Turdus merula,N,3,J,131,95.3
+13/08/2011,BLABI,Blackbird,Turdus merula,N,3,M,129,101.3
+13/08/2011,BLABI,Blackbird,Turdus merula,N,3,J,132,81.5
+01/10/2011,BLABI,Blackbird,Turdus merula,R,3,M,128,100.2
+01/10/2011,BLABI,Blackbird,Turdus merula,N,3,M,129,88.9
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,M,133,104.6
+05/11/2011,BLABI,Blackbird,Turdus merula,R,3,M,128,98.8
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,M,132,101.1
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,F,127,98.5
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,M,126,96.5
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,F,126,92.8
+05/11/2011,BLABI,Blackbird,Turdus merula,N,3,M,131,98.3
+11/12/2010,BLABI,Blackbird,Turdus merula,N,4,M,141,127.3
+20/10/2011,BLABI,Blackbird,Turdus merula,R,4,M,131,99.4
+30/01/2011,BLABI,Blackbird,Turdus merula,R,5,M,127,97.8
+30/01/2011,BLABI,Blackbird,Turdus merula,N,5,F,132,113
+30/01/2011,BLABI,Blackbird,Turdus merula,N,5,M,137,103.6
+12/02/2011,BLABI,Blackbird,Turdus merula,N,5,M,128,100.9
+27/02/2011,BLABI,Blackbird,Turdus merula,N,5,M,129,92.7
+19/03/2011,BLABI,Blackbird,Turdus merula,N,5,M,131,92.7
+10/03/2012,BLABI,Blackbird,Turdus merula,R,5,F,124,90.3
+19/03/2012,BLABI,Blackbird,Turdus merula,N,5,F,122,91.8
+19/05/2012,BLABI,Blackbird,Turdus merula,R,5,M,129,83.7
+19/05/2012,BLABI,Blackbird,Turdus merula,R,5,M,128,89.8
+20/06/2014,BLABI,Blackbird,Turdus merula,N,5,,128,93.1
+30/01/2011,BLABI,Blackbird,Turdus merula,N,6,F,128,100.2
+12/02/2011,BLABI,Blackbird,Turdus merula,N,6,M,133,113.2
+12/02/2011,BLABI,Blackbird,Turdus merula,N,6,F,131,102.7
+27/02/2011,BLABI,Blackbird,Turdus merula,N,6,F,128,95.2
+27/02/2011,BLABI,Blackbird,Turdus merula,R,6,M,133,94.7
+07/05/2011,BLABI,Blackbird,Turdus merula,N,6,F,129,94.8
+19/06/2011,BLABI,Blackbird,Turdus merula,R,6,M,138,97.9
+12/05/2012,BLABI,Blackbird,Turdus merula,N,6,F,127,94.1
+12/05/2013,BLABI,Blackbird,Turdus merula,N,6,M,131,83.9
+12/05/2013,BLABI,Blackbird,Turdus merula,N,6,M,135,94.4
+12/05/2013,BLABI,Blackbird,Turdus merula,N,6,F,127,96.7
+19/05/2013,BLABI,Blackbird,Turdus merula,R,6,F,126,96.8
+26/05/2013,BLABI,Blackbird,Turdus merula,N,6,F,130,99.5
+23/05/2015,BLABI,Blackbird,Turdus merula,N,6,M,134,8.7
+23/05/2015,BLABI,Blackbird,Turdus merula,N,6,M,131,99.3
+23/05/2015,BLABI,Blackbird,Turdus merula,N,6,F,125,89.4
+28/05/2004,BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,11.3
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,10.5
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,9.3
+11/12/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,3,M,63,11.7
+19/06/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,3,J,62,9.2
+19/06/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,8.4
+26/06/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,69,10.4
+13/08/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,10.1
+13/08/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,F,61,8.7
+13/08/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,J,62,10.4
+23/09/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,61,10.1
+24/09/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,63,10.3
+01/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,61,11.4
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,3,,67,11.5
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,3,,60,9.3
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,3,,63,10.5
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,64,10.6
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,62,10.1
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,3,,64,11.1
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,3,,61,10.1
+20/06/2014,BLUTI,Blue tit,Cyanistes caeruleus,R,3,J,61,8.9
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,66,11.5
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,66,11.6
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,65,11.3
+20/11/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,64,10.8
+11/12/2010,BLUTI,Blue tit,Cyanistes caeruleus,R,4,M,67,11.1
+24/09/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,4,,62,10.1
+01/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,4,,61,10.1
+20/10/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,10
+05/11/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,10.7
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,4,,66,11.5
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,4,,64,11.1
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,4,,62,11.1
+18/12/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,4,,66,11.5
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,61,9.9
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10.1
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,65,10.5
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,61,10.8
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.4
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.6
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,5,F,60,10.5
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,61,9.6
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,65,9.3
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,10.1
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,M,66,11
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,9.2
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,63,10.3
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,9.9
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,5,,63,9.4
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,5,M,64,10.7
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.8
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10.8
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,5,M,65,10.8
+19/03/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,63,9.9
+07/05/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,63,11.9
+19/06/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,5,F,61,9.3
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,60,10.5
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,5,,59,9.8
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,5,,65,11
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.3
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,10.5
+11/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,5,,64,11.8
+24/05/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,62,11.5
+12/05/2013,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,11.5
+23/05/2015,BLUTI,Blue tit,Cyanistes caeruleus,N,5,F,60,10
+30/01/2011,BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,63,9.9
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,6,F,61,10.7
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,10.4
+12/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,11.7
+27/02/2011,BLUTI,Blue tit,Cyanistes caeruleus,R,6,M,65,10.6
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,67,11.7
+04/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,N,6,,62,10.5
+11/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10
+11/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10.5
+11/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,63,10.8
+19/02/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,61,9.8
+10/03/2012,BLUTI,Blue tit,Cyanistes caeruleus,R,6,,62,10.1
+19/05/2013,BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,11.9
+23/09/2013,BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,10.6
+23/09/2013,BLUTI,Blue tit,Cyanistes caeruleus,N,6,,64,10.4
+20/06/2014,BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,61,10.5
+23/05/2015,BLUTI,Blue tit,Cyanistes caeruleus,N,6,F,62,11.2
+23/05/2015,BLUTI,Blue tit,Cyanistes caeruleus,N,6,M,62,10.6
+23/05/2015,BLUTI,Blue tit,Cyanistes caeruleus,N,6,,62,10.2
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,62,8
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,56,7.1
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,R,2,,63,9.5
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,60,7.9
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,2,,56,7.7
+19/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,55,6.6
+26/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,61,7.4
+26/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,60,7.5
+26/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,57,7
+26/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,J,60,7.1
+01/07/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,60,8.4
+13/08/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,M,60,7.8
+13/08/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,F,56,6.7
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.5
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,58,8.2
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,62,9
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.8
+23/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,8
+24/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.8
+24/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,56,7.4
+24/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,R,3,,57,7.1
+24/09/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.9
+01/10/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,57,7.1
+01/10/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,62,8.2
+14/07/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,61,7.4
+21/07/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,60,7.1
+21/07/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,3,,60,12.9
+23/04/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,61,8.2
+23/04/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,62,7.8
+26/06/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,,61,7.7
+07/08/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,54,7.1
+14/07/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,54,6.8
+12/05/2013,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,64,8.6
+20/06/2014,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,F,61,8.4
+23/05/2015,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,,68,8.6
+23/05/2015,CHIFF,Chiffchaff,Phylloscopus collybita,N,4,M,64,7.8
+28/05/2004,CHIFF,Chiffchaff,Phylloscopus collybita,N,5,F,55,8.2
+19/03/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,5,,62,8.7
+19/03/2011,CHIFF,Chiffchaff,Phylloscopus collybita,N,6,M,62,7.7
+19/03/2012,CHIFF,Chiffchaff,Phylloscopus collybita,N,6,,62,9.2
+23/05/2015,GRETI,Great tit,Parus major,N,1,,23,17
+23/05/2015,GRETI,Great tit,Parus major,N,1,,24,17.2
+23/05/2015,GRETI,Great tit,Parus major,N,1,,24,16.4
+23/05/2015,GRETI,Great tit,Parus major,N,1,,24,18.1
+23/05/2015,GRETI,Great tit,Parus major,N,1,,23,16.7
+18/12/2011,GRETI,Great tit,Parus major,R,2,F,73,18.9
+20/11/2010,GRETI,Great tit,Parus major,N,3,F,73,18.2
+20/11/2010,GRETI,Great tit,Parus major,N,3,M,75,18.1
+11/12/2010,GRETI,Great tit,Parus major,R,3,M,75,18
+11/12/2010,GRETI,Great tit,Parus major,R,3,M,76,19.2
+19/06/2011,GRETI,Great tit,Parus major,N,3,J,77,17
+19/06/2011,GRETI,Great tit,Parus major,N,3,J,71,14.2
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,68,18.1
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,74,16.7
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,75,16.7
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,75,16
+26/06/2011,GRETI,Great tit,Parus major,N,3,F,72,15.9
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,78,18.4
+26/06/2011,GRETI,Great tit,Parus major,N,3,J,73,17.1
+07/08/2011,GRETI,Great tit,Parus major,N,3,F,73,16.5
+07/08/2011,GRETI,Great tit,Parus major,N,3,J,78,18
+13/08/2011,GRETI,Great tit,Parus major,N,3,F,74,19.1
+13/08/2011,GRETI,Great tit,Parus major,N,3,J,74,18.6
+20/10/2011,GRETI,Great tit,Parus major,N,3,M,77,19
+18/12/2011,GRETI,Great tit,Parus major,R,3,M,78,21
+20/06/2014,GRETI,Great tit,Parus major,R,3,J,68,17.1
+20/06/2014,GRETI,Great tit,Parus major,R,3,J,68,17.1
+20/06/2014,GRETI,Great tit,Parus major,R,3,J,66,16.4
+20/06/2014,GRETI,Great tit,Parus major,R,3,J,66,14.8
+20/11/2010,GRETI,Great tit,Parus major,R,4,F,73,17.6
+20/11/2010,GRETI,Great tit,Parus major,R,4,F,77,18.8
+11/12/2010,GRETI,Great tit,Parus major,R,4,M,78,20.4
+11/12/2010,GRETI,Great tit,Parus major,N,4,F,72,15.9
+11/12/2010,GRETI,Great tit,Parus major,R,4,M,78,15.8
+12/02/2011,GRETI,Great tit,Parus major,N,5,M,73,18.4
+12/02/2011,GRETI,Great tit,Parus major,N,5,M,80,20.1
+12/02/2011,GRETI,Great tit,Parus major,R,5,M,77,18.8
+12/02/2011,GRETI,Great tit,Parus major,N,5,F,71,17.1
+12/02/2011,GRETI,Great tit,Parus major,N,5,M,76,18.9
+12/02/2011,GRETI,Great tit,Parus major,N,5,F,72,16.7
+12/02/2011,GRETI,Great tit,Parus major,N,5,M,74,19.2
+12/02/2011,GRETI,Great tit,Parus major,R,5,M,75,19
+27/02/2011,GRETI,Great tit,Parus major,R,5,M,75,18.1
+27/02/2011,GRETI,Great tit,Parus major,N,5,F,73,16.5
+27/02/2011,GRETI,Great tit,Parus major,N,5,M,77,18.2
+27/02/2011,GRETI,Great tit,Parus major,N,5,M,74,17.3
+27/02/2011,GRETI,Great tit,Parus major,N,5,M,74,20.2
+27/02/2011,GRETI,Great tit,Parus major,R,5,F,74,15.7
+27/02/2011,GRETI,Great tit,Parus major,N,5,F,74,17.2
+27/02/2011,GRETI,Great tit,Parus major,N,5,F,74,16.2
+27/02/2011,GRETI,Great tit,Parus major,R,5,F,73,17.4
+19/03/2011,GRETI,Great tit,Parus major,N,5,F,72,17.8
+07/05/2011,GRETI,Great tit,Parus major,N,5,F,74,21.7
+04/02/2012,GRETI,Great tit,Parus major,N,5,F,73,17.9
+04/02/2012,GRETI,Great tit,Parus major,R,5,M,74,19
+04/02/2012,GRETI,Great tit,Parus major,R,5,M,76,18.4
+04/02/2012,GRETI,Great tit,Parus major,R,5,M,76,17.1
+04/02/2012,GRETI,Great tit,Parus major,R,5,F,76,17.8
+12/05/2013,GRETI,Great tit,Parus major,N,5,F,71,21.1
+12/05/2013,GRETI,Great tit,Parus major,N,5,F,70,17.7
+23/09/2013,GRETI,Great tit,Parus major,N,5,F,71,17.5
+13/03/2014,GRETI,Great tit,Parus major,N,5,F,74,16.1
+12/02/2011,GRETI,Great tit,Parus major,R,6,F,73,17.8
+12/02/2011,GRETI,Great tit,Parus major,R,6,M,79,19.1
+12/02/2011,GRETI,Great tit,Parus major,R,6,F,75,18
+12/02/2011,GRETI,Great tit,Parus major,N,6,F,73,17.9
+19/03/2011,GRETI,Great tit,Parus major,N,6,F,73,16.1
+07/05/2011,GRETI,Great tit,Parus major,N,6,F,74,19.3
+07/05/2011,GRETI,Great tit,Parus major,R,6,M,79,19.4
+04/02/2012,GRETI,Great tit,Parus major,R,6,F,74,17.9
+04/02/2012,GRETI,Great tit,Parus major,N,6,F,74,18.3
+04/02/2012,GRETI,Great tit,Parus major,N,6,F,75,18
+04/02/2012,GRETI,Great tit,Parus major,R,6,M,78,20
+04/02/2012,GRETI,Great tit,Parus major,N,6,M,75,20.5
+12/05/2013,GRETI,Great tit,Parus major,N,6,M,76,18.9
+12/05/2013,GRETI,Great tit,Parus major,N,6,M,76,19
+20/06/2014,GRETI,Great tit,Parus major,N,6,F,75,16.8
+20/06/2014,GRETI,Great tit,Parus major,N,6,M,75,17.6
+23/05/2015,GRETI,Great tit,Parus major,N,6,F,73,17.9
+26/06/2011,GREWO,Green woodpecker,Picus viridis,N,6,F,163,190
+20/06/2014,ROBIN,Robin,Erithacus rubecula,N,1,J,72,17.8
+28/05/2004,ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.6
+28/05/2004,ROBIN,Robin,Erithacus rubecula,N,3,J,73,17.9
+28/05/2004,ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.2
+28/05/2004,ROBIN,Robin,Erithacus rubecula,N,3,J,71,18.3
+28/05/2004,ROBIN,Robin,Erithacus rubecula,N,3,J,73,18.2
+11/12/2010,ROBIN,Robin,Erithacus rubecula,R,3,,71,18.2
+11/12/2010,ROBIN,Robin,Erithacus rubecula,R,3,,75,19.3
+19/06/2011,ROBIN,Robin,Erithacus rubecula,N,3,J,75,16.2
+26/06/2011,ROBIN,Robin,Erithacus rubecula,N,3,J,73,19
+01/07/2011,ROBIN,Robin,Erithacus rubecula,N,3,J,72,18.7
+07/08/2011,ROBIN,Robin,Erithacus rubecula,N,3,,72,16.7
+07/08/2011,ROBIN,Robin,Erithacus rubecula,R,3,J,73,18.8
+19/05/2012,ROBIN,Robin,Erithacus rubecula,N,3,J,72,18.2
+27/07/2013,ROBIN,Robin,Erithacus rubecula,N,3,J,73,19.7
+27/07/2013,ROBIN,Robin,Erithacus rubecula,N,3,J,74,17.2
+22/09/2013,ROBIN,Robin,Erithacus rubecula,N,3,,71,17
+22/09/2013,ROBIN,Robin,Erithacus rubecula,N,3,J,71,19.2
+20/06/2014,ROBIN,Robin,Erithacus rubecula,N,3,J,75,18.4
+20/10/2011,ROBIN,Robin,Erithacus rubecula,N,4,,71,17.3
+11/02/2012,ROBIN,Robin,Erithacus rubecula,R,4,,71,22.3
+24/05/2012,ROBIN,Robin,Erithacus rubecula,N,4,,77,19.7
+30/01/2011,ROBIN,Robin,Erithacus rubecula,N,5,,72,17.8
+12/02/2011,ROBIN,Robin,Erithacus rubecula,N,5,,72,18.7
+09/04/2011,ROBIN,Robin,Erithacus rubecula,N,5,M,74,18.1
+01/05/2011,ROBIN,Robin,Erithacus rubecula,R,5,M,72,16.4
+24/05/2012,ROBIN,Robin,Erithacus rubecula,N,5,,75,20.5
+12/05/2013,ROBIN,Robin,Erithacus rubecula,N,5,F,72,19.7
+19/05/2013,ROBIN,Robin,Erithacus rubecula,N,5,M,74,16.9
+19/05/2013,ROBIN,Robin,Erithacus rubecula,N,5,F,71,20.6
+26/05/2013,ROBIN,Robin,Erithacus rubecula,R,5,F,71,24.3
+23/05/2015,ROBIN,Robin,Erithacus rubecula,N,5,F,71,18.3
+23/05/2015,ROBIN,Robin,Erithacus rubecula,N,5,M,68,16.2
+12/02/2011,ROBIN,Robin,Erithacus rubecula,R,6,,74,18.5
+12/02/2011,ROBIN,Robin,Erithacus rubecula,N,6,,74,19
+01/07/2011,ROBIN,Robin,Erithacus rubecula,R,6,M,74,17.2
+22/09/2013,ROBIN,Robin,Erithacus rubecula,N,6,M,75,18.5
+22/09/2013,ROBIN,Robin,Erithacus rubecula,N,6,,72,18.2
+19/06/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,50,9.6
+19/06/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,47,8.2
+26/06/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,45,10.2
+01/07/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,45,7.8
+01/07/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,52,10.2
+07/08/2011,WREN,Wren,Troglodytes troglodytes,R,3,J,51,10.9
+13/08/2011,WREN,Wren,Troglodytes troglodytes,N,3,J,51,10.1
+20/10/2011,WREN,Wren,Troglodytes troglodytes,N,3,,46,8.1
+05/11/2011,WREN,Wren,Troglodytes troglodytes,N,3,,46,8.2
+24/05/2012,WREN,Wren,Troglodytes troglodytes,N,3,,49,10.1
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,3,,49,10.8
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,3,J,49,10.4
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,3,J,48,10.2
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,4,,51,11.5
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,4,,46,10.6
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,4,,50,10.2
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,4,F,45,9.7
+27/02/2011,WREN,Wren,Troglodytes troglodytes,R,5,,50,11.7
+21/04/2012,WREN,Wren,Troglodytes troglodytes,N,5,F,47,10.4
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,5,,50,10.5
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,5,F,49,10.8
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,F,49,10.5
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,M,43,8.9
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,M,50,12.1
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,F,52,11.6
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,,46,11
+23/05/2015,WREN,Wren,Troglodytes troglodytes,N,5,,50,11.6
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,6,,49,10.6
+20/06/2014,WREN,Wren,Troglodytes troglodytes,N,6,F,46,10.3
+21/04/12,BLACA,Blackcap,Sylvia atricapilla,N,5,M,72,23.1

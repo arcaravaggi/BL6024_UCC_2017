@@ -46,7 +46,7 @@
   </aside>
   <hgroup class="auto-fadein">
     <h1>BL6024 - Quantitative Skills for Biologists using R</h1>
-    <h2>Lecture XX: Subtitle</h2>
+    <h2>Lecture 4: Linear regression</h2>
     <p><br/></p>
   </hgroup>
   <article></article>  
@@ -56,20 +56,1968 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Topics covered today</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>Choosing the right kind of statistical analysis</li>
+<li>Theory of linear regression</li>
+</ul>
+
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Choosing the right kind of statistical analysis</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li><p>One of hardest parts of statistical modelling is getting started, i.e. choosing the right kind of statistical analysis</p></li>
+<li><p>Choice depends on nature of your data and the particular question(s) you are trying to answer</p></li>
+<li><p>Essential to answer the following:</p></li>
+</ul>
+
+<ol>
+<li>Which of your variables is your response variable?</li>
+<li>Which are the explanatory variables?</li>
+<li>Are the explanatory variables continuous, or categorical, or a mixture of both?</li>
+<li>What kind of response variable do you have: continuous, count, proportion, a time at death, or a category?<br></li>
+</ol>
+
   </article>
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Type of test depends on nature of explanatory and response variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/types of response and explanatory variables.jpg" style="height:450px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Regression analysis is the statistical method you use when both the response variable and the explanatory variable are <strong>continuous</strong> (i.e. real numbers with decimal places - things like heights, weights, volumes, or temperatures).
+<img src="assets/fig/fig1-1.png" title="plot of chunk fig1" alt="plot of chunk fig1" style="display: block; margin: auto;" /></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Linear regression comes in different flavours:</p>
+
+<ul>
+<li><strong><code>linear regression</code></strong> (the simplest, and much the most frequently used); </li>
+<li><strong><code>polynomial regression</code></strong> (often used to test for non-linearity in a relationship); </li>
+<li><code>piecewise regression</code> (two or more adjacent straight lines); </li>
+<li><code>robust regression</code> (models that are less sensitive to outliers); </li>
+<li><strong><code>multiple regression</code></strong> (where there are numerous explanatory variables); </li>
+<li><code>non-linear regression</code> (to fit a specified non-linear model to data); </li>
+<li><code>non-parametric regression</code> (used when there is no obvious functional form).</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The essence of regression analysis is using sample data to estimate parameter values and their standard errors. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The essence of regression analysis is using sample data to estimate parameter values and their standard errors. </p>
+
+<p>First, however, we need to select a model which describes the relationship between the response variable and the explanatory variable(s). </p>
+
+<p>The simplest of all is the linear model:</p>
+
+<p>\[y = a + bx\]</p>
+
+<p>There are 2 <strong>variables</strong> (<em>\(y\)</em> and <em>\(x\)</em>) and 2 <strong>paramaters</strong> (<em>\(a\)</em> and <em>\(b\)</em>)</p>
+
+<p>The intercept is <strong>\(a\)</strong> (the value of \(y\) when \(x\)=0)</p>
+
+<p>The slope is <strong>\(b\)</strong>  (the change in \(y\) divided by the change in \(x\) which brought it about)</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Let&#39;s start with an example which shows the growth of caterpillars fed on experimental diets differing in their tannin content (see Chapter 10 of Crawley 2007 <em>The R Book</em>):</p>
+
+<pre><code class="r">reg.data&lt;-read.table(&quot;datasets\\regression.txt&quot;,header=T) 
+str(reg.data)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    9 obs. of  2 variables:
+##  $ growth: int  12 10 8 11 6 7 2 3 3
+##  $ tannin: int  0 1 2 3 4 5 6 7 8
+</code></pre>
+
+<pre><code class="r">names(reg.data)
+</code></pre>
+
+<pre><code>## [1] &quot;growth&quot; &quot;tannin&quot;
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">with(reg.data, 
+     plot(tannin,growth,pch=1, 
+          cex.lab=2, cex.axis=1.5, cex=1.5))
+</code></pre>
+
+<p><img src="assets/fig/fig2-1.png" title="plot of chunk fig2" alt="plot of chunk fig2" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br></p>
+
+<p>The higher the percentage of tannin in the diet, the more slowly the caterpillars grew. </p>
+
+<p>One can get a crude estimate of the parameter values by eye.</p>
+
+<p><strong>Slope</strong> looks like around -10/8=  -1.25 </p>
+
+<p><strong>Intercept</strong> looks like around 12. </p>
+
+<p>So: \[y \approx 12.0 -1.25x\]</p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>But what we want is an <em>objective method</em> of computing parameter estimates from the data that are in some sense the &#39;best&#39; estimates of the parameters for these data and this particular model. </p>
+
+<ul>
+<li>Convention in modern statistics is to use the <strong>maximum likelihood (ML) estimates</strong> of the parameters as providing the &#39;best&#39; estimates. That is:</li>
+</ul>
+
+<p><br>
+<strong>Given the data, and having selected a linear model, we want to find the values of the slope and intercept that make the data most likely</strong></p>
+
+<p><br>
+The <strong>method of least squares</strong> gives the ML estimates, under the following set of assumptions:</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Theory of linear regression</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><br></p>
+
+<ul>
+<li>The variance in \(y\) is constant (i.e. the spread does not change as \(y\) gets bigger). </li>
+<li>The explanatory variable, \(x\), is measured without error. </li>
+<li>The difference between a measured value of \(y\) and the value predicted by the model for the same value of \(x\) is called a residual. </li>
+<li>Residuals are measured on the scale of \(y\) (i.e. parallel to the \(y\) axis). </li>
+<li>The residuals are normally distributed.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/fig3-1.png" title="plot of chunk fig3" alt="plot of chunk fig3" style="display: block; margin: auto 0 auto auto;" />
+\[d = y -\hat{y}\]
+\[d = y -(a+bx) = y - a - bx\]</p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The sum of the squares of these distances (i.e. residuals) provides a measure of lack of fit
+\[\sum{d^{2}} = \sum{({y-\hat {y}})^2}\]</p>
+
+<p><br></p>
+
+<p>\[     = \sum{(y-a-bx)^2}\]</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>The best fit line is defined as passing through the point defined by the mean value of \(x\) and the mean value of \(y\), i.e. \((\bar x, \bar y)\).</p>
+
+<p><img src="assets/fig/fig4-1.png" title="plot of chunk fig4" alt="plot of chunk fig4" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Imagine pivoting the line around this mean: what would happen to the sum of squares?</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>The best fit line is defined as passing through the point defined by the mean value of \(x\) and the mean value of \(y\), i.e. \((\bar x, \bar y)\).</p>
+
+<p><img src="assets/fig/fig5-1.png" title="plot of chunk fig5" alt="plot of chunk fig5" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Imagine pivoting the line around this mean: what would happen to the sum of squares?</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>The best fit line is defined as passing through the point defined by the mean value of \(x\) and the mean value of \(y\), i.e. \((\bar x, \bar y)\).</p>
+
+<p><img src="assets/fig/fig6-1.png" title="plot of chunk fig6" alt="plot of chunk fig6" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Imagine pivoting the line around this mean: what would happen to the sum of squares?</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>The best fit line is defined as passing through the point defined by the mean value of \(x\) and the mean value of \(y\), i.e. \((\bar x, \bar y)\).</p>
+
+<p><img src="assets/fig/fig7-1.png" title="plot of chunk fig7" alt="plot of chunk fig7" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Imagine pivoting the line around this mean: what would happen to the sum of squares?</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>The best fit line is defined as passing through the point defined by the mean value of \(x\) and the mean value of \(y\), i.e. \((\bar x, \bar y)\).</p>
+
+<p><img src="assets/fig/fig8-1.png" title="plot of chunk fig8" alt="plot of chunk fig8" style="display: block; margin: auto auto auto 0;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>Imagine pivoting the line around this mean: what would happen to the sum of squares?</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/sum of squares graph.jpg" style="height:300px"></img>
+</div>
+
+<ul>
+<li>The ML estimate of the slope is the value of b associated with the <strong>minimum
+value</strong> of the sum of the squares of the residuals</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>With these three quantities...</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSX_SSY_SSXY.png" style="height:150px"></img>
+</div>
+
+<p><br>
+... we can easily calculate the ML esimate of the parameters and their standard errors.</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>With these three quantities...</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSX_SSY_SSXY.png" style="height:150px"></img>
+</div>
+
+<p><br>
+... we can easily calculate the ML esimate of the parameters and their standard errors.
+The <strong>ML estimate of the slope</strong> is just:</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/MLE_reg_slope.png" style="height:100px"></img>
+</div>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>With these three quantities...</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSX_SSY_SSXY.png" style="height:150px"></img>
+</div>
+
+<p><br>
+... we can easily calculate the ML esimate of the parameters and their standard errors.
+The <strong>ML estimate of the slope</strong> is just:</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/MLE_reg_slope.png" style="height:100px"></img>
+</div>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>One part of the definition of the best-fit straight line is that it passes through the the mean values of \(x\) and \(y\). Since we know that \(y = a + bx\), it must be the case that: 
+\[\bar{y} = a + b\bar{x}\]
+and so the <strong>ML estimate of the intercept</strong> is simply:
+\[ a = \bar{y} - b\bar{x}\]</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The famous sum of squares</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p>With these three quantities...</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSX_SSY_SSXY.png" style="height:150px"></img>
+</div>
+
+<p><br>
+... we can easily calculate the ML esimate of the parameters and their standard errors.
+The <strong>ML estimate of the slope</strong> is just:</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/MLE_reg_slope.png" style="height:100px"></img>
+</div>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>One part of the definition of the best-fit straight line is that it passes through the the mean values of x and y. Since we know that <em>y = a + bx</em>, it must be the case that: 
+\[\bar{y} = a + b\bar{x}\]
+and so the <strong>ML estimate of the intercept</strong> is simply:
+\[ a = \bar{y} - b\bar{x}\]
+And the standard errors:
+<div style='text-align: center;'>
+<img src="assets/img/SE_reg_params.jpg" style="height:125px"></img>
+</div></li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Linear regression in R</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The function for carrying out linear regression in R is lm (which stands for &#39;linear model&#39;).</p>
+
+<pre><code class="r">lm(growth ~ tannin, data=reg.data)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = growth ~ tannin, data = reg.data)
+## 
+## Coefficients:
+## (Intercept)       tannin  
+##      11.756       -1.217
+</code></pre>
+
+<p>We can now write the maximum likelihood equation like this:
+\[growth = 11.756 - 1.217 \times  tannin\]</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Degree of scatter</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There is another very important issue that needs to be considered, because two data sets
+with exactly the same slope and intercept could look quite different:</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/degree_of_scatter.png" style="height:300px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Degree of scatter</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There is another very important issue that needs to be considered, because two data sets
+with exactly the same slope and intercept could look quite different:</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/degree_of_scatter.png" style="height:300px"></img>
+</div>
+
+<p>We need a way to quantify the degree of scatter, so that the graph on the left has a high
+value and the graph on the right has a low value.
+We can use our sum of squares of the residuals! Also known as the <strong>error sum of squares, SSE</strong>.</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The coefficient of determination</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>By tradition, however, when talking about the degree of scatter we actually quantify the <em>lack of scatter</em>
+<br></p>
+
+<p>Here we use the coefficient of determination, more commonly known simply as &#39;r squared&#39;:<br>
+<strong>r<sup>2</sup></strong> = <em>the fraction of the total variation in y that is explained by variation in x</em></p>
+
+<p>\[ r^{2}=\frac{SSY-SSE}{SSY} \]</p>
+
+<div style='text-align: center;'>
+    <img src="assets/img/r_squared.png" style="height:200px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The coefficient of determination</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>In R, a null model can be fitted in which growth is described by an intercept only. </li>
+</ul>
+
+<pre><code class="r"># This gives SSY. Note than in R, the intercept is called parameter 1: 
+deviance(lm(growth~1, data=reg.data))
+</code></pre>
+
+<pre><code>## [1] 108.8889
+</code></pre>
+
+<ul>
+<li>The value of <em>SSE</em> can be extracted very simply from the regression model:</li>
+</ul>
+
+<pre><code class="r">deviance(lm(growth~tannin, data=reg.data))
+</code></pre>
+
+<pre><code>## [1] 20.07222
+</code></pre>
+
+<p>\[ r^2 = \frac {108.8889 - 20.07222}{108.8889} = 0.8156633 \]</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The coefficient of determination</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>But of course, the value of <em>r<sup>2</sup></em> can be extracted directly from the model:</li>
+</ul>
+
+<pre><code class="r">#Note the use of [[8]] to subset the output of a list:
+summary(lm(growth~tannin, data=reg.data))[[8]]
+</code></pre>
+
+<pre><code>## [1] 0.8156633
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The coefficient of determination</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>But of course, the value of <em>r<sup>2</sup></em> can be extracted directly from the model:</li>
+</ul>
+
+<pre><code class="r">#Note the use of [[8]] to subset the output of a list:
+summary(lm(growth~tannin, data=reg.data))[[8]]
+</code></pre>
+
+<pre><code>## [1] 0.8156633
+</code></pre>
+
+<ul>
+<li>The correlation coefficient, <em>r</em>, is given by:
+\[ r = \frac {SSXY}{\sqrt {SSX \times SSY}} = \frac {cov(x,y)}{\sqrt {var(x)var(y)}} \]</li>
+<li>Remember, \(var(x)=SSX/(n-1)\) and \(covar(x,y)=SSXY/(n-1)\) </li>
+<li><em>Why n-1?</em> Good question! See here: <a href="https://tinyurl.com/y8rel9lb">https://tinyurl.com/y8rel9lb</a></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of variance in regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The idea is simple: we take the total variation in \(y\), <em>SSY</em>, and partition it into components
+that tell us about the explanatory power of our model.</li>
+<li><strong><em>SSY</em></strong> = <strong><em>SSR</em></strong> <em>(REGRESSION SUM OF SQUARES)</em> + <strong><em>SSE</em></strong> <em>(ERROR (RESIDUAL) SUM OF SQUARES)</em></li>
+</ul>
+
+<pre><code class="r">(sse&lt;-deviance(lm(growth~tannin, data=reg.data)))
+</code></pre>
+
+<pre><code>## [1] 20.07222
+</code></pre>
+
+<pre><code class="r">(ssy&lt;-deviance(lm(growth~1, data=reg.data)))
+</code></pre>
+
+<pre><code>## [1] 108.8889
+</code></pre>
+
+<pre><code class="r">(ssr&lt;-ssy-sse)
+</code></pre>
+
+<pre><code>## [1] 88.81667
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of variance in regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>We now have all the sums of squares, but what about the degrees of freedom?</li>
+<li>Remember, degrees of freedom equals the <em>number of data points minus the number of parameters estimated from the data</em>, i.e. <strong><em>df = n - p</em></strong></li>
+<li>To calculate <em>SSY</em>, we had to estimate 1 parameter - the overall mean - so the total <em>df</em> = n-1</li>
+<li>SSE (error) was calculated after 2 parameters (intercept and slope) had been estimated from the data, so error <em>df</em> = n-2</li>
+<li>Finally, the regression model added just one parameter, the slope <em>b</em>, compared with the null
+model, so there is one regression degree of freedom</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/anova_reg_table.png" style="height:200px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of variance in regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">mod&lt;- lm(growth~tannin, data=reg.data)
+anova(mod)
+</code></pre>
+
+<pre><code>## Analysis of Variance Table
+## 
+## Response: growth
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## tannin     1 88.817  88.817  30.974 0.0008461 ***
+## Residuals  7 20.072   2.867                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
+
+<pre><code class="r"># note the same output can be obtained using summary.aov(mod)
+</code></pre>
+
+<ul>
+<li>The <em>F ratio</em> is sufficiently large that we can reject the null hypothesis</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of variance in regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To calculate the critical value of <em>F</em>, expected by chance alone, we use the quantiles of the <em>F</em> distibution, with 1 d.f. in the numerator and 7 d.f. in the denominator. We have to &#39;put up with&#39; some arbirtary level of uncertainty, which is traditionally set at 5%. Thus we have 95% certainty:</p>
+
+<pre><code class="r">qf(p=0.95, df1=1, df2=7)
+</code></pre>
+
+<pre><code>## [1] 5.591448
+</code></pre>
+
+<p>Or we can ask what is the probability of getting a value for <em>F</em> as big as 30.974 or larger if the null hypothesis is true?</p>
+
+<pre><code class="r">1-pf(q=30.974, df1=1, df2=7)
+</code></pre>
+
+<pre><code>## [1] 0.0008460725
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The <em>summary.lm</em> table</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Of the two sorts of summary table, <em>summary.lm</em> is by far the more informative, because it shows the effect sizes (in this case the slope of the graph) and their unreliability estimates (the standard error of the slope):</li>
+</ul>
+
+<pre><code class="r">summary(lm(growth~tannin, data=reg.data))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/summary_lm.png" style="height:350px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The <em>summary.lm</em> table</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/summary_lm.png" style="height:350px"></img>
+</div>
+
+<ul>
+<li>The residual standard error is the square root of the error variance from the ANOVA table</li>
+<li>Multiple R-squared is the fraction of the total variance explained by the model (<em>SSR/SSY</em> = 0.8157)</li>
+<li>The Adjusted R-squared is based on variances instead of SS, and is given by: (total variance - error variance) / total variance</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Confidence intervals</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>There is a built-in function, <em>confint</em>, which produces 95% confidence intervals for the estimated parameters from the model directly like this:</li>
+</ul>
+
+<pre><code class="r">confint(mod)
+</code></pre>
+
+<pre><code>##                 2.5 %     97.5 %
+## (Intercept)  9.294457 14.2166544
+## tannin      -1.733601 -0.6997325
+</code></pre>
+
+<ul>
+<li>These values are obtained by subtracting from, and adding to, each parameter estimate an interval which is the standard error times Student&#39;s <em>t</em> with 7 degrees of freedom (the appropriate value of <em>t</em> is given by <em>qt</em>(.975, 7) = 2.364624).</li>
+<li>The fact that neither interval includes 0 indicates that both parameter values are significantly different from zero, as
+established by the earlier <em>F</em> tests. </li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Prediction using the fitted model</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>First, we save the results of fitting the model in a named object, which is good practice:</li>
+</ul>
+
+<pre><code class="r"># Note here we call it &quot;model&quot;, but you could call it Paddy if you wanted!!
+model&lt;-lm(growth~tannin, data=reg.data)
+</code></pre>
+
+<ul>
+<li>The object called <em>model</em> can now be used for all sorts of things. We can use the <em>predict</em> function to obtain the predicted growth at different tannin concentrations:</li>
+</ul>
+
+<pre><code class="r">predict(model,list(tannin=5.5))
+</code></pre>
+
+<pre><code>##        1 
+## 5.063889
+</code></pre>
+
+<pre><code class="r">predict(model,list(tannin=c(3.3,4.4,5.5,6.6)))
+</code></pre>
+
+<pre><code>##        1        2        3        4 
+## 7.740556 6.402222 5.063889 3.725556
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Prediction using the fitted model</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Note that the default for this function is to predict the values of the response (\(y\)) variable at the observed values of the \(x\) variable (here = <em>tannin</em>):</li>
+</ul>
+
+<pre><code class="r">predict(model)
+</code></pre>
+
+<pre><code>##         1         2         3         4         5         6         7 
+## 11.755556 10.538889  9.322222  8.105556  6.888889  5.672222  4.455556 
+##         8         9 
+##  3.238889  2.022222
+</code></pre>
+
+<ul>
+<li>The following code can be used to draw a smooth fitted line through the data (works for more complex models too):</li>
+</ul>
+
+<pre><code class="r">xv&lt;-seq(from=min(reg.data$tannin, na.rm=T), to=max(reg.data$tannin, na.rm=T), length.out=100)
+p&lt;- as.data.frame(predict(model,list(tannin=xv), interval = &quot;confidence&quot;))
+with(reg.data, plot(growth ~ tannin))
+lines(xv, p$fit); lines(xv, p$lwr, lty=2); lines(xv,p$upr, lty=2)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model checking</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This is an <em>indepensable</em> step in the process - you must expose the model to critical appraisal!!</li>
+<li>Key assumptions we really want to be sure about are <strong>constancy of variance</strong> and <strong>normality of
+errors</strong></li>
+<li>Base R has built-in model checking plots for this:</li>
+</ul>
+
+<pre><code class="r">plot(model)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model checking</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model checking</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>What is the effect of removing the influential data point #7?</li>
+</ul>
+
+<pre><code class="r">model2&lt;-update(model,
+  subset=(reg.data$tannin != reg.data$tannin[7]))
+summary(model2)
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/model2.png" style="height:100px"></img>
+</div>
+
+<pre><code class="r">summary(model)
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/model1.png" style="height:100px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Heteroscedasticity</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/heteroscedasticity.png" style="height:500px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Mis-specified model:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Should also plot the residuals against the explanatory variables, to check for e.g. evidence of curvature:</li>
+</ul>
+
+<pre><code class="r">par(mfrow=c(1,2))
+plot(resid(model) ~ reg.data$tannin)
+x &lt;- seq(1,10,length.out=50);  y &lt;- 0.5*x^2+rnorm(length(x),0,2)
+plot(resid(lm(y~x)) ~ x)
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/curvature_check.png" style="height:300px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Correctly specified model:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">model2&lt;- lm(y ~ x + I(x^2)) ;  summary(model2)
+plot(y ~ x)
+plot(resid(model2) ~ x)
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/curve_model.png" style="height:100px"></img>
+</div>
+
+<div style='text-align: center;'>
+    <img src="assets/img/curve_plot.png" style="height:300px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Non-normality of errors</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Here we are going to generate a series of data sets where we introduce different but known kinds of non-normal errors</li>
+<li>We will then plot them using a simple home-made function (Crawley 2007):</li>
+</ul>
+
+<pre><code class="r">mcheck &lt;-function (obj, ...) {
+rs&lt;-obj$resid
+fv&lt;-obj$fitted
+par(mfrow=c(1,2))
+plot(fv,rs,xlab=&quot;Fitted values&quot;,ylab=&quot;Residuals&quot;)
+abline(h=0, lty=2)
+qqnorm(rs,xlab=&quot;Normal scores&quot;,ylab=&quot;Ordered residuals&quot;,main=&quot;&quot;)
+qqline(rs,lty=2)
+par(mfrow=c(1,1))
+invisible(NULL) }
+</code></pre>
+
+<ul>
+<li>Idea is to see what patterns are generated in normal plots</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example 1: normal errors!!</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Let&#39;s first get a sense of how variable these plots can look when the errors are in fact normally distributed</li>
+<li>First we need a vector of \(x\) values. Then we manufacture the response variables according to the equation:
+\[ y = 10 + x + \varepsilon \]</li>
+</ul>
+
+<pre><code class="r">x&lt;-0:30 ; length(x)
+</code></pre>
+
+<pre><code>## [1] 31
+</code></pre>
+
+<pre><code class="r">e&lt;-rnorm(31,mean=0,sd=5)
+yn&lt;-10+x+e
+mn&lt;-lm(yn ~ x)
+mcheck(mn)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example 1: normal errors!!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-33-1.png" alt="plot of chunk unnamed-chunk-33"></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Now you guys try different types of non-normal errors:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Try running the <em>mcheck</em> function now on data generated using the following types of errors instead:</li>
+</ul>
+
+<pre><code class="r"># Uniform errors:
+eu&lt;-20*(runif(31)-0.5)
+# Negative binomial errors:
+enb&lt;-rnbinom(31,2,.3)
+# Gamma errors and increasing variance
+eg&lt;-rgamma(31,1,1/x)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Introducing... general linear models</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>General linear models are a class of statistical model that includes regression, multiple regression, ANOVA and ANCOVA. </li>
+<li>Share a common framework for estimation (leaset squares) and a common set of assumptions, centred around the idea of normally distributed residuals</li>
+<li>Not to be confused with the <em>generalised</em> linear model, known as the <strong>GLM</strong> (where key assumptions about normality are relaxed)</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Introducing... general linear models</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>General linear models are a class of statistical model that includes regression, multiple regression, ANOVA and ANCOVA. </li>
+<li>Share a common framework for estimation (leaset squares) and a common set of assumptions, centred around the idea of normally distributed residuals</li>
+<li>Not to be confused with the <em>generalised</em> linear model, known as the <strong>GLM</strong> (where key assumptions about normality are relaxed)</li>
+<li>A very sensible workflow (see the excellent Beckerman, Childs &amp; Petchey 2017 book) for general linear models (and indeed all models) is this:</li>
+</ul>
+
+<p><strong>Plot  -&gt;   Model   -&gt;   Check Assumptions   -&gt;    Interpret   -&gt;    Plot Again</strong> </p>
+
+<ul>
+<li>We&#39;ll now go through another linear regression example, to hammer this home... but this time using super-handy functions from the <em>dplyr</em> and <em>ggplot2</em> packages!</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Worklow for general linear models</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>We&#39;ll use the plant growth dataset used also by Beckerman, Childs &amp; Petchey (2017). </li>
+<li>Our basic question is whether plant growth rates vary with soil moisture content?</li>
+</ul>
+
+<pre><code class="r">#################################################################
+# Plant growth linear model example
+#################################################################
+
+# First we clear the decks:
+rm(list = ls())
+
+# Load the necessary libraries:
+library(dplyr)
+library(ggplot2)
+
+# import the data:
+plant_gr &lt;- read.csv(&quot;Datasets/plant.growth.rate.csv&quot;)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Worklow for general linear models</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Use <strong>glimpse()</strong> to inspect the data:</li>
+</ul>
+
+<pre><code class="r">glimpse(plant_gr)
+</code></pre>
+
+<pre><code>## Observations: 50
+## Variables: 2
+## $ soil.moisture.content &lt;dbl&gt; 0.4696876, 0.5413106, 1.6979915, 0.82557...
+## $ plant.growth.rate     &lt;dbl&gt; 21.31695, 27.03072, 38.98937, 30.19529, ...
+</code></pre>
+
+<ul>
+<li>All seems to be in order.  Next step then is to make a picture that reflects our question...which in this case simply means plotting <em>plant.growth.rate</em> against <em>soil.moisture.content</em></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (1) Plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">ggplot(plant_gr,
+       aes(x = soil.moisture.content, y = plant.growth.rate)) + 
+        geom_point(size=3) + 
+        ylab(&quot;Plant Growth Rate (mm/week)&quot;) + 
+        theme_bw() + 
+        theme(axis.title=element_text(size=14))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ggplot_plant_growth.png" style="height:300px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (2) Model</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Now we fit a simple regression model using <em>lm()</em></li>
+</ul>
+
+<pre><code class="r"># Fit LM:
+model_pgr &lt;- lm(plant.growth.rate ~ soil.moisture.content, 
+                data = plant_gr)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (3) Check Assumptions:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Although temptation is to rush ahead and check the model results, we must first check the assumptions of the linear model.</li>
+<li><strong><em>ggplot2</em></strong> needs a little push with this, as it doesn&#39;t know what linear models are.</li>
+<li>Help comes from <strong><em>ggfortify</em></strong>, and its <strong>autoplot()</strong> function, which, when given a linear model created by <strong>lm()</strong>, produces four very useful figures (same 4 as produced by <strong>plot()</strong> in base R)</li>
+</ul>
+
+<pre><code class="r">library(ggfortify)
+autoplot(model_pgr, smooth.colour = NA)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (3) Check Assumptions:</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/autoplot_pg.png" style="height:530px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (4) Intepret:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Now we are ready to see whether we can reject the null hypothesis that soil moisture content has no effecft on plant growth rate:</li>
+</ul>
+
+<pre><code class="r">anova(model_pgr)
+</code></pre>
+
+<pre><code>## Analysis of Variance Table
+## 
+## Response: plant.growth.rate
+##                       Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## soil.moisture.content  1 2521.15 2521.15  156.08 &lt; 2.2e-16 ***
+## Residuals             48  775.35   16.15                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (4) Intepret:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(model_pgr)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = plant.growth.rate ~ soil.moisture.content, data = plant_gr)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -8.9089 -3.0747  0.2261  2.6567  8.9406 
+## 
+## Coefficients:
+##                       Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)             19.348      1.283   15.08   &lt;2e-16 ***
+## soil.moisture.content   12.750      1.021   12.49   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.019 on 48 degrees of freedom
+## Multiple R-squared:  0.7648, Adjusted R-squared:  0.7599 
+## F-statistic: 156.1 on 1 and 48 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (4) Intepret:</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Recommended way to report this in a paper:</p>
+
+<p>&quot;Soil moisture content had a positive effect on plant growth. For each unit increase in soil moisture, plant growth rate increased by 12.7 mm/week (slope = 12.7, <em>t</em> = 12.5, d.f. = 48, <em>p</em> &lt; 0.001).&quot;</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (5) From stats back to figure:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Our final step in the workflow involves translating the model we have fitted back onto our figure of the raw data:</li>
+</ul>
+
+<pre><code class="r">ggplot(plant_gr, aes(x = soil.moisture.content, y = plant.growth.rate)) + 
+  geom_point() +
+  geom_smooth(method = &#39;lm&#39;) +
+  ylab(&quot;Plant Growth Rate (mm/week)&quot;) +
+  theme_bw() + 
+  theme(axis.title=element_text(size=14))
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Workflow for general LMs: (5) From stats back to figure:</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/ggplot_predict.png" style="height:450px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of variance (ANOVA)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>We use ANOVA when all explanatory variables are categorical</li>
+<li>The explanatory variables are called <strong>factors</strong>, and each factor has two or more <strong><em>levels</em></strong></li>
+<li>When there is a single factor with 3 or more levels we use <strong>one-way ANOVA</strong>.</li>
+<li>If we had a single factor with just 2 levels, we would use a simple <em>t</em> test:
+would give exactly same answer as ANOVA (remember the rule that \(F=t^2\))</li>
+<li>When there are 2 or more factors, we use <strong>two-way or three-way  ANOVA</strong>, etc.</li>
+<li>When there is <strong>replication</strong> at each combination of levels in a multi-way ANOVA, the experiment is called a <strong>factorial design</strong>. Allows us to study <em>interactions</em> between variables, i.e. does the response to one factor depends on the level of another factor?</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The paradox of ANOVA: 
+The idea of analysis of variance is to compare two or more <strong>means</strong>, but it does this by comparing <strong><em>variances</em></strong>. How can that work?</p>
+
+<p>Best illustrated using an example: </p>
+
+<ul>
+<li>An experiment in which crop yields per unit area were measured from 10 randomly selected fields on each of <em>three soil types</em>. </li>
+<li>All fields were sown with the same variety of seed and provided with the same fertilizer and pest control inputs. </li>
+<li>The question is whether soil type significantly affects crop yield, and if so, to what extent?</li>
+</ul>
+
+<pre><code class="r">yields&lt;- read.csv(&quot;datasets/yields.csv&quot;, header=T)
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(yields)
+</code></pre>
+
+<pre><code>##      yield         soil        field     
+##  Min.   : 3.00   clay:10   Min.   : 1.0  
+##  1st Qu.: 9.25   loam:10   1st Qu.: 3.0  
+##  Median :12.00   sand:10   Median : 5.5  
+##  Mean   :11.90             Mean   : 5.5  
+##  3rd Qu.:14.75             3rd Qu.: 8.0  
+##  Max.   :18.00             Max.   :10.0
+</code></pre>
+
+<pre><code class="r">with(yields, tapply(yield, soil, mean))
+</code></pre>
+
+<pre><code>## clay loam sand 
+## 11.5 14.3  9.9
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Before carrying out analysis of variance, we should check for constancy of variance across the three soil types:</p>
+
+<pre><code class="r">with(yields, tapply(yield, soil, var))
+</code></pre>
+
+<pre><code>##      clay      loam      sand 
+## 15.388889  7.122222 12.544444
+</code></pre>
+
+<p>The variances differ by more than a factor of 2. But is this significant? We test for heteroscedasticity using the Fligner-Killeen test of homogeneity of variances:</p>
+
+<pre><code class="r">with(yields,  
+     fligner.test(yield~soil))
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>## 
+##  Fligner-Killeen test of homogeneity of variances
+## 
+## data:  yield by soil
+## Fligner-Killeen:med chi-squared = 0.36507, df = 2, p-value =
+## 0.8332
+</code></pre>
+
+<p>No evidence of any significant difference in variance across the three samples, so it is legitimate to continue
+with our one-way ANOVA!</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/fig/unnamed-chunk-48-1.png" alt="plot of chunk unnamed-chunk-48"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>The analysis of variance involves calculating the total variation in the response variable (yield in this case) and partitioning it (&#39;analysing it&#39;) into informative components. In the simplest case, we partition the total variation into just two components: <strong>explained variation</strong> and <strong>unexplained variation</strong>:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSA_SSE.png" style="height:150px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Explained variation is called the <strong>treatment sum of squares (SSA)</strong> and unexplained variation is called the <strong>error sum of squares</strong> (<strong>SSE</strong>, also known as the residual sum of squares). The unexplained variation is defined as the sum of the squares of the differences between the individual y values and the relevant treatment mean</li>
+<li>\(k\) parameters (where \(k\) = no. of factor levels) were estimated from the data to work out SSE, so \(k\) degrees of freedom are lost in the process</li>
+<li>If each level of the factor has \(n\) replicates, there are \(kn\) data points in total</li>
+<li>So the d.f. associated with <strong>SSE</strong> are \(kn - k = k(n-1)\)</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: center;'>
+    <img src="assets/img/SSE_ANOVA.png" style="height:400px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li><strong>SSY</strong>, the total sum of squares, is calculated simply as the sum of the squares of the residuals of the data points from the overall, or grand, mean:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/SSY_ANOVA.png" style="height:400px"></img>
+</div>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li>One parameter (the grand mean) was estimated in calculating <strong>SSY</strong>, so the d.f. for <strong>SSY</strong> are \(kn-1\) </li>
+</ul>
+
+<p><br></p>
+
+<p><strong>SSA</strong> can then be calculated by simple subtraction:  <strong>SSA = SSY - SSE</strong></p>
+
+<ul>
+<li>There are 3 soil types, so there are 3-1 d.f. for <strong>SSA</strong></li>
+<li>Note that d.f. for <strong>SSA</strong> plus the d.f. for <strong>SSE</strong> must sum to the total d.f.</li>
+<li>i.e. \((k-1)+k(n-1)=kn-1\)</li>
+<li>in this case: \(2+27=29\)</li>
+</ul>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>One-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The extent to which the lines are shorter in <strong>SSE</strong> than in <strong>SSY</strong> is a measure of the significance of the difference between the mean yields on the different soils. </li>
+<li>In the extreme case in which there was no variation between the replicates, then <strong>SSY</strong> is large, but <strong>SSE</strong> is zero:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_extreme.png" style="height:400px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA table for one-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/ANOVA_table.png" style="height:170px"></img>
+</div>
+
+<ul>
+<li>The error variance, \(s^2\), is the residual mean square, sometimes called the <em>&#39;pooled error variance&#39;</em> because it is calculated across all the treatments:</li>
+</ul>
+
+<pre><code class="r">with(yields, tapply(yield, soil, var))
+</code></pre>
+
+<pre><code>##      clay      loam      sand 
+## 15.388889  7.122222 12.544444
+</code></pre>
+
+<pre><code class="r">mean(with(yields, tapply(yield, soil, var)))
+</code></pre>
+
+<pre><code>## [1] 11.68519
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA table for one-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/ANOVA_table.png" style="height:170px"></img>
+</div>
+
+<ul>
+<li>The <strong><em>F</em></strong> <strong>ratio</strong> is the <em>treatment variance</em> divided by the <em>error variance</em>, testing the null hypothesis that the treatment means are all the same.</li>
+<li>If we reject this null hypothesis, we accept the alternative hypothesis that <em>at least one of the means is significantly different from the others</em></li>
+<li>We decide whether the test statistic <em>F</em> =4.24 is big or small by comparing it with the critical value of <em>F</em>, given that there are 2 d.f. in the numerator and 27 d.f. in the denominator:</li>
+</ul>
+
+<pre><code class="r">qf(.95,2,27)
+</code></pre>
+
+<pre><code>## [1] 3.354131
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA table for one-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img src="assets/img/ANOVA_table.png" style="height:170px"></img>
+</div>
+
+<ul>
+<li>The <strong><em>F</em></strong> <strong>ratio</strong> is the <em>treatment variance</em> divided by the <em>error variance</em>, testing the null hypothesis that the treatment means are all the same.</li>
+<li>If we reject this null hypothesis, we accept the alternative hypothesis that <em>at least one of the means is significantly different from the others</em></li>
+<li>We decide whether the test statistic <em>F</em> =4.24 is big or small by comparing it with the critical value of <em>F</em>, given that there are 2 d.f. in the numerator and 27 d.f. in the denominator:</li>
+</ul>
+
+<pre><code class="r">1-pf(4.24,2,27)
+</code></pre>
+
+<pre><code>## [1] 0.02503987
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>ANOVA table for one-way ANOVA</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(aov(yield~soil,data=yields))
+</code></pre>
+
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## soil         2   99.2   49.60   4.245  0.025 *
+## Residuals   27  315.5   11.69                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Model checking for ANOVA:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">plot(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_plotmodel.png" style="height:450px"></img>
+</div>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary.lm(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_summary_lm.png" style="height:200px"></img>
+</div>
+
+<ul>
+<li>This takes the factor level that comes first in the alphabet (here &quot;clay&quot;) as the reference level</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary.lm(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_summary_lm.png" style="height:200px"></img>
+</div>
+
+<ul>
+<li>The effect sizes (i.e. means) of the other factors are then expressed as deviations from this reference level:</li>
+</ul>
+
+<pre><code class="r">with(yields, tapply(yield, soil, mean) - mean(yield[soil==&quot;clay&quot;]))
+</code></pre>
+
+<pre><code>## clay loam sand 
+##  0.0  2.8 -1.6
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary.lm(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_summary_lm.png" style="height:200px"></img>
+</div>
+
+<ul>
+<li>The first row (Intercept) is a mean, so the standard error column in row 1 contains the standard error of a mean. Rows 2 and 3 are differences between means, so their standard error columns contain the <strong>standard error of the difference between two means</strong> (which is a bigger number):
+<div style='text-align: center;'>
+<img src="assets/img/ANOVA_sediff.png" style="height:80px"></img>
+</div></li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary.lm(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_summary_lm.png" style="height:200px"></img>
+</div>
+
+<ul>
+<li>The <strong>t value</strong> is calculated as: <em>Estimate/std. error</em>:</li>
+</ul>
+
+<pre><code class="r">11.5/1.081;    2.8/1.529;    -1.6/1.529
+</code></pre>
+
+<pre><code>## [1] 10.6383
+</code></pre>
+
+<pre><code>## [1] 1.831262
+</code></pre>
+
+<pre><code>## [1] -1.046436
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Interpretation of ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary.lm(aov(yield~soil,data=yields))
+</code></pre>
+
+<div style='text-align: center;'>
+    <img src="assets/img/ANOVA_summary_lm.png" style="height:200px"></img>
+</div>
+
+<ul>
+<li>The only remaining issue is whether <strong>sand</strong> soils yielded significantly less than <strong>loam</strong>. The difference between
+these two means was \(2.8-(-1.6)=4.4\) and so the <em>t value</em> is \(4.4/1.529=2.878\). This is greater than 2 (the rule of thumb for <em>t</em>) so the mean yields of loam and sand seem to be  significantly different. To find the precise <em>p</em> value:</li>
+</ul>
+
+<pre><code class="r">2*(1 - pt(2.878, df = 18))
+</code></pre>
+
+<pre><code>## [1] 0.0100095
+</code></pre>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plotting ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Nice way of plotting the data using <em>ggplot</em>:</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">sumDat &lt;- yields %&gt;% 
+  group_by(soil) %&gt;%
+    summarise(yield = mean(yield))
+
+p&lt;- ggplot(yields, aes(x=soil,y=yield)) + 
+        geom_point(size=5, shape=21, 
+                   fill=&quot;grey&quot;) + 
+        theme_bw() + 
+        theme(axis.title=element_text
+              (size=20)) +
+        theme(axis.text=element_text
+              (size=16)) +
+        coord_flip() 
+p + geom_point(data=sumDat, size=12, 
+               shape=18)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-63-1.png" alt="plot of chunk unnamed-chunk-63"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plotting ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>An alternative way to plot the data is as a bar-plot with error bars (preferred by many journals)</li>
+<li>No simple way of doing this in R (at least in base R)...</li>
+<li>Here&#39;s a function from Crawley R book:</li>
+</ul>
+
+<pre><code class="r">error.bars&lt;-function(yv,z,nn) {
+xv&lt;-
+barplot(yv,ylim=c(0,(max(yv)+max(z))),names=nn,ylab=deparse(substitute(yv)
+))
+g=(max(xv)-min(xv))/50
+for (i in 1:length(xv)) {
+lines(c(xv[i],xv[i]),c(yv[i]+z[i],yv[i]-z[i]))
+lines(c(xv[i]-g,xv[i]+g),c(yv[i]+z[i], yv[i]+z[i]))
+lines(c(xv[i]-g,xv[i]+g),c(yv[i]-z[i], yv[i]-z[i]))
+}}
+</code></pre>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plotting ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Need to decide on what type of error bars. </li>
+<li>E.g. could use the <strong>standard error of a mean</strong> based on the pooled error variance from the ANOVA.</li>
+<li>From previous ANOVA table we found that the pooled error variance \(s^2 = 11.685\)</li>
+<li>There was equal replication (n=10) per factor level, which makes life easier, so the standard error of a mean is \(\sqrt(s^2/n) = \sqrt(11.685/10) = 1.081\)</li>
+<li>We shall draw an error bar up 1.081 from each mean and down by the same distance, so we need 3 values
+for z, one for each bar, each of 1.081:</li>
+</ul>
+
+<pre><code class="r">se&lt;-rep(1.081,3)
+</code></pre>
+
+<ul>
+<li>And we need to provide labels for the five different bars: the factor levels should be good for this:</li>
+</ul>
+
+<pre><code class="r">labels&lt;-as.character(levels(yields$soil))
+</code></pre>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plotting ANOVA results:</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Now we work out the five mean values which will be the heights of the bars, and save them as a vector called <em>Yield</em>:</li>
+</ul>
+
+<pre><code class="r">Yield&lt;-
+  as.vector(with(yields, 
+           tapply(yield,soil,mean)))
+</code></pre>
+
+<ul>
+<li>Finally, we can create the barplot with error bars:</li>
+</ul>
+
+<pre><code class="r">error.bars(Yield,se,labels)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <div style='text-align: center;'>
+    <img src="assets/img/ANOVA_barplot.png" style="height:500px"></img>
+</div>
+
+</div>
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Important note about error bars!!</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>If we use standard error of the means: <em>when the bars overlap this implies that the two means are not significantly different</em></li>
+<li>Because remember the rule of thumb for <em>t</em>: significance requires 2 or more standard errors, and if the bars overlap it means that the difference between the means is <em>less than</em> 2 standard errors.</li>
+<li><strong>PLUS:</strong> when comparing means, we should use the <strong>standard error of the difference between two means</strong> (not the standard error of one mean) in our tests; these bars would be about 1.4 times as long as the bars we have drawn here!</li>
+<li>So we cannot easily conclude that <em>non-overlapping error bars</em> = significant difference! </li>
+<li>Alternativley we could use 95% confidence intervals for the lengths of the bars, which roughly = 2*SE</li>
+<li><strong>But...</strong> if it were the case that the error bars <em>did not overlap</em> when we are using confidence intervals, then that would imply that the means differed by more than <strong>4 standard errors</strong>, and this is a much greater difference than is required to conclude that the means are significantly different...</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Solution = use least significant difference (LSD) bars!</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Let&#39;s revisit the formula for Student&#39;s <em>t</em> test:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/t_formula.png" style="height:70px"></img>
+</div>
+
+<ul>
+<li>We say that the difference is significant when <em>t</em>&gt;2 (by the rule of thumb, or <em>t&gt;qt(0.975,df)</em> if we want to be more precise). </li>
+<li>We can rearrange this formula to find the smallest difference that we would regard as being significant, and call this <em>the least significant difference</em>:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img src="assets/img/LSD_formula.png" style="height:50px"></img>
+</div>
+
+<ul>
+<li>So, we want overlapping bars to indicate a difference less than this <em>LSD</em></li>
+<li>Therefore we need to draw bars that are <em>LSD</em>/2 in length</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Solution = use least significant difference (LSD) bars!</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code class="r">lsd&lt;-qt(0.975, 18)*sqrt(2*11.685/10)
+lsdbars&lt;-rep(lsd,3)/2
+error.bars(Yield,lsdbars,labels)
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-70-1.png" alt="plot of chunk unnamed-chunk-70"></p>
+
+</div>
+  </article>
+</slide>
+
+<slide class="" id="slide-87" style="background:;">
   <article data-timings="">
     
   </article>
@@ -81,20 +2029,524 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Topics covered today'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='Choosing the right kind of statistical analysis'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Type of test depends on nature of explanatory and response variables'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Theory of linear regression'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Theory of linear regression'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Theory of linear regression'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Theory of linear regression'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Theory of linear regression'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Theory of linear regression'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Theory of linear regression'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Theory of linear regression'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='The famous sum of squares'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='The famous sum of squares'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='The famous sum of squares'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='The famous sum of squares'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='The famous sum of squares'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='The famous sum of squares'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='The famous sum of squares'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='The famous sum of squares'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='The famous sum of squares'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='The famous sum of squares'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Linear regression in R'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Degree of scatter'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Degree of scatter'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='The coefficient of determination'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='The coefficient of determination'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='The coefficient of determination'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='The coefficient of determination'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Analysis of variance in regression'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Analysis of variance in regression'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Analysis of variance in regression'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Analysis of variance in regression'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='The <em>summary.lm</em> table'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='The <em>summary.lm</em> table'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Confidence intervals'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Prediction using the fitted model'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Prediction using the fitted model'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Model checking'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Model checking'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Model checking'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Heteroscedasticity'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Mis-specified model:'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Correctly specified model:'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Non-normality of errors'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Example 1: normal errors!!'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Example 1: normal errors!!'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Now you guys try different types of non-normal errors:'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Introducing... general linear models'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Introducing... general linear models'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Worklow for general linear models'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Worklow for general linear models'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Workflow for general LMs: (1) Plot'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Workflow for general LMs: (2) Model'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Workflow for general LMs: (3) Check Assumptions:'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Workflow for general LMs: (3) Check Assumptions:'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Workflow for general LMs: (4) Intepret:'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Workflow for general LMs: (4) Intepret:'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Workflow for general LMs: (4) Intepret:'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Workflow for general LMs: (5) From stats back to figure:'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Workflow for general LMs: (5) From stats back to figure:'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Analysis of variance (ANOVA)'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='One-way ANOVA'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='One-way ANOVA'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='One-way ANOVA'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='One-way ANOVA'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='One-way ANOVA'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='One-way ANOVA'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='One-way ANOVA'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='One-way ANOVA'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='ANOVA table for one-way ANOVA'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='ANOVA table for one-way ANOVA'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='ANOVA table for one-way ANOVA'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='ANOVA table for one-way ANOVA'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Model checking for ANOVA:'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Interpretation of ANOVA results:'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Interpretation of ANOVA results:'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Interpretation of ANOVA results:'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Interpretation of ANOVA results:'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='Interpretation of ANOVA results:'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='Plotting ANOVA results:'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Plotting ANOVA results:'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='Plotting ANOVA results:'>
+         82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='Plotting ANOVA results:'>
+         83
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='Important note about error bars!!'>
+         84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='Solution = use least significant difference (LSD) bars!'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='Solution = use least significant difference (LSD) bars!'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='NA'>
+         87
       </a>
     </li>
   </ul>

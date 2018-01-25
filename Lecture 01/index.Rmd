@@ -11,6 +11,61 @@ logo        : logo_ucc.png
 biglogo     : BEES_logo.jpg
 ---
 
+## Required software
+
+R  
+Available at https://cran.r-project.org/mirrors.html  
+  
+R studio  
+Available at https://www.rstudio.com/
+
+
+--- .class #id &twocol
+
+## Course tutors
+
+*** =left
+
+<div style='text-align: left;'>
+    <img src="assets/img/tom.jpg" style="height:125px"></img>
+    Tom Reed
+</div>   
+.  
+<div style='text-align: left;'>
+    <img src="assets/img/javi.jpg" style="height:125px"></img>
+    Javi Del barco-Trillo
+</div> 
+.  
+<div style='text-align: left;'>
+    <img src="assets/img/adam.jpg" style="height:125px"></img>
+    Adam Kane
+</div> 
+*** =right
+<div style='text-align: left;'>
+    <img src="assets/img/emma.jpg" style="height:125px"></img>
+    Emma Critchley
+</div> 
+.  
+<div style='text-align: left;'>
+    <img src="assets/img/james.jpg" style="height:125px"></img>
+    James Savage
+</div> 
+.  
+<div style='text-align: left;'>
+    <img src="assets/img/anthony.jpg" style="height:125px"></img>
+    Anthony Caravaggi
+</div> 
+
+--- .class #id
+
+## Suggested reading
+
+<div style='text-align: center;'>
+    <img src="assets/img/book.jpg" style="height:500px"></img>
+</div> 
+
+--- .class #id
+
 ## Why R?
 
 - It's free
@@ -20,6 +75,7 @@ biglogo     : BEES_logo.jpg
 - Collaboration with colleagues
 - Support for reproducible analysis
 - Methods of publishing code and results
+- Distributable computing
 
 And much more.
 
@@ -57,6 +113,38 @@ Many functions are in packages/libraries which must be installed and loaded
 
 --- .class #id
 
+## The R Studio GUI - Code
+
+<div style='text-align: center;'>
+    <img src="assets/img/RStudio_gui_1.jpg" style="height:500px"></img>
+</div>
+
+--- .class #id
+
+## The R Studio GUI - Environment
+
+<div style='text-align: center;'>
+    <img src="assets/img/RStudio_gui_2.jpg" style="height:500px"></img>
+</div>
+
+--- .class #id
+
+## The R Studio GUI - Files, Plots, Packages, etc.
+
+<div style='text-align: center;'>
+    <img src="assets/img/RStudio_gui_3.jpg" style="height:500px"></img>
+</div>
+
+--- .class #id
+
+## The R Studio GUI - Console
+
+<div style='text-align: center;'>
+    <img src="assets/img/RStudio_gui_4.jpg" style="height:500px"></img>
+</div>
+
+--- .class #id
+
 ## What can we do with R?
 
 - Simple calculations
@@ -72,4 +160,652 @@ And much more.
 
 --- .class #id
 
----
+## Examples
+
+Data exploration
+
+<div style='text-align: center;'>
+    <img src="assets/img/mix_plots.jpg" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Examples
+
+3D plots
+
+<div style='text-align: center;'>
+    <img src="assets/img/3d_plot.png" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Examples
+
+Kernel Density Estimation
+
+<div style='text-align: center;'>
+    <img src="assets/img/kde_plot.png" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Examples
+
+Tree plots
+
+<div style='text-align: center;'>
+    <img src="assets/img/tree_plot.png" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Examples
+
+Mapping
+
+<div style='text-align: center;'>
+    <img src="assets/img/map.jpeg" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Setting your work environment
+
+Before beginning work in R, you should specify your working directory. This is the root directory which contains (and will contain) all files and subfolders relevant to your analyses. 
+
+```{r}
+setwd("C:/Users/Anthony Caravaggi/Dropbox/GitHub/BL6024_UCC_2017/Lecture 01")
+```
+
+--- .class #id
+
+## R Console
+
+In the R console, you can enter numbers, perform calculations, and run code.
+
+```{r}
+3 + 5
+3 - 5
+3 * 5
+```
+
+--- .class #id
+
+## Saving code
+
+Any code entered in the Console will **not** be saved. All code should be entered in the code window and the file saved. 
+
+<div style='text-align: center;'>
+    <img src="assets/img/RStudio_gui.png" style="height:400px"></img>
+</div>
+
+--- .class #id
+
+## Commenting on code
+
+Be sure to comment on your code for future reference and to ease replication by other users.
+
+```{r}
+# Anything preceded by hashtags is ignored by R
+# Hashtags don't flow to the next line!
+# An example comment would be:
+
+# Finding the square root of integers as an example of basic R functionality
+sqrt(34 + 12)
+```
+
+Comments do not have to be wordy or complex but **must** be clear.
+
+--- .class #id
+
+## Assigning variables
+
+
+```{r}
+x <- 3 + 5
+x = 3 + 5
+x
+```
+
+The "<-" or "=" tells R to take the equation to the right of the symbol and store it in a variable whose name is given on the left.
+
+Any data entered or calculations performed which are not assigned to variables will **not** be saved.
+
+--- .class #id
+
+## Vectors
+
+Lists of integers or characters (strings) can be stored. These are known as vectors.
+
+```{r}
+x <- c(2, 4, 6, 8, 10)
+y <- c("two", "four", "six", "eight", "ten")
+x
+y
+```
+
+--- .class #id
+
+## Sequences and repetition
+
+```{r}
+a <- c(1:10)
+b <- seq(1,10, by = 0.5)
+a
+b
+```
+
+--- .class #id
+
+## Sequences and repetition
+
+```{r}
+c <- rep(5,10)
+d <- rep(c("A","B","C"),2)
+c
+d
+```
+
+--- .class #id
+
+## Random numbers
+
+For a vector of 5 numbers
+```{r}
+runif(5)
+```
+
+5 numbers between 5 and 20
+```{r}
+runif(5, min=5, max=20)
+```
+
+Similarly
+```{r}
+sample(5:20, 5, replace=TRUE)
+```
+
+--- .class #id
+
+To generate random numbers from a normal distribution
+```{r}
+rnorm(5)
+```
+
+With a specfied mean and standard deviation
+```{r}
+rnorm(5, mean=6, sd=1.2)
+```
+
+To make your random numbers repeatable, use set.seed
+```{r}
+set.seed(42)
+rnorm(5, mean=6, sd=1.2)
+```
+
+
+--- .class #id
+
+## Extracting data
+
+4th element of vector a (first element is element 1)
+
+```{r}
+a[4] 
+```
+
+Second and fifth element of b
+
+```{r}
+b[c(2,5)]
+```
+
+--- .class #id
+
+## Calculations with objects
+
+Numeric objects can be adjusted according to a single number
+
+```{r}
+x <- c(2, 4, 6, 8, 10)
+x + 1
+```
+
+Or pairwise, by another object
+
+```{r}
+x <- c(2, 4, 6, 8, 10)
+y <- c(1, 2, 3, 4, 5)
+x/y
+```
+
+--- .class #id
+
+## Mathematical operators
+
+To take the square root, find e raised to each number, etc., use the usual commands 
+
+```{r}
+sqrt(x)
+exp(x)
+log(x)
+```
+
+--- .class #id
+
+## Mathematical operators
+
+By combining operations and using parentheses you can make more complicated expressions
+
+```{r}
+c <- (x + sqrt(x))/(exp(x)+1)
+c
+```
+
+--- .class #id
+
+## Logical operators
+
+```{r}
+3 + 5 == 8 # equal to
+3 + 5 != 9 # not equal to
+3 + 5 >= 8 # greater than or equal to
+3 + 5 < 12 # less than
+```
+
+--- .class #id
+
+## Vector length
+
+When you do operations on vectors they are performed on an element by element basis. All of the vectors in an expression must be the same length, or else the shorter vector will loop. 
+
+```{r}
+a <- c(1,2,3)
+b <- c(10,11,12,13)
+a+b
+```
+
+--- .class #id  
+
+## Accounting for Class
+
+Certain functions cannot be applied to certain data classes. To find out the class of your data:
+
+```{r}
+x <- c(2, 4, 6, 8, 10)
+y <- c("two", "four", "six", "eight", "ten")
+class(x)
+class(y)
+```
+
+--- .class #id
+
+## Accounting for Class
+
+For example, you cannot use arthimetic with a character object
+
+```{r}
+x + y
+```
+
+You can change a vector's class, but be careful - this can have implications elsewhere in your code!
+
+```{r}
+x2 <- as.character(x)
+class(x2)
+```
+
+--- .class #id
+
+## Descriptive statistics
+
+Simple commands can be used to derive basic descriptive statistics for objects
+
+```{r}
+x <- c(2, 4, 6, 8, 10)
+mean(x)
+summary(x)
+```
+
+--- .class #id
+
+## Factors
+
+Sometimes an experiment includes different levels of some explanatory variable. The different levels are also called factors. Factors are treated differently than ordinary vectors. For example, when you use `summary` on a factor,it prints out the possible values and their frequencies rather than the five-point summary.
+
+```{r}
+x <- sample(4:10, 50, replace=TRUE)
+summary(x)
+x <- factor(x)
+summary(x)
+```
+
+
+--- .class #id
+
+## Exercise
+
+Explore arthimetic and creating vectors in R.
+
+--- .class #id
+
+## Data frames
+
+A data frame is a collection of related objects. They can be created manually (here an example based on blue tits (*Cyanistes caeruleus*)...
+
+```{r}
+sp <- rep("BLUTI", 50) # repeat a string or number x times
+wi <- sample(57:69, 50, replace=TRUE) # generate a vector of given length between integers
+we <- runif(50, min=8, max=13) # as above, but allows generation of decimal data
+btDat <- data.frame(sp, wi, we)
+head(btDat)
+```
+
+--- .class #id
+
+All values of the same variable **must** be contained within the same column
+
+```{r}
+v1 <- c(13.4, 18.1, 11.9)
+v2 <- c(9.5, 12.3, 10.4)
+v3 <- c(21.0, 18.3, 17.6)
+v <- data.frame(v1, v2, v3)
+colnames(v) <- c("cold", "warm", "hot")
+v
+```
+
+This is not a dataframe. 
+
+A dataframe based on these data would need two columns:
+- Levels (cold, warm, hot)
+- Response (measurments)
+
+--- .class #id
+
+```{r}
+library(reshape2)
+v2 <- melt(v)
+colnames(v2) <- c("temperature", "r_time")
+v2
+```
+
+--- .class #id
+
+## Data frames
+
+Data can also be read from external files. csv and txt are the easiest and most frequently used. Here  we have a dataset based on great tits (*Parus major*)
+
+```{r}
+gtDat <- read.csv("assets/img/gtDat.csv", header = TRUE, row.names = 1)
+summary(gtDat)
+```
+
+--- .class #id
+
+```{r}
+str(gtDat)
+```
+
+```{r}
+dim(gtDat)
+```
+
+--- .class #id
+
+## Data frame attributes
+
+```{r}
+names(btDat)
+colnames(btDat)
+class(btDat)
+```
+
+--- .class #id
+
+## Data frame attributes
+
+```{r}
+attributes(btDat)
+```
+
+--- .class #id
+
+## Data frames
+
+We can use the same commands to explore or manipulate the data as we would with individual objects. We use **$** to specify columns in a data frame.
+
+```{r}
+mean(btDat$wi)
+max(btDat$we)
+```
+
+--- .class #id
+
+We can also derive estimates for different levels within a dataframe. 
+
+```{r}
+tDat <- read.csv("assets/img/tDat.csv", header = TRUE, stringsAsFactors=FALSE)
+head(tDat)
+```
+
+```{r  echo = FALSE}
+tDat$Wing <- as.numeric(tDat$Wing)
+tDat$Weight <- as.numeric(tDat$Weight)
+```
+
+--- .class #id
+
+```{r}
+summary(tDat)
+```
+
+--- .class #id
+
+```{r}
+by(tDat, tDat$Sp_C, function(x) {mean.w <- mean(x$Weight)})
+```
+
+--- .class #id
+
+## Data frames - plotting data
+
+```{r}
+plot(tDat$Wing, tDat$Weight)
+```
+
+--- .class #id
+
+```{r}
+hist(btDat$we)
+```
+
+--- .class #id
+
+## Extract values from data frame
+
+```{r}
+btDat[,3] # 4th column of matrix
+btDat[4,] # 4th row of matrix
+```
+
+--- .class #id
+
+## Extract values from data frame
+
+```{r}
+btDat[2:4,1:3] # rows 2-4 of columns 1-3
+```
+
+We can also `subset` our data, to extract rows containing specific values.
+
+```{r}
+tDat[tDat$Sp_C == "Green woodpecker", ]
+```
+
+--- .class #id
+
+We can also base subsets on multiple options.
+
+```{r}
+cchaff <- tDat[ which(tDat$Sp_L=='Phylloscopus collybita' & tDat$Age == 4), ]
+cchaff
+```
+
+--- .class #id
+
+```{r}
+robin <- tDat[ which(tDat$Code=='ROBIN' & tDat$Age == 3 & tDat$Weight >= 18), ]
+robin
+```
+
+--- .class #id
+
+## Matrix
+
+Matrices are data arranged in a two-dimensional, rectangular layout, where all cell types are the same
+
+```{r}
+a <- c("Hungry","Fed","Hungry","Hungry","Fed","Hungry","Fed","Fed")
+b <- c("Yes","No","Yes","Yes","No","No","Yes","No")
+t <- table(a,b)
+t
+```
+
+The table command allows us to do a very quick combination, and gives us a quick overview of the data.
+
+--- .class #id
+
+
+Matrices can also be entered manually.
+
+```{r}
+cDat <-matrix(c(34, 12, 41, 7),ncol=2,byrow=TRUE)
+rownames(cDat)<-c("male","female")
+colnames(cDat)<-c("robin","goldc")
+cDat <- as.table(cDat)
+cDat
+```
+
+The byrow=TRUE option indicates that the numbers are filled in across the rows first, and the ncols=2 indicates that there are two columns.
+
+
+--- .class #id
+
+## Lists
+
+Lists are vectors containing other objects
+```{r}
+lis <- list(l1 = 1:10, l2 = seq(0, 1, length.out = 5))
+lis
+```
+
+--- .class #id
+
+## Tidying and saving
+
+You can save your dataframes to csv or text files
+
+```{r}
+write.csv(cchaff, "chiffchaff_data.csv")
+```
+
+You can remove any objects from your working environment using the `rm` command
+
+```{r}
+rm(cchaff)
+rm(robin, greti)
+```
+
+--- .class #id
+
+## Exercise
+
+Generate two character and four numerical vectors
+
+Combine these vectors into a data frame
+
+Explore these data to retrieve summary statistics and plots
+
+--- .class #id
+
+## Exercise
+
+Load the data file `tdat` which was distributed prior to this class.
+
+Read the csv and explore the data. Answer the following questions:
+- How many species are detailed in these data?
+- What is the name of the third column?
+- What is the value of the data in the 2nd column, 57th row?
+- What data are on the 12th,  87th and 197th rows?
+- What is the median wing length across all species?
+- What is the square root of the value in the 3rd column, 70th row?
+- What are the sex, age, wing length and weight of the Blackcap?
+- How many Blackbirds of age 6 have a wing length of over 130 cm?
+
+--- .class #id
+
+## Packages
+
+A bundle of code, data, documentation, and tests developed by the community
+- Easy to share
+- Often stored on repositories (repos)
+- Over 10,000 packages on the Comprehensive R Archive Network, or CRAN
+- Stored in your R library
+
+Which package do I use?
+- Refer to papers using the same analyses
+- Refer to CRAN's index (https://cran.r-project.org/web/views/)
+- Ask colleagues
+
+Install from CRAN with `install.packages("x")` where x = the name of the package  
+Use in R with `library("x")`  
+
+
+--- .class #id
+
+## Help within R
+
+- help("sqrt")
+- ?sqrt
+- help.start()
+- apropos("test")
+- help.search("Linear Model")
+- RSiteSearch("An Introduction to R")
+
+help and ? are equivalent functions
+help.start() opens HTML documentation directly in the browser
+apropos looks for every function that contains a given pattern in their name
+help.search searches the help files of the installation. 
+RSiteSearch searches on-line sources via the browser 
+
+--- .class #id
+
+## Help within R
+
+Package vignettes
+- How-to guides for topics with simple introductions and examples
+- To get a list of all available vignettes type `vignette()` 
+- Use the `openVignette()` command to open it 
+- Get help with `package?x` and `help(package = "x")`
+
+
+--- .class #id
+
+## Troubleshooting and getting help 
+
+Google  
+Stack Overflow - https://stackoverflow.com/questions/tagged/r  
+Reddit - http://www.reddit.com/r/rstats  
+Facebook - R-Space (https://www.facebook.com/groups/308600982528221)  
+
+R Cookbook - http://www.cookbook-r.com/     
+R Reference Card - https://cran.r-project.org/doc/contrib/Short-refcard.pdf  
+RStudio Cheat Sheets - https://www.rstudio.com/resources/cheatsheets/   
+RSeek - http://rseek.org/ 
+
+`UCC R Stats Mailing List`    
+https://github.com/arcaravaggi/BL6024_UCC_2017/blob/master/UCCRstats_list_intro.md 
+
+Join the list by sending a blank email to `UCCRSTATS-L-subscribe-request@lists.ucc.ie`
+
