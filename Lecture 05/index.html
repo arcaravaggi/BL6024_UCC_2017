@@ -46,7 +46,7 @@
   </aside>
   <hgroup class="auto-fadein">
     <h1>BL6024 - Quantitative Skills for Biologists using R</h1>
-    <h2>Lecture XX: Subtitle</h2>
+    <h2>Lecture 5: More advanced linear models</h2>
     <p><br/></p>
   </hgroup>
   <article></article>  
@@ -56,20 +56,240 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Slide 1</h2>
+    <h2>Normality</h2>
   </hgroup>
   <article data-timings="">
-    
+    <p>If you measured the height of 1000 ten year old boys, what would you expect their height distribution to look like? </p>
+
   </article>
 </slide>
 
 <slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Height</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
   </article>
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Height cont</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you then measured the height of 1000 thirty year old men, what would you expect their height distribution to look like? </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Height cont</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Reality bites</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Normally we don&#39;t have 1000 samples from each age or value on the x axis. In ecological research we typically only get one value of y per x e.g. one measurement of height per age class. We then assume the data point we have comes from a normal distribution. </p>
+
+<p>When we fit the regression line it is as if it is running through a load of normal distributions, one for each x data point. Because the line won&#39;t fit through the points perfectly we&#39;re left with some residual variance around it. That&#39;s what we mean when we say the residuals are normally distributed. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>LM to GLM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Linear models assume that your residuals:</p>
+
+<ul>
+<li>are normally distributed and </li>
+<li>have constant variance. </li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Normally distributed data with constant variance</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Artificially messy data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Real world data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>GLMs to the rescue</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Generalized linear models enable you to fit models to data that don&#39;t meet the requirements of normality and equal variance in your residuals. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Types of data GLMs can handle</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Specifically, you should use GLMs when the response variable is:</p>
+
+<ul>
+<li>count data expressed as proportions (e.g. logistic regressions);</li>
+<li>count data that are not proportions (e.g. log-linear models of counts);</li>
+<li>binary response variables (e.g. dead or alive);</li>
+<li>data on time to death where the variance increases faster than linearly with the mean (e.g. time data with gamma errors).</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Properties of GLMs</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A generalized linear model has three important properties:</p>
+
+<ul>
+<li>the error structure;</li>
+<li>the linear predictor;</li>
+<li>the link function.</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The error structure - random component</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>You may specify a variety of different error distributions with a GLM:</p>
+
+<ul>
+<li>Poisson errors, useful with count data;</li>
+<li>binomial errors, useful with data on proportions;</li>
+<li>gamma errors, useful with data showing a constant coefficient of variation;</li>
+<li>exponential errors, useful with data on time to death (survival analysis).</li>
+</ul>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The linear predictor - systematic component</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This specifies the explanatory variables (\(X_1, X_2, ... X_k\)) in the model, more specifically their linear combination in creating the so called linear predictor; e.g., the linear prediction function is equal to \(\beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_kx_k\) as we have seen in linear regression.</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The link function</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The link function specifies the link between the random (error structure) and systematic components (linear predictor). It says how the expected value of the response (your y value) relates to the linear predictor of explanatory variables</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The link function</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>It uses maximum likelihood estimation (MLE) rather than ordinary least squares (OLS) to estimate the parameters.</p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Count data and Poisson Errors</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">glm(y~x, family = poisson)
+</code></pre>
+
+<p>Here your error structure is fit by specifiying the family. </p>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Table</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th>Error</th>
+<th>Link</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Normal</td>
+<td>identity</td>
+</tr>
+<tr>
+<td>poisson</td>
+<td>log</td>
+</tr>
+<tr>
+<td>binomial</td>
+<td>logit</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>reciprocal</td>
+</tr>
+</tbody></table>
+
+  </article>
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Work</h2>
+  </hgroup>
   <article data-timings="">
     
   </article>
@@ -81,20 +301,116 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Slide 1'>
+        data-slide=1 title='Normality'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='Height'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Height cont'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Height cont'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Reality bites'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='LM to GLM'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Normally distributed data with constant variance'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Artificially messy data'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Real world data'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='GLMs to the rescue'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Types of data GLMs can handle'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Properties of GLMs'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='The error structure - random component'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='The linear predictor - systematic component'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='The link function'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='The link function'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Count data and Poisson Errors'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Table'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Work'>
+         19
       </a>
     </li>
   </ul>
