@@ -101,12 +101,24 @@ $$ p(y|x) = \frac {p(x|y) \times p(y)}{p(x)}$$
 $$ \color{darkgreen}{p(\theta|x)} = \frac { \color{darkred}{p(x|\theta)} \times \color{darkorange}{p(\theta)}}{\color{darkblue}{p(x)}}$$
 <br>
 
+
+
+---  .class #id 
+
+
+## Priors and posteriors
+<br>
+
+$$ \color{darkgreen}{p(\theta|x)} = \frac { \color{darkred}{p(x|\theta)} \times \color{darkorange}{p(\theta)}}{\color{darkblue}{p(x)}}$$
+<br>
+
 Simplified to: \(\color{darkgreen}{Posterior\ distribution} \sim \color{darkred}{Likelihood} \times \color{darkorange}{Prior\ distribution}\)
 
 i.e. we update our prior belief in light of the data to get a posterior distribution for the parameters
 <br>
 
 \(\color{darkblue}{p(x)}\) &rightarrow; Evidence (normalization)
+
 
 ---  .class #id 
 
@@ -265,6 +277,62 @@ $$ p(x) = \int p(x,\theta)\  d\theta $$
 <br>
 
 - \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
+
+---  .class #id 
+
+
+## Example: Gibbs sampler
+
+<br>
+
+- \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
+- Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)
+
+---  .class #id 
+
+
+## Example: Gibbs sampler
+
+<br>
+
+- \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
+- Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)
+- Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+ Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+......................
+ <br />
+ Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)
+
+
+---  .class #id 
+
+
+## Example: Gibbs sampler
+
+<br>
+
+- \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
+- Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)
+- Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+ Sample \(\theta_2^{(1)}\) from \(p(\theta_2|\theta_1^{(1)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
+ <br />
+......................
+ <br />
+ Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)
+- Repeat previous step many times to get a good approximation of \(p(\theta|x)\)
+
+
+---  .class #id 
+
+
+## Example: Gibbs sampler
+
+<br>
+
+- \(x= \)data, \(\theta= \)vector of *k* unknowns \((\theta_1,\theta_2,...,\theta_k)\)  
 - Choose starting values \(\theta_1^{(0)},\theta_2^{(0)},...,\theta_k^{(0)}\)
 - Sample \(\theta_1^{(1)}\) from \(p(\theta_1|\theta_2^{(0)},\theta_3^{(0)},...,\theta_k^{(0)},x)\)
  <br />
@@ -275,6 +343,7 @@ $$ p(x) = \int p(x,\theta)\  d\theta $$
  Sample \(\theta_k^{(1)}\) from \(p(\theta_k|\theta_1^{(1)},\theta_2^{(1)},...,\theta_{k-1}^{(1)},x)\)
 - Repeat previous step many times to get a good approximation of \(p(\theta|x)\)
 - The sequence of random draws for each parameter *k* forms a Markov chain
+
 
 ---  .class #id 
 
@@ -634,7 +703,7 @@ gelman.diag(mcmc)
 
 
 ```r
-#MC error vs SD
+#MC error vs SD (%)
 summa<-summary(mcmc)
 summa[[1]][,4]/summa[[1]][,2]*100
 ```
@@ -650,9 +719,9 @@ summa[[1]][,4]/summa[[1]][,2]*100
 
 
 ```r
-#density plots
+#autocorrelation plots
 par(mfrow=c(1,3),cex.main=2,cex.lab=2)
-densplot(mcmc)
+autocorr.plot(mcmc[[1]], auto.layout = F)
 ```
 
 ![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7-1.png)
@@ -661,8 +730,21 @@ densplot(mcmc)
 
 ## Example: simple linear regression
 
+
 ```r
-#HPD interval
+#density plots
+par(mfrow=c(1,3),cex.main=2,cex.lab=2)
+densplot(mcmc)
+```
+
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.png)
+
+---  .class #id 
+
+## Example: simple linear regression
+
+```r
+#Summary of the posterior distribution
 summary(mcmc)
 ```
 
@@ -687,7 +769,7 @@ summary(mcmc)
 ## Practical - Objectives
 <br>
 
-- Estimate the mean, probability of obtaining heads and the parameters of a simple linear regression (using the example from Session 4)
+- Estimate the mean and standard deviation of a set of numbers, and the parameters of a simple linear regression (using the example from Session 4)
 
 - Familiarise yourself with BUGS language and `R2OpenBUGS` and `coda` packages in `R`
 
