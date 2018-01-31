@@ -242,7 +242,7 @@ step(min.model, direction = &quot;both&quot;,max.model)
     <h2>Multiple Regression</h2>
   </hgroup>
   <article data-timings="">
-    <h3>Inerpret and plot our final model</h3>
+    <h3>Interpret and plot our final model</h3>
 
 <pre><code class="r">intercepts &lt;- c(coef(model1)[&quot;(Intercept)&quot;],
                 coef(model1)[&quot;(Intercept)&quot;] + coef(model1)[&quot;factor(week)2&quot;],
@@ -267,7 +267,7 @@ qplot(x = NAP, y = Richness, color = factor(week), data = rich) +
     <h2>Multiple Regression</h2>
   </hgroup>
   <article data-timings="">
-    <h3>Inerpret and plot our final model</h3>
+    <h3>Interpret and plot our final model</h3>
 
 <p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
 
@@ -1372,7 +1372,7 @@ summary(m2)
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Overdispersion</h2>
+    <h2>GLMs</h2>
   </hgroup>
   <article data-timings="">
     <h3>Offsets</h3>
@@ -1754,7 +1754,9 @@ lines(mydata$CellSize,pred)
   <article data-timings="">
     <h3>Plot the fitted values</h3>
 
-<p>Model validation for this sort of data is difficult because we&#39;re working with 1s and 0s i.e. binary data. </p>
+<p>Model validation for this sort of data is difficult because we&#39;re working with 1s and 0s i.e. binary data. 
+Check this link for some options:
+<a href="https://www.r-bloggers.com/evaluating-logistic-regression-models/">https://www.r-bloggers.com/evaluating-logistic-regression-models/</a></p>
 
   </article>
 </slide>
@@ -2239,7 +2241,7 @@ lines(mydata$CellSize,pred)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=80 title='Overdispersion'>
+        data-slide=80 title='GLMs'>
          80
       </a>
     </li>

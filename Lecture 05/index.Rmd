@@ -149,7 +149,7 @@ step(min.model, direction = "both",max.model)
 
 --- .class #id 
 ## Multiple Regression 
-### Inerpret and plot our final model 
+### Interpret and plot our final model 
 ```{r,eval=F}
 intercepts <- c(coef(model1)["(Intercept)"],
                 coef(model1)["(Intercept)"] + coef(model1)["factor(week)2"],
@@ -169,7 +169,7 @@ qplot(x = NAP, y = Richness, color = factor(week), data = rich) +
 
 --- .class #id 
 ## Multiple Regression 
-### Inerpret and plot our final model 
+### Interpret and plot our final model
 ```{r,echo=F,fig.align='center'}
 intercepts <- c(coef(model1)["(Intercept)"],
                 coef(model1)["(Intercept)"] + coef(model1)["factor(week)2"],
@@ -1061,7 +1061,7 @@ which is equivalent to this:
 \[log(\mu_i)=\beta_1+\beta_2X_i+log(t)\]
 
 --- .class #id 
-## Overdispersion
+## GLMs
 ### Offsets
 
 For our example:
@@ -1418,4 +1418,6 @@ lines(mydata$CellSize,pred)
 ## GLM 
 ### Plot the fitted values 
 Model validation for this sort of data is difficult because we're working with 1s and 0s i.e. binary data. 
+Check this link for some options:
+https://www.r-bloggers.com/evaluating-logistic-regression-models/
 
