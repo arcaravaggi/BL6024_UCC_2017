@@ -2,3 +2,6 @@ base
 ggplot2
 knitr
 kableExtra
+car
+MASS
+rsm
